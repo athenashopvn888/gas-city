@@ -128,7 +128,7 @@ export default async function ItemsCategoryPage({
           <div className={styles.visitCta}>
             <h3 className={styles.visitTitle}>Visit GAS CITY CANNABIS</h3>
             <p className={styles.visitText}>
-              985 O'Connor Dr, GTA, ON M4B 2T1 · Open 24 Hours
+              985 O'Connor Dr, GTA, ON M4B 2T1 · Open Daily: 10:00 AM - 03:00 AM
             </p>
             <a
               href="https://gascitycannabis.com/"
