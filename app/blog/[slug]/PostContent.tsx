@@ -128,7 +128,7 @@ export default function PostContent() {
 
         <div className={styles.cta}>
           <p>
-            <strong>GAS CITY CANNABIS</strong> — 985 O'Connor Dr, GTA · Open 24 Hours · (647) 638-1494
+            <strong>GAS CITY CANNABIS</strong> — 985 O'Connor Dr, GTA · Open Daily: 10:00 AM - 03:00 AM · (647) 638-1494
           </p>
           <Link href="/exotic" className={styles.ctaBtn}>Browse Our Menu</Link>
         </div>
