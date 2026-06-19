@@ -24,7 +24,7 @@ export const gbpLocation = {
     "Accessories"
   ],
   menuUrl: "/",
-  directionsUrl: "https://gascitycannabis.com/",
+  directionsUrl: "https://www.google.com/maps/search/?api=1&query=985%20O%27Connor%20Dr%2C%20Toronto%2C%20ON%20M4B%202T1",
   mapEmbedUrl: "https://maps.google.com/maps?q=GAS%20CITY%20CANNABIS%20985%20O%27Connor%20Dr%2C%20Toronto%2C%20ON%20M4B%202T1&t=&z=15&ie=UTF8&iwloc=&output=embed",
   latitude: "43.7086100",
   longitude: "-79.3101300",
