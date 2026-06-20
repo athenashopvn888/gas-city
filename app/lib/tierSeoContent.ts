@@ -98,7 +98,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
 
   BUDGET: {
     seoTitle: "Budget Cannabis GTA — Cheap Weed From $3/g",
-    seoIntro: "Cheap weed in GTA starting at $3/g. GAS CITY CANNABIS Budget tier features shreds and value ounces for cost-conscious smokers. Open daily on GTA St.",
+    seoIntro: "Cheap weed in GTA starting at $3/g. GAS CITY CANNABIS Budget tier features shreds and value ounces for cost-conscious smokers. Check current store hours before visiting GAS CITY CANNABIS.",
     sections: [
       {
         heading: "Affordable Cannabis Without Compromise",

@@ -130,14 +130,6 @@ export default async function ItemsCategoryPage({
             <p className={styles.visitText}>
               985 O'Connor Dr, GTA, ON M4B 2T1 · Open Daily: 10:00 AM - 03:00 AM
             </p>
-            <a
-              href="https://gascitycannabis.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.visitBtn}
-            >
-              📍 Get Directions
-            </a>
           </div>
         </div>
       </section>

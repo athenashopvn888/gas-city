@@ -44,14 +44,6 @@ export default function ContactPage() {
                 <br />
                 <span className={styles.infoMuted}>985 O'Connor Dr & Nearby Expressway</span>
               </p>
-              <a
-                href="https://gascitycannabis.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.infoBtn}
-              >
-                Get Directions →
-              </a>
             </div>
 
             {/* Hours */}
@@ -107,16 +99,6 @@ export default function ContactPage() {
 
           {/* Map */}
           <div className={styles.mapSection}>
-            <iframe
-              src="https://maps.google.com/maps?q=985%20O%27Connor%20Dr,+GTA,+ON+M4B%202T1&t=&z=15&ie=UTF8&iwloc=&output=embed"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="GAS CITY CANNABIS — 985 O'Connor Dr, GTA"
-            ></iframe>
           </div>
         </div>
       </section>

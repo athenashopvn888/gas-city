@@ -234,17 +234,6 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
       { q: "Are your cigarette prices competitive?", a: "Absolutely. We offer some of the best cigarette prices in the 985 O'Connor Dr & Nearby Expressway area of GTA." },
     ],
   },
-  "MAGIC & OTHERS": {
-    banner: "/banners/09_Magic_Stuff.webp",
-    name: "Magic & Others", slug: "magic", color: "#ec4899", icon: "🍄",
-    seoTitle: "Magic Mushrooms & More — GTA",
-    seoIntro: "Magic mushrooms, psilocybin products, and specialty items at GAS CITY CANNABIS, GTA.",
-    seoDescription: "GAS CITY CANNABIS carries a curated selection of magic mushrooms and specialty products in GTA. From micro-dose capsules to dried psilocybin mushrooms, we stock products for both beginners and experienced psychonauts. Visit us at 985 O'Connor Dr for our full selection.",
-    faqs: [
-      { q: "Do you sell magic mushrooms?", a: "Yes, we carry dried magic mushrooms, micro-dose capsules, and psilocybin edibles." },
-      { q: "What is micro-dosing?", a: "Micro-dosing involves taking very small amounts of psilocybin (typically 0.1-0.3g) for subtle cognitive and mood benefits without a full psychedelic experience." },
-    ],
-  },
 };
 
 /* ── Helper functions ── */
