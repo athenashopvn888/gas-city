@@ -39,8 +39,8 @@ export const SEO_PAGES: SeoPageData[] = [
         body: "At GAS CITY CANNABIS, we make it convenient for you. We are Open Daily: 10:00 AM - 03:00 AM, 365 days a year. Whether you're finishing a late shift, heading out for the night, or need an early morning pickup, we are ready to serve you. We're centrally located at 985 O'Connor Dr, near major transit bus routes, close to major highways and central stations. Free street parking is available near the dispensary.",
       },
       {
-        heading: "Unbeatable Promotions on Every Purchase",
-        body: "Every purchase at GAS CITY CANNABIS comes with our signature promotions. Our Buy 2g Get 1g FREE deal applies to every single tier — you always get a bonus gram. Our top three tiers (Exotic, Premium, and AAA+) also qualify for Buy 3g Get 3g FREE, effectively doubling your order. Combined with our already competitive pricing, GAS CITY CANNABIS offers some of the best cannabis value in GTA, Toronto, and the surrounding area.",
+        heading: "Clear Bundle Pricing on Flower",
+        body: "Every purchase at GAS CITY CANNABIS comes with our signature bundle offers. Our 3g bundle offer applies to every single tier — the 3g total is shown clearly before purchase. Our top three tiers (Exotic, Premium, and AAA+) also qualify for 6g bundle pricing for 6g total. Combined with our already competitive pricing, GAS CITY CANNABIS offers some of the best cannabis value in GTA, Toronto, and the surrounding area.",
       },
       {
         heading: "Serving GTA, Toronto & Mississauga",
@@ -51,9 +51,9 @@ export const SEO_PAGES: SeoPageData[] = [
       { q: "Where is GAS CITY CANNABIS located?", a: "We are located at 985 O'Connor Dr, GTA, ON M4B 2T1 — in the heart of 985 O'Connor Dr & Nearby Expressway area — one of GTA's most accessible areas. We're near major transit bus routes and close to major highways." },
       { q: "What are the hours for GAS CITY CANNABIS?", a: "We are open daily from 10:00 AM to 03:00 AM. Walk in anytime — no appointment needed. Whether it's day or night, our staff is here to help." },
       { q: "What cannabis products does GAS CITY CANNABIS carry?", a: "We carry 200+ strains of cannabis flower across 5 quality tiers (Exotic, Premium, AAA+, AA, Budget), plus edibles, vapes, concentrates, pre-rolls, native cigarettes, and accessories. Our menu updates in real time online." },
-      { q: "What is the cheapest weed at GAS CITY CANNABIS?", a: "Our Budget tier starts at $3/g with value ounces from $40. Our AA tier is $4/g. Every tier includes our Buy 2g Get 1g FREE promotion, making our prices even more competitive." },
+      { q: "What is the cheapest weed at GAS CITY CANNABIS?", a: "Our Budget tier starts at $3/g with value ounces from $40. Our AA tier is $4/g. Every tier includes our 3g bundle pricing, making our prices even more competitive." },
       { q: "Does GAS CITY CANNABIS have a live menu?", a: "Yes! Our online menu at gascitycannabis.com updates in real time with current stock, prices, and availability. You can see exactly what we have before you visit." },
-      { q: "What makes GAS CITY CANNABIS different from other GTA dispensaries?", a: "Three things set us apart: (1) we are open daily from 10:00 AM to 03:00 AM, (2) our transparent 5-tier pricing system means no confusing markups, and (3) every purchase includes our Buy 2g Get 1g FREE promotion. Plus we carry one of GTA's largest selections with over 200 strains." },
+      { q: "What makes GAS CITY CANNABIS different from other GTA dispensaries?", a: "Three things set us apart: (1) we are open daily from 10:00 AM to 03:00 AM, (2) our transparent 5-tier pricing system means no confusing markups, and (3) every purchase includes our 3g bundle pricing. Plus we carry one of GTA's largest selections with over 200 strains." },
       { q: "Can I check stock before visiting?", a: "Absolutely. Visit gascitycannabis.com to see our live menu. All flower, edibles, vapes, and accessories are listed with real-time stock status, THC levels, and pricing." },
       { q: "Is there parking near GAS CITY CANNABIS?", a: "Yes. Free street parking is available nearby and surrounding residential streets. We're also easily accessible via local transit." },
     ],
@@ -62,7 +62,7 @@ export const SEO_PAGES: SeoPageData[] = [
   {
     slug: "cheap-weed-york",
     title: "Cheap Weed GTA — Budget Cannabis Deals From $3/g | GAS CITY CANNABIS",
-    metaDescription: "Looking for cheap weed in GTA? GAS CITY CANNABIS has budget flower from $3/g, ounces from $40, and Buy 2g Get 1g FREE promos. We are Open Daily: 10:00 AM - 03:00 AM at 985 O'Connor Dr.",
+    metaDescription: "Looking for cheap weed in GTA? GAS CITY CANNABIS has budget flower from $3/g, ounces from $40, and 3g bundle pricing. We are Open Daily: 10:00 AM - 03:00 AM at 985 O'Connor Dr.",
     h1: "Cheap Weed GTA — Budget Cannabis Deals",
     icon: "💰",
     heroTagline: "Budget Flower From $3/g · Ounces From $40 · Open Daily: 10:00 AM - 03:00 AM",
@@ -73,8 +73,8 @@ export const SEO_PAGES: SeoPageData[] = [
         body: "Looking for cheap weed in GTA without sacrificing quality? GAS CITY CANNABIS offers some of the most competitive cannabis prices in the city. Our Budget tier starts at just $3/g with value ounces from $40. Our AA tier ($4/g) and AAA+ tier ($5-$6/g) also deliver incredible value with THC levels from 27% to 32%. We believe great cannabis shouldn't break the bank, and our transparent tier-based pricing ensures you always get exactly what you pay for — no hidden markups, no gimmicks.",
       },
       {
-        heading: "Unbeatable Promotions That Stack",
-        body: "Every tier at GAS CITY CANNABIS comes with our signature Buy 2g Get 1g FREE promotion — meaning you always get a free gram with every purchase. Our top three tiers (Exotic, Premium, AAA+) also offer Buy 3g Get 3g FREE, effectively doubling your order. When you combine our already low prices with these promos, GAS CITY CANNABIS delivers the best cannabis value in GTA. A $15 AAA+ 3g purchase actually gets you 3g of flower — that's just $5/g for THC 30%+ cannabis.",
+        heading: "Flower Bundle Pricing",
+        body: "Every tier at GAS CITY CANNABIS comes with clear 3g bundle pricing so the total grams and price are shown before purchase. Our top three tiers (Exotic, Premium, AAA+) also offer 6g bundle pricing for 6g total. When you combine our already low prices with these bundle offers, GAS CITY CANNABIS delivers the best cannabis value in GTA. A $15 AAA+ 3g purchase actually gets you 3g of flower — that's just $5/g for THC 30%+ cannabis.",
       },
       {
         heading: "Budget Doesn't Mean Low Quality",
@@ -82,15 +82,15 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Compare Our Prices",
-        body: "Budget: $3/g — $40/oz. AA: $4/g — $90/oz. AAA+: $5-$6/g — $100/oz. Premium: $7-$10/g. Exotic: $10-$12/g. Every tier includes Buy 2g Get 1g FREE. Top tiers include Buy 3g Get 3g FREE. These are some of the lowest prices you'll find at any dispensary in GTA, 985 O'Connor Dr & Nearby Expressway and surrounding areas.",
+        body: "Budget: $3/g — $40/oz. AA: $4/g — $90/oz. AAA+: $5-$6/g — $100/oz. Premium: $7-$10/g. Exotic: $10-$12/g. Every tier includes 3g bundle pricing. Top tiers include 6g bundle pricing. These are some of the lowest prices you'll find at any dispensary in GTA, 985 O'Connor Dr & Nearby Expressway and surrounding areas.",
       },
     ],
     faqs: [
       { q: "What is the cheapest weed at GAS CITY CANNABIS?", a: "Our Budget tier starts at $3/g with value ounces from $40. These are quality, properly-cured strains at GTA's most competitive prices." },
-      { q: "Do you have ounce deals?", a: "Yes! Budget ounces from $40, AA ounces from $90, AAA+ ounces from $100. All with excellent quality, freshness guaranteed, and Buy 2g Get 1g FREE promotions on top." },
+      { q: "Do you have ounce deals?", a: "Yes! Budget ounces from $40, AA ounces from $90, AAA+ ounces from $100. All with excellent quality, freshness guaranteed, and 3g bundle pricing on top." },
       { q: "Is cheap weed still good quality?", a: "Absolutely. Our Budget flower delivers THC 24-27% from trusted Canadian growers. We never sell old, dry, or improperly stored flower. Every product meets our quality standards regardless of price point." },
       { q: "Where can I buy cheap weed in GTA?", a: "GAS CITY CANNABIS at 985 O'Connor Dr, GTA. We are open daily from 10:00 AM to 03:00 AM, walk in anytime, no appointment needed. We're in the heart of 985 O'Connor Dr & Nearby Expressway area." },
-      { q: "What promotions do you offer?", a: "Every tier includes Buy 2g Get 1g FREE (pay for 2g, get 3g). Our Exotic, Premium, and AAA+ tiers also offer Buy 3g Get 3g FREE (pay for 3g, get 6g). These promos apply on every visit." },
+      { q: "What bundle pricing do you offer?", a: "Every tier includes 3g bundle pricing (pay for 3g total). Our Exotic, Premium, and AAA+ tiers also offer 6g bundle pricing (pay for 6g total). These bundle offers apply on every visit." },
       { q: "Do you offer bulk discounts?", a: "Yes — our ounce pricing is deeply discounted compared to per-gram rates. Budget ounces are $40, AA ounces $90, and AAA+ ounces $100. The more you buy, the more you save." },
     ],
   },
@@ -146,7 +146,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Why Make the Drive to GAS CITY CANNABIS?",
-        body: "GAS CITY CANNABIS offers a wider selection and more competitive pricing than most local Peel options. You'll find over 200 strains across five quality tiers — from ultra-rare Exotic genetics (THC 35-39%) to affordable Budget flower at just $3/g. Our Buy 2g Get 1g FREE promotion applies to every tier, and our top three tiers offer Buy 3g Get 3g FREE. With prices starting at $3/g and ounces from $40, GAS CITY CANNABIS delivers value that's worth the short drive from Toronto.",
+        body: "GAS CITY CANNABIS offers a wider selection and more competitive pricing than most local Peel options. You'll find over 200 strains across five quality tiers — from ultra-rare Exotic genetics (THC 35-39%) to affordable Budget flower at just $3/g. Our 3g bundle pricing applies to every tier, and our top three tiers offer 6g bundle pricing. With prices starting at $3/g and ounces from $40, GAS CITY CANNABIS delivers value that's worth the short drive from Toronto.",
       },
       {
         heading: "Open Daily: 10:00 AM - 03:00 AM — Perfect for Late Night Visits",
@@ -163,9 +163,9 @@ export const SEO_PAGES: SeoPageData[] = [
     ],
     faqs: [
       { q: "How far is GAS CITY CANNABIS from Mississauga?", a: "We're located at 985 O'Connor Dr in GTA — just a 15-20 minute drive from central Mississauga via Highway 401 East." },
-      { q: "Is it worth driving from Mississauga for cannabis?", a: "Absolutely. GAS CITY CANNABIS offers 200+ strains, prices starting at $3/g, and promotions like Buy 2g Get 1g FREE that make the short drive incredibly worthwhile." },
+      { q: "Is it worth driving from Mississauga for cannabis?", a: "Absolutely. GAS CITY CANNABIS offers 200+ strains, prices starting at $3/g, and bundle pricing options like 3g total that make the short drive incredibly worthwhile." },
       { q: "Is GAS CITY CANNABIS open late?", a: "We are open daily from 10:00 AM to 03:00 AM. Whether you're driving up at noon or late at night, we are open and ready to serve you." },
-      { q: "What's the cheapest weed near Toronto?", a: "GAS CITY CANNABIS has Budget flower from $3/g and value ounces from $40. With our Buy 2g Get 1g FREE promo, these are some of the best prices in the Greater Toronto Area." },
+      { q: "What's the cheapest weed near Toronto?", a: "GAS CITY CANNABIS has Budget flower from $3/g and value ounces from $40. With our 3g bundle pricing, these are some of the best prices in the Greater Toronto Area." },
       { q: "Is there parking at GAS CITY CANNABIS?", a: "Yes. Free evening street parking is available near the store and surrounding residential streets." },
       { q: "Can I take transit from Toronto to GAS CITY CANNABIS?", a: "Yes! Local transit connects directly subway and bus routes that will drop you off right near our location." },
       { q: "Do you carry products besides cannabis?", a: "Yes — we also carry native cigarettes, rolling papers, grinders, and other accessories. Many Mississauga customers appreciate the one-stop convenience." },
@@ -187,7 +187,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         heading: "Why Choose GAS CITY CANNABIS Over Other Dispensaries?",
-        body: "What sets GAS CITY CANNABIS apart from other GTA dispensaries is our combination of selection, pricing, and convenience. We carry 200+ strains across five clear quality tiers — no confusing markups, no inconsistent pricing. Our Buy 2g Get 1g FREE promotion applies to every tier, every purchase. And unlike most dispensaries that close early, we are open daily from 10:00 AM to 03:00 AM. Whether you need flower, edibles, vapes, or concentrates, GAS CITY CANNABIS is here.",
+        body: "What sets GAS CITY CANNABIS apart from other GTA dispensaries is our combination of selection, pricing, and convenience. We carry 200+ strains across five clear quality tiers — no confusing markups, no inconsistent pricing. Our 3g bundle pricing applies to every tier, every purchase. And unlike most dispensaries that close early, we are open daily from 10:00 AM to 03:00 AM. Whether you need flower, edibles, vapes, or concentrates, GAS CITY CANNABIS is here.",
       },
       {
         heading: "Areas We Serve in Greater Toronto Area",
