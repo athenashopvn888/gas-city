@@ -5,11 +5,11 @@ import AgeGate from "./components/AgeGate";
 export const metadata: Metadata = {
   metadataBase: new URL("https://gascitycannabis.com"),
   title: {
-    default: "GAS CITY CANNABIS — Premium Cannabis Dispensary, GTA",
+    default: "GAS CITY CANNABIS | O'Connor Dr Dispensary",
     template: "%s | GAS CITY CANNABIS",
   },
   description:
-    "Shop 200+ premium cannabis strains at GAS CITY CANNABIS. Exotic, Premium, AAA+, AA & Budget flower from $3/g. GTA's uplifting dispensary at 985 O'Connor Dr. Open Daily: 10:00 AM - 03:00 AM.",
+    "GAS CITY CANNABIS is a cannabis dispensary on O'Connor Dr with adult 19+ store info and category browsing for flower, pre-rolls, vapes, edibles, concentrates, and accessories. Open Daily: 10:00 AM - 03:00 AM.",
   keywords: [
     "cannabis dispensary GTA",
     "weed store GTA",
