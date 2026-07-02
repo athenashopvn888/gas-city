@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://gascitycannabis.com/sitemap.xml",
+    sitemap: "https://www.gascitycannabis.com/sitemap.xml",
   };
 }

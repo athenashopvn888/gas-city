@@ -25,7 +25,7 @@ export const STORE_BLOG_CONFIG = {
   storeCode: "GCC01",
   storeName: "GAS CITY CANNABIS",
   city: "Toronto",
-  domain: "gascitycannabis.com",
+  domain: "www.gascitycannabis.com",
   storePath: "/weed-dispensary-toronto",
 };
 
