@@ -39,7 +39,7 @@ export const STATIC_POSTS: StaticBlogPost[] = [
     meta_description: "Adult 19+ guide to GAS CITY CANNABIS around East York / O'Connor, with local store-page checks, menu-category context, and safe visit planning.",
     h1: "GAS CITY CANNABIS Local Store Guide for Adults 19+",
     excerpt: "GAS CITY CANNABIS guide for adults 19+ reviewing store information around East York / O'Connor.",
-    author: "Athena SEO Team",
+    author: "The GAS CITY CANNABIS Team",
     date: "2026-07-02",
     category: "Store Guide",
     readTime: "4 min",
