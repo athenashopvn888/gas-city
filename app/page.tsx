@@ -63,7 +63,6 @@ const EXPLORE_CATEGORIES = [
   { name: "Accessories", slug: "items/add-ons", banner: "/banners/05_Accessories.webp", icon: "➕" },
   { name: "Cigarettes", slug: "items/cigarettes", banner: "/banners/06_Cigarettes.webp", icon: "🏷️" },
   { name: "Magic Stuff", slug: "items/magic", banner: "/banners/09_Magic_Stuff.webp", icon: "🍄" },
-  { name: "Games Arcade", slug: "games", banner: "/banners/10_Games.webp", icon: "🎮" },
 ];
 
 /* ── Local FAQs for Jane St ── */
@@ -261,7 +260,7 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Explore Categories</h2>
             <p className={styles.sectionSubtitle}>
-              From custom disposable vapes and concentrates to accessories and cigarettes.
+              Pick the category that matches the visit, then compare the current menu details.
             </p>
           </div>
 
@@ -294,7 +293,7 @@ export default function HomePage() {
           <div className={styles.sectionHeader}>
             <h2 className={styles.sectionTitle}>Featured Strains</h2>
             <p className={styles.sectionSubtitle}>
-              Staff picks and top sellers dynamically updated from our real-time stock sheet.
+              A quick look at flower options from the store menu. Open the item page for current details before choosing.
             </p>
           </div>
 
@@ -312,15 +311,15 @@ export default function HomePage() {
       <section className={styles.seoSection}>
         <div className={styles.container}>
           <div className={styles.seoPanel}>
-            <h2 className={styles.seoPanelTitle}>985 O'Connor Dr & Nearby Expressway's Premier Cannabis Dispensary — Open Daily: 10:00 AM - 03:00 AM</h2>
+            <h2 className={styles.seoPanelTitle}>Shop The Menu With A Plan</h2>
             <p className={styles.seoPanelText}>
-              Welcome to <strong>GAS CITY CANNABIS</strong>, GTA's premier cannabis destination at 985 O'Connor Dr. We carry an electrifying selection of top-shelf strains — from ultra-rare exotics to solid everyday budget picks.
+              Start with the store page, then choose the product lane that fits the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently.
             </p>
             <p className={styles.seoPanelText}>
-              We are open Open Daily: 10:00 AM - 03:00 AM — GAS CITY CANNABIS is here to serve you. Our live menu is constantly refreshed with the freshest drops, premium prerolls, artisan edibles, and everything in between. Whether you're winding down or stocking up for the weekend, our knowledgeable staff can help during listed store hours.
+              If cheap weed or affordable weed is the goal, start with Budget and AA flower before moving up. If premium flower or exotic flower is the mood, open those lanes first and compare the current details there.
             </p>
             <p className={styles.seoPanelText}>
-              Searching for a cannabis dispensary in GTA or the surrounding area? GAS CITY CANNABIS is your go-to destination for premium flower, potent prerolls, and artisan edibles. Our six-tier pricing system means quality cannabis at every budget level — starting from just $3/g.
+              Menus change, so use the current menu and staff for product names, prices, and availability before you make the trip.
             </p>
           </div>
         </div>

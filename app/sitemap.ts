@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
+import { RESOURCE_PAGES } from "./resources/resourceData";
 
 const BASE = "https://www.gascitycannabis.com";
 
@@ -15,7 +16,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/delivery`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
   ];
 
-  /* Tier pages */
   const tierPages: MetadataRoute.Sitemap = Object.values(TIER_CONFIG).map((t) => ({
     url: `${BASE}/${t.slug}`,
     lastModified: now,
@@ -23,7 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  /* Item category pages */
   const itemPages: MetadataRoute.Sitemap = Object.values(CATEGORY_CONFIG).map((c) => ({
     url: `${BASE}/items/${c.slug}`,
     lastModified: now,
@@ -31,7 +30,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  /* Flower detail pages */
   const flowerPages: MetadataRoute.Sitemap = allFlowers.map((f) => ({
     url: `${BASE}/flower/${f.slug}`,
     lastModified: now,
@@ -39,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  /* Item detail pages */
   const itemDetailPages: MetadataRoute.Sitemap = allItems.map((i) => ({
     url: `${BASE}/item/${i.slug}`,
     lastModified: now,
@@ -47,7 +44,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  /* SEO landing pages */
+  const resourcePages: MetadataRoute.Sitemap = RESOURCE_PAGES.map((page) => ({
+    url: page.slug ? `${BASE}/resources/${page.slug}` : `${BASE}/resources`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: page.slug ? 0.6 : 0.7,
+  }));
+
   const seoPages: MetadataRoute.Sitemap = SEO_PAGES.map((p) => ({
     url: `${BASE}/info/${p.slug}`,
     lastModified: now,
@@ -55,8 +58,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-
-
-  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...seoPages];
+  return [...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages];
 }
-
