@@ -21,7 +21,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Shop Gas City Cannabis With A Plan",
-        "body": "Gas City Cannabis helps adults compare the menu without turning the visit into a maze. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
+        "body": "Gas City Cannabis helps adults compare the menu without overcomplicating the visit. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
       },
       {
         "heading": "Local Menu Notes For East York / O'Connor",
@@ -57,7 +57,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Shop Gas City Cannabis With A Plan",
-        "body": "Gas City Cannabis helps adults compare the menu without turning the visit into a maze. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
+        "body": "Gas City Cannabis helps adults compare the menu without overcomplicating the visit. Start with the store page, then choose the category that matches the visit: flower, pre-rolls, edibles, THC vapes, concentrates, accessories, or cigarettes where listed."
       },
       {
         "heading": "Local Menu Notes For East York / O'Connor",
@@ -89,7 +89,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "metaDescription": "A value-minded Gas City Cannabis guide for cheap weed, budget weed, affordable weed, and flower tier shopping in Toronto.",
     "h1": "Gas City Cannabis Cheap Weed and Budget Weed Guide",
     "icon": "$",
-    "heroTagline": "Value shopping without the guessing game",
+    "heroTagline": "Value shopping with clearer category choices",
     "sections": [
       {
         "heading": "Start With Budget And AA",
@@ -101,7 +101,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "Know When To Move Up",
-        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the lane, not with random scrolling."
+        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier choice starts with the category, then the current product details."
       }
     ],
     "faqs": [
@@ -125,7 +125,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "metaDescription": "A value-minded Gas City Cannabis guide for cheap weed, budget weed, affordable weed, and flower tier shopping in Toronto.",
     "h1": "Gas City Cannabis Cheap Weed and Budget Weed Guide",
     "icon": "$",
-    "heroTagline": "Value shopping without the guessing game",
+    "heroTagline": "Value shopping with clearer category choices",
     "sections": [
       {
         "heading": "Start With Budget And AA",
@@ -137,7 +137,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "Know When To Move Up",
-        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier decision starts with the lane, not with random scrolling."
+        "body": "If Budget or AA does not fit the visit, compare AAA+, Premium, or Exotic flower next. A better tier choice starts with the category, then the current product details."
       }
     ],
     "faqs": [
@@ -240,7 +240,7 @@ export const SEO_PAGES: SeoPageData[] = [
         "body": "When you search for a weed store near East York / O'Connor, open the Gas City Cannabis store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
       },
       {
-        "heading": "Choose The Product Lane",
+        "heading": "Choose The Product Category",
         "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
       },
       {
@@ -276,7 +276,7 @@ export const SEO_PAGES: SeoPageData[] = [
         "body": "When you search for a weed store near East York / O'Connor, open the Gas City Cannabis store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
       },
       {
-        "heading": "Choose The Product Lane",
+        "heading": "Choose The Product Category",
         "body": "Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories all shop differently. Pick the category first, then compare current product details."
       },
       {

@@ -28,7 +28,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "seoTitle": "Gas City Cannabis Resources | Menu and Shopping Guides",
     "description": "Resource guides for shopping the Gas City Cannabis menu in Toronto, including flower, value, pre-rolls, and Native smokes where listed.",
     "eyebrow": "Resource Centre",
-    "intro": "Welcome to the Gas City Cannabis resource centre. This is the no-stress corner for shoppers who want the menu to make sense before they visit. Pick the product lane, compare what matters, then use the current menu or staff for details that change.",
+    "intro": "Welcome to the Gas City Cannabis resource centre. These guides help shoppers compare categories before they visit. Choose the product category, compare what matters, then use the current menu or staff for details that can change.",
     "cards": [
       {
         "title": "Menu Guide",
@@ -38,7 +38,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         "title": "Flower Guide",
         "href": "/resources/flower-guide",
-        "text": "Compare Exotic, Premium, AAA+, AA, and Budget without guessing."
+        "text": "Compare Exotic, Premium, AAA+, AA, and Budget with clearer category notes."
       },
       {
         "title": "Value Guide",
@@ -58,17 +58,17 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "sections": [
       {
-        "heading": "Shop The Menu Like A Human",
+        "heading": "How To Use These Guides",
         "body": "Start with the store page, then choose the category that matches the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarette options should not all be compared the same way.",
         "bullets": [
           "Use the store page for directions, contact options, and listed hours.",
-          "Use category pages to compare the current menu lane.",
+          "Use category pages to compare the current menu category.",
           "Ask staff when a product detail needs a current answer."
         ]
       },
       {
         "heading": "Local Notes For East York / O'Connor",
-        "body": "Gas City Cannabis serves shoppers around East York / O'Connor, O'Connor Dr, East York, Woodbine Ave. If you searched for a weed dispensary in East York / O'Connor, this resource section keeps the visit simple: right store, right menu lane, right next step."
+        "body": "Gas City Cannabis serves shoppers around East York / O'Connor, O'Connor Dr, East York, Woodbine Ave. If you searched for a weed dispensary in East York / O'Connor, this resource section keeps the visit simple: right store, right category, right next step."
       }
     ]
   },
@@ -83,7 +83,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         "title": "Flower Guide",
         "href": "/resources/flower-guide",
-        "text": "Compare Exotic, Premium, AAA+, AA, and Budget without guessing."
+        "text": "Compare Exotic, Premium, AAA+, AA, and Budget with clearer category notes."
       },
       {
         "title": "Value Guide",
@@ -103,7 +103,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     ],
     "sections": [
       {
-        "heading": "Pick The Lane First",
+        "heading": "Choose The Category First",
         "body": "If you want flower, start with flower. If you want pre-rolls, stay in pre-rolls. If the visit is about edibles, vapes, concentrates, or accessories, open that section and compare there first.",
         "bullets": [
           "Flower shoppers should compare tiers.",
@@ -121,7 +121,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "slug": "flower-guide",
     "title": "Gas City Cannabis Flower Guide",
     "seoTitle": "Gas City Cannabis Flower Guide | Exotic, Premium, Budget",
-    "description": "Compare exotic flower, premium flower, budget weed, cheap weed, and affordable weed at Gas City Cannabis without guessing.",
+    "description": "Compare exotic flower, premium flower, budget weed, cheap weed, and affordable weed at Gas City Cannabis with clearer category notes.",
     "eyebrow": "Flower Guide",
     "intro": "Flower gets easier when you compare one tier at a time. Exotic flower and premium flower sit in different lanes from AAA+, AA, and Budget, so start with the lane that matches the visit.",
     "cards": [
@@ -243,7 +243,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       {
         "title": "Flower Guide",
         "href": "/resources/flower-guide",
-        "text": "Compare Exotic, Premium, AAA+, AA, and Budget without guessing."
+        "text": "Compare Exotic, Premium, AAA+, AA, and Budget with clearer category notes."
       },
       {
         "title": "Value Guide",
