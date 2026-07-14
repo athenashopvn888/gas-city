@@ -36,13 +36,13 @@ export default function DeliveryContent() {
           Delivery <span className={styles.highlight}>Coming Soon</span>
         </h1>
         <p className={styles.pageSubtitle}>
-          GAS CITY CANNABIS is launching delivery across GTA.
-          Sign up below to be the first to know when we go live — and get an exclusive launch-day deal.
+          GAS CITY CANNABIS is preparing delivery updates for East York and nearby Toronto shoppers.
+          Sign up below to be the first to know when delivery goes live.
         </p>
 
         {/* Email signup */}
         <div className={styles.formSection}>
-          <h2 className={styles.formTitle}>🔔 Get Notified When We Launch</h2>
+          <h2 className={styles.formTitle}>Get Notified When We Launch</h2>
           <p className={styles.formDesc}>
             Enter your email to join our delivery waitlist. We&apos;ll send you one email when delivery goes live.
           </p>
@@ -68,7 +68,7 @@ export default function DeliveryContent() {
           </form>
           {status === "success" && (
             <p className={styles.successMsg}>
-              ✅ You&apos;re on the list! We&apos;ll notify you when delivery launches.
+              You&apos;re on the list. We&apos;ll notify you when delivery launches.
             </p>
           )}
           {status === "error" && (
@@ -81,26 +81,26 @@ export default function DeliveryContent() {
         {/* Info cards */}
         <div className={styles.infoGrid}>
           <div className={styles.infoCard}>
-            <span className={styles.infoIcon}>📦</span>
-            <h3 className={styles.infoTitle}>Same-Day Delivery</h3>
-            <p className={styles.infoDesc}>Order before 6 PM, delivered same day across GTA.</p>
+            <span className={styles.infoIcon}>01</span>
+            <h3 className={styles.infoTitle}>Delivery Updates</h3>
+            <p className={styles.infoDesc}>Join the waitlist for launch timing and local delivery details.</p>
           </div>
           <div className={styles.infoCard}>
-            <span className={styles.infoIcon}>🌉</span>
-            <h3 className={styles.infoTitle}>GTA & Gatineau</h3>
-            <p className={styles.infoDesc}>Serving the entire National Capital Region.</p>
+            <span className={styles.infoIcon}>02</span>
+            <h3 className={styles.infoTitle}>East York & Toronto</h3>
+            <p className={styles.infoDesc}>Focused on O&apos;Connor Dr, East York, and nearby Toronto areas.</p>
           </div>
           <div className={styles.infoCard}>
-            <span className={styles.infoIcon}>💰</span>
-            <h3 className={styles.infoTitle}>Same Great Prices</h3>
-            <p className={styles.infoDesc}>All in-store promotions apply to delivery orders too.</p>
+            <span className={styles.infoIcon}>03</span>
+            <h3 className={styles.infoTitle}>Launch Details</h3>
+            <p className={styles.infoDesc}>We&apos;ll share the delivery menu path and launch details when ready.</p>
           </div>
         </div>
 
         {/* CTA */}
         <div className={styles.ctaSection}>
           <p className={styles.ctaText}>
-            Can&apos;t wait? Visit us in-store at <strong>985 O'Connor Dr, GTA</strong> —
+            Can&apos;t wait? Visit us in-store at <strong>985 O'Connor Dr, Toronto</strong> -
             we are <strong>Open Daily: 10:00 AM - 03:00 AM</strong>. Call <strong>(647) 638-1494</strong>.
           </p>
         </div>

@@ -18,7 +18,7 @@ const ALL_LINKS = [
   { href: "/items/magic", label: "Magic Stuff" },
   { href: "/items/cigarettes", label: "Cigarettes" },
   { href: "/items/add-ons", label: "Accessories" },
-  { href: "/delivery", label: "🚗 Delivery" },
+  { href: "/delivery", label: "Delivery" },
   { href: "/faq", label: "FAQ" },
   { href: "/resources", label: "Resources" },
 ];
@@ -28,7 +28,6 @@ export default function Navbar() {
 
   return (
     <nav className={styles.navbar} id="main-nav">
-      {/* Top bar — logo + open now */}
       <div className={styles.topBar}>
         <Link href="/" className={styles.logo} style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none" }}>
           <img src="/storeFavicon.webp" alt="GAS CITY CANNABIS Logo" style={{ height: "30px", width: "30px", objectFit: "contain", borderRadius: "4px" }} />
@@ -38,7 +37,7 @@ export default function Navbar() {
             fontSize: "18px",
             letterSpacing: "0.04em",
             color: "white",
-            textShadow: "0 0 12px rgba(255,255,255,0.2)"
+            textShadow: "0 0 12px rgba(255,255,255,0.2)",
           }}>
             GAS CITY CANNABIS
           </span>
@@ -51,7 +50,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Scrollable link bar */}
       <div className={styles.scrollBar}>
         <div className={styles.scrollInner}>
           {ALL_LINKS.map((link) => {

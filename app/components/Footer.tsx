@@ -6,32 +6,31 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.inner}>
         <div className={styles.grid}>
-          {/* Column 1 — Store Description */}
           <div className={styles.col}>
-            <div className={styles.brand}>
-              GAS CITY CANNABIS
-            </div>
+            <div className={styles.brand}>GAS CITY CANNABIS</div>
             <p className={styles.desc}>
-              Your Local Cannabis Dispensary At 985 O'Connor Dr, GTA. Visit
+              Your Local Cannabis Dispensary At 985 O'Connor Dr, Toronto. Visit
               GAS CITY CANNABIS For Premium Flower, Edibles, Vapes &amp; More.
               Open: Open Daily: 10:00 AM - 03:00 AM.
             </p>
-            <div className={styles.buttons}>
-            </div>
+            <div className={styles.buttons}></div>
           </div>
 
-          {/* Column 2 — Contact Info */}
           <div className={styles.col}>
             <h3 className={styles.colTitle}>Contact Info</h3>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Address:</span>
               <span>985 O'Connor Dr</span>
-              <span>GTA, ON M4B 2T1</span>
+              <span>Toronto, ON M4B 2T1</span>
               <span>Canada</span>
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Phone:</span>
-              <span><a href="tel:+16476381494" style={{color: "inherit"}}>(647) 638-1494</a></span>
+              <span>
+                <a href="tel:+16476381494" style={{ color: "inherit" }}>
+                  (647) 638-1494
+                </a>
+              </span>
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Hours:</span>
@@ -39,7 +38,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 3 — Quick Links */}
           <div className={styles.col}>
             <h3 className={styles.colTitle}>Quick Links</h3>
             <nav className={styles.links}>
@@ -55,10 +53,10 @@ export default function Footer() {
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery (Coming Soon)</Link>
-              <Link href="/info/york-weed-dispensary">GTA Dispensary</Link>
-              <Link href="/info/cheap-weed-york">Cheap Weed GTA</Link>
-              <Link href="/info/native-cigarettes-york">Native Cigarettes</Link>
-              <Link href="/info/weed-store-near-mississauga">Weed Store Near Mississauga</Link>
+              <Link href="/info/toronto-weed-dispensary">Toronto Dispensary</Link>
+              <Link href="/info/cheap-weed-toronto">Cheap Weed Toronto</Link>
+              <Link href="/info/native-cigarettes-toronto">Native Cigarettes</Link>
+              <Link href="/info/weed-store-near-east-york-o-connor">Weed Store Near East York</Link>
               <Link href="/weed-dispensary-toronto/">GAS CITY CANNABIS Weed Dispensary in Toronto</Link>
               <Link href="/contact">Contact Us</Link>
               <a
@@ -74,7 +72,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p>
-            © {new Date().getFullYear()} GAS CITY CANNABIS. Must be 19+ to
+            (c) {new Date().getFullYear()} GAS CITY CANNABIS. Must be 19+ to
             enter. Please consume responsibly.
           </p>
         </div>
