@@ -68,7 +68,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         "heading": "Local Notes For East York / O'Connor",
-        "body": "Gas City Cannabis serves shoppers around East York / O'Connor, O'Connor Dr, East York, Woodbine Ave. If you searched for a weed dispensary in East York / O'Connor, this resource section keeps the visit simple: right store, right category, right next step."
+        "body": "Gas City Cannabis serves shoppers around East York / O'Connor, O'Connor Dr, East York, Woodbine Ave. If you searched for a weed dispensary in East York / O'Connor, this resource section keeps the visit simple: store details, category links, and visit information easy to find."
       }
     ]
   },
@@ -108,7 +108,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
         "bullets": [
           "Flower shoppers should compare tiers.",
           "Pre-roll shoppers should compare format and package details.",
-          "Edible, vape, and concentrate shoppers should read product notes carefully."
+          "Edible, vape, and concentrate shoppers should read item details carefully."
         ]
       },
       {
@@ -168,7 +168,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
     "seoTitle": "Gas City Cannabis Value Guide | Cheap Weed and Budget Weed",
     "description": "A practical value guide for shoppers comparing cheap weed, budget weed, affordable weed, and menu categories at Gas City Cannabis.",
     "eyebrow": "Value Guide",
-    "intro": "Good value shopping is not just chasing the lowest number. It is choosing the right category, checking the current details, and knowing when Budget, AA, or another lane makes more sense.",
+    "intro": "Good value shopping is not just chasing the lowest number. It is choosing the matching category, checking the current details, and knowing when Budget, AA, or another section makes more sense.",
     "cards": [
       {
         "title": "Budget Flower",

@@ -31,7 +31,7 @@ export function getStrainData(
 
   const description = `${name} is listed as ${tierDesc} in the ${typeLabel} lane at Gas City Cannabis${thcLine}. Compare the current product page, menu notes, weight, and posted price before choosing.`;
 
-  const metaDescription = `${name} at Gas City Cannabis in Toronto. Compare the current ${tierDesc} listing, product notes, and staff guidance before visiting.`;
+  const metaDescription = `${name} at Gas City Cannabis in Toronto. Compare the current ${tierDesc} listing, item details, and staff guidance before visiting.`;
 
   return { effects: MENU_NOTES, description, metaDescription };
 }

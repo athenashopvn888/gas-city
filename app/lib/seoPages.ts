@@ -43,7 +43,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "Does Gas City Cannabis carry flower and pre-rolls?",
-        "a": "The site has menu paths for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
+        "a": "The site has menu categories for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
       }
     ]
   },
@@ -79,7 +79,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "Does Gas City Cannabis carry flower and pre-rolls?",
-        "a": "The site has menu paths for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
+        "a": "The site has menu categories for flower tiers and pre-rolls. Check the current menu or ask staff for current details."
       }
     ]
   },
@@ -237,7 +237,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Confirm The Right Store Page",
-        "body": "When you search for a weed store near East York / O'Connor, open the Gas City Cannabis store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
+        "body": "When you search for a weed store near East York / O'Connor, open the Gas City Cannabis store page first. Confirm directions, contact options, listed hours, and the menu category before visiting."
       },
       {
         "heading": "Choose The Product Category",
@@ -259,7 +259,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "What categories can shoppers compare?",
-        "a": "Use the menu paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
+        "a": "Use the menu categories for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
       }
     ]
   },
@@ -273,7 +273,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Confirm The Right Store Page",
-        "body": "When you search for a weed store near East York / O'Connor, open the Gas City Cannabis store page first. Confirm directions, contact options, listed hours, and the menu path before visiting."
+        "body": "When you search for a weed store near East York / O'Connor, open the Gas City Cannabis store page first. Confirm directions, contact options, listed hours, and the menu category before visiting."
       },
       {
         "heading": "Choose The Product Category",
@@ -295,7 +295,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "What categories can shoppers compare?",
-        "a": "Use the menu paths for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
+        "a": "Use the menu categories for flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes where listed."
       }
     ]
   },

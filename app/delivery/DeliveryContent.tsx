@@ -93,7 +93,7 @@ export default function DeliveryContent() {
           <div className={styles.infoCard}>
             <span className={styles.infoIcon}>03</span>
             <h3 className={styles.infoTitle}>Launch Details</h3>
-            <p className={styles.infoDesc}>We&apos;ll share the delivery menu path and launch details when ready.</p>
+            <p className={styles.infoDesc}>We&apos;ll share the delivery menu category and launch details when ready.</p>
           </div>
         </div>
 
