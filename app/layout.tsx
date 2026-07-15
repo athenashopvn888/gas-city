@@ -3,7 +3,7 @@ import "./globals.css";
 import AgeGate from "./components/AgeGate";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gascitycannabis.com"),
+  metadataBase: new URL("https://www.gascitycannabis.com"),
   title: {
     default: "GAS CITY CANNABIS | O'Connor Dr Dispensary",
     template: "%s | GAS CITY CANNABIS",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_CA",
-    url: "https://gascitycannabis.com",
+    url: "https://www.gascitycannabis.com",
     siteName: "GAS CITY CANNABIS",
     title: "GAS CITY CANNABIS - O'Connor Dr Cannabis Dispensary",
     description:
-      "200+ strains from $3/g. Exotic to Budget. East York dispensary at 985 O'Connor Dr. Open Daily: 10:00 AM - 03:00 AM.",
+      "Browse flower tiers and cannabis categories at GAS CITY CANNABIS on O'Connor Dr in East York. Open Daily: 10:00 AM - 03:00 AM.",
     images: [
       {
-        url: "https://gascitycannabis.com/wp-content/uploads/2026/04/46Oi5.jpg",
+        url: "https://www.gascitycannabis.com/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
         alt: "GAS CITY CANNABIS - Cannabis Dispensary Toronto",
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "GAS CITY CANNABIS - O'Connor Dr Dispensary",
-    description: "200+ strains from $3/g. Open Daily: 10:00 AM - 03:00 AM at 985 O'Connor Dr, Toronto.",
-    images: ["https://gascitycannabis.com/wp-content/uploads/2026/04/46Oi5.jpg"],
+    description: "Browse GAS CITY CANNABIS categories. Open Daily: 10:00 AM - 03:00 AM at 985 O'Connor Dr, Toronto.",
+    images: ["https://www.gascitycannabis.com/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
     index: true,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://gascitycannabis.com",
+    canonical: "https://www.gascitycannabis.com",
   },
   verification: {
     // google: "your-google-verification-code",
@@ -73,12 +73,12 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Store",
   additionalType: "https://schema.org/Store",
-  "@id": "https://gascitycannabis.com",
+  "@id": "https://www.gascitycannabis.com",
   name: "GAS CITY CANNABIS",
   description: "Cannabis dispensary at 985 O'Connor Dr in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open Daily: 10:00 AM - 03:00 AM.",
-  url: "https://gascitycannabis.com",
+  url: "https://www.gascitycannabis.com",
   telephone: "+16476381494",
-  image: "https://gascitycannabis.com/wp-content/uploads/2026/04/7Clmh.jpg",
+  image: "https://www.gascitycannabis.com/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
     "@type": "PostalAddress",
@@ -110,10 +110,10 @@ const jsonLd = {
   }
 ],
   sameAs: [
-    "https://gascitycannabis.com/",
-    "https://gascitycannabis.com/",
+    "https://www.gascitycannabis.com/",
+    "https://www.gascitycannabis.com/",
   ],
-  hasMap: "https://gascitycannabis.com/",
+  hasMap: "https://www.gascitycannabis.com/",
   areaServed: {
     "@type": "City",
     name: "Toronto",

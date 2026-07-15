@@ -309,7 +309,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Make The Search Useful",
-        "body": "A near-me search should get you to the right store page, not a wall of generic copy. Gas City Cannabis gives shoppers a clear path to the store page, menu categories, and resources."
+        "body": "Gas City Cannabis gives nearby shoppers a clear path to the store page, menu categories, and resources."
       },
       {
         "heading": "Compare Categories Naturally",
@@ -345,7 +345,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "sections": [
       {
         "heading": "Make The Search Useful",
-        "body": "A near-me search should get you to the right store page, not a wall of generic copy. Gas City Cannabis gives shoppers a clear path to the store page, menu categories, and resources."
+        "body": "Gas City Cannabis gives nearby shoppers a clear path to the store page, menu categories, and resources."
       },
       {
         "heading": "Compare Categories Naturally",

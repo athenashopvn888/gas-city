@@ -60,7 +60,7 @@ export default function Footer() {
               <Link href="/weed-dispensary-toronto/">GAS CITY CANNABIS Weed Dispensary in Toronto</Link>
               <Link href="/contact">Contact Us</Link>
               <a
-                href="https://gascitycannabis.com/"
+                href="https://www.gascitycannabis.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -73,7 +73,7 @@ export default function Footer() {
         <div className={styles.bottom}>
           <p>
             (c) {new Date().getFullYear()} GAS CITY CANNABIS. Must be 19+ to
-            enter. Please consume responsibly.
+            enter.
           </p>
         </div>
       </div>

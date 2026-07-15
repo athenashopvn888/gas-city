@@ -76,7 +76,7 @@ export const TIER_SEO: Record<string, TierSeoData> = {
     "sections": [
       {
         "heading": "How To Shop AAA+",
-        "body": "AAA+ is a clean middle lane for shoppers comparing flower without jumping straight to the top tier. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
+        "body": "AAA+ is a middle lane for shoppers comparing flower tiers. Start with the tier page, then compare product name, format, weight, posted price, and item notes. The current menu is the right place for details that move."
       },
       {
         "heading": "When AAA+ Makes Sense",

@@ -101,15 +101,15 @@ export function GBPLandingPage() {
 
       {/* Intro Section */}
       <section className={styles.section}>
-        <h2 className={styles.h2}>Your Trusted Local Weed Dispensary</h2>
+        <h2 className={styles.h2}>Your Local Weed Dispensary</h2>
         <p className={styles.introText}>{gbpLocation.introVariant}</p>
       </section>
 
       {/* Product Section */}
       <section className={styles.section}>
-        <h2 className={styles.h2}>Weed and Cannabis Products Available</h2>
+        <h2 className={styles.h2}>Weed and Cannabis Categories</h2>
         <p className={styles.infoText}>
-          At {gbpLocation.storeName}, we offer a curated selection of weed and cannabis products for adults 19+ in {gbpLocation.city}. Enjoy some of Ontario&apos;s finest quality and value in the following categories:
+          Adults 19+ can use the following links to browse the cannabis categories shown for {gbpLocation.storeName} in {gbpLocation.city}:
         </p>
         <div className={styles.productGrid}>
           {gbpLocation.products.map((p) => {

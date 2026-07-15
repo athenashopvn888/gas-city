@@ -34,7 +34,7 @@ export async function generateMetadata({
     title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
     description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at GAS CITY CANNABIS.`,
     alternates: {
-      canonical: `https://gascitycannabis.com/items/${catSlug}`,
+      canonical: `https://www.gascitycannabis.com/items/${catSlug}`,
     },
   };
 }

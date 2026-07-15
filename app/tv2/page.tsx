@@ -135,7 +135,7 @@ function ItemCard({ title, accent, items, hiIdx, preset }: {
 /* -- TICKER -- */
 const TICKER_SLIDES = [
   "🔥 GAS CITY CANNABIS — 985 O'Connor Dr, GTA",
-  "200+ Strains In Stock",
+  "Browse Flower Tiers",
   "Open Daily: 10:00 AM - 03:00 AM",
   "Pre-Rolls · Edibles · Vapes · Concentrates",
   "ALL SALES ARE FINAL",

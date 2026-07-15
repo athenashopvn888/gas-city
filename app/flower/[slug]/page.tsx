@@ -31,7 +31,7 @@ export async function generateMetadata({
     title: `${flower.name} | ${tierName} ${flower.type === "indica" ? "Indica" : flower.type === "sativa" ? "Sativa" : "Hybrid"} | THC ${flower.thc} | GAS CITY CANNABIS GTA`,
     description: strainData.metaDescription,
     alternates: {
-      canonical: `https://gascitycannabis.com/flower/${slug}`,
+      canonical: `https://www.gascitycannabis.com/flower/${slug}`,
     },
     openGraph: {
       title: `${flower.name} | GAS CITY CANNABIS`,
@@ -60,9 +60,8 @@ function getJsonLd(flower: FlowerProduct) {
 
   const offers: any = {
     "@type": "Offer",
-    url: `https://gascitycannabis.com/flower/${flower.slug}`,
+    url: `https://www.gascitycannabis.com/flower/${flower.slug}`,
     priceCurrency: "CAD",
-    availability: "https://schema.org/InStock",
     itemCondition: "https://schema.org/NewCondition",
     seller: { "@type": "Organization", name: "GAS CITY CANNABIS" },
     hasMerchantReturnPolicy: {
@@ -80,7 +79,7 @@ function getJsonLd(flower: FlowerProduct) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: flower.name,
-    image: flower.image ? [flower.image.startsWith('http') ? flower.image : `https://gascitycannabis.com${flower.image.startsWith('/') ? '' : '/'}${flower.image}`] : undefined,
+    image: flower.image ? [flower.image.startsWith('http') ? flower.image : `https://www.gascitycannabis.com${flower.image.startsWith('/') ? '' : '/'}${flower.image}`] : undefined,
     description: strainData.description,
     brand: { "@type": "Brand", name: "GAS CITY CANNABIS" },
     sku: cleanSku(flower.sku || flower.slug),
@@ -101,19 +100,19 @@ function getBreadcrumbJsonLd(flower: FlowerProduct) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://gascitycannabis.com"
+        "item": "https://www.gascitycannabis.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": tierName,
-        "item": `https://gascitycannabis.com/${tierSlug}`
+        "item": `https://www.gascitycannabis.com/${tierSlug}`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": flower.name,
-        "item": `https://gascitycannabis.com/flower/${flower.slug}`
+        "item": `https://www.gascitycannabis.com/flower/${flower.slug}`
       }
     ]
   };
@@ -236,7 +235,7 @@ export default async function FlowerPage({
                 </div>
               </div>
 
-              {/* Effects */}
+              {/* Menu notes */}
               <div className={styles.effectsRow}>
                 {strainData.effects.map((e) => (
                   <span key={e.label} className={styles.effectPill}>
@@ -297,7 +296,7 @@ export default async function FlowerPage({
               </div>
 
               <div className={styles.visitCta}>
-                <p>Available in-store &middot; Walk-in welcome &middot; No appointment needed</p>
+                <p>Check the current menu &middot; Walk-in welcome &middot; No appointment needed</p>
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 // Auto-generated Google Business Profile Local SEO Location Configuration
 export const gbpLocation = {
   storeName: "GAS CITY CANNABIS",
-  domain: "gascitycannabis.com",
+  domain: "www.gascitycannabis.com",
   city: "Toronto",
   province: "ON",
   country: "CA",
@@ -32,7 +32,7 @@ export const gbpLocation = {
   seoTitle: "GAS CITY CANNABIS | Weed Dispensary in Toronto",
   metaDescription: "GAS CITY CANNABIS is a local weed dispensary in Toronto offering flower, pre-rolls, edibles, vapes, concentrates, CBD, and service for adults 19+.",
   localLandmarks: ["O'Connor Dr", "East York", "Woodbine Ave"],
-  introVariant: "Welcome to GAS CITY CANNABIS, your premier weed dispensary in Toronto situated right on 985 O'Connor Dr. We are dedicated to providing adults 19+ with top-tier weed, premium cannabis flower, pre-rolls, edibles, THC vapes, concentrates, and CBD products. If you are looking for a trusted cannabis store near East York / O'Connor or a weed shop near East York, stop by today to consult with our knowledgeable staff.",
+  introVariant: "GAS CITY CANNABIS is located at 985 O'Connor Dr in Toronto. Adults 19+ can browse cannabis flower, pre-rolls, edibles, THC vapes, concentrates, CBD products, and accessories. Visit the store page and menu categories for current details near East York and O'Connor.",
   neighborhoodDescription: "Located in the vibrant East York / O'Connor district, our cannabis store fits right into this active and historic community, surrounded by local retail shops and convenient transit links.",
   parkingNote: "Parking spaces are available in the plaza lot",
   transitNote: "Easily accessible via local TTC bus routes serving O'Connor Drive.",

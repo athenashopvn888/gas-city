@@ -6,11 +6,11 @@ import BudtenderApplicationForm from "./BudtenderApplicationForm";
 import styles from "./budtender.module.css";
 
 export const metadata: Metadata = {
-  title: "Budtender Or Manager Application | GAS CITY CANNABIS",
+  title: { absolute: "Budtender Or Manager Application | GAS CITY CANNABIS" },
   description:
     "Apply for budtender or manager opportunities at GAS CITY CANNABIS in Toronto. Submit availability, retail experience, motivation, determination, and customer-service answers.",
   alternates: {
-    canonical: "https://gascitycannabis.com/careers/budtender",
+    canonical: "https://www.gascitycannabis.com/careers/budtender",
   },
 };
 

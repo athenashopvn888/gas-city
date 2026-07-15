@@ -39,7 +39,7 @@ export default function NotFound() {
           }}
         >
           This page doesn&apos;t exist — but our shelves are fully stocked.
-          Browse 200+ strains at GTA&apos;s most fire dispensary.
+          Browse GAS CITY CANNABIS menu categories and store resources.
         </p>
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", justifyContent: "center" }}>
           <Link
