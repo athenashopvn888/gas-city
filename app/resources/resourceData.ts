@@ -113,7 +113,7 @@ export const RESOURCE_PAGES: ResourcePage[] = [
       },
       {
         "heading": "Check What Is Current",
-        "body": "Use this guide for the shopping method, then use the current menu and staff for details that change. Product names, prices, and availability can move, so do not let an old example make the decision."
+        "body": "Use this guide for the shopping method, then use the current menu and staff for the product names, prices, and package details currently listed."
       }
     ]
   },

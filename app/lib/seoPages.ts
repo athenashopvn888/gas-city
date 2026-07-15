@@ -29,7 +29,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "What To Check Before Visiting",
-        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current products, prices, or availability, use the menu or ask staff before leaving."
+        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current product names, prices, and package details, use the menu or ask staff before leaving."
       }
     ],
     "faqs": [
@@ -65,7 +65,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "What To Check Before Visiting",
-        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current products, prices, or availability, use the menu or ask staff before leaving."
+        "body": "Confirm the store page, directions, contact options, listed hours, and menu category first. For current product names, prices, and package details, use the menu or ask staff before leaving."
       }
     ],
     "faqs": [
@@ -115,7 +115,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "Where can shoppers confirm current prices?",
-        "a": "Use the current menu or ask staff. A guide should not pretend prices and availability never move."
+        "a": "Use the current menu or ask staff for the prices and item details currently listed."
       }
     ]
   },
@@ -151,7 +151,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "Where can shoppers confirm current prices?",
-        "a": "Use the current menu or ask staff. A guide should not pretend prices and availability never move."
+        "a": "Use the current menu or ask staff for the prices and item details currently listed."
       }
     ]
   },
@@ -183,7 +183,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "Are $25 cartons guaranteed?",
-        "a": "No. This page points shoppers toward menu listings where $25 carton-style options are shown. Confirm current price and availability before choosing."
+        "a": "This page points shoppers toward menu listings where $25 carton-style options are shown. Check the current listed price and package details before choosing."
       },
       {
         "q": "Where should shoppers start?",
@@ -219,7 +219,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "q": "Are $25 cartons guaranteed?",
-        "a": "No. This page points shoppers toward menu listings where $25 carton-style options are shown. Confirm current price and availability before choosing."
+        "a": "This page points shoppers toward menu listings where $25 carton-style options are shown. Check the current listed price and package details before choosing."
       },
       {
         "q": "Where should shoppers start?",
@@ -317,7 +317,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "Check Current Details",
-        "body": "For product names, prices, and availability, use the current menu or ask staff. This page is for orientation and visit planning."
+        "body": "For current product names, prices, and package details, use the menu or ask staff. This page is for orientation and visit planning."
       }
     ],
     "faqs": [
@@ -353,7 +353,7 @@ export const SEO_PAGES: SeoPageData[] = [
       },
       {
         "heading": "Check Current Details",
-        "body": "For product names, prices, and availability, use the current menu or ask staff. This page is for orientation and visit planning."
+        "body": "For current product names, prices, and package details, use the menu or ask staff. This page is for orientation and visit planning."
       }
     ],
     "faqs": [
