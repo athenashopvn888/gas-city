@@ -101,7 +101,7 @@ export default function DeliveryContent() {
         <div className={styles.ctaSection}>
           <p className={styles.ctaText}>
             Can&apos;t wait? Visit us in-store at <strong>985 O'Connor Dr, Toronto</strong> -
-            we are <strong>Open Daily: 10:00 AM - 03:00 AM</strong>. Call <strong>(647) 638-1494</strong>.
+            we are <strong>Open Daily: 10:00 AM - 03:00 AM</strong>. Call <strong>+1 (437) 466-0318</strong>.
           </p>
         </div>
       </div>

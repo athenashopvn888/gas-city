@@ -78,7 +78,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "Where is GAS CITY CANNABIS located?",
-    a: "We are located at 985 O'Connor Dr, GTA, ON M4B 2T1. Visit us in person or call us at (647) 638-1494. Free evening street parking is available.",
+    a: "We are located at 985 O'Connor Dr, GTA, ON M4B 2T1. Visit us in person or call us at +1 (437) 466-0318. Free evening street parking is available.",
   },
   {
     q: "What is the cheapest weed at GAS CITY CANNABIS?",

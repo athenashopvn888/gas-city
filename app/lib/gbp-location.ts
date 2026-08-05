@@ -9,8 +9,8 @@ export const gbpLocation = {
   address: "985 O'Connor Dr, Toronto, ON M4B 2T1",
   streetAddress: "985 O'Connor Dr",
   postalCode: "M4B 2T1",
-  phone: "(647) 638-1494",
-  phoneIntl: "+16476381494",
+  phone: "+1 (437) 466-0318",
+  phoneIntl: "+14374660318",
   neighborhood: "East York / O'Connor",
   nearbyAreas: ["O'Connor Dr", "East York", "Woodbine Ave", "Taylor Creek", "Parkview Hills", "Topham Park", "TTC"],
   products: [
