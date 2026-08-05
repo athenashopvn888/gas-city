@@ -77,7 +77,7 @@ const jsonLd = {
   name: "GAS CITY CANNABIS",
   description: "Cannabis dispensary at 985 O'Connor Dr in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open Daily: 10:00 AM - 03:00 AM.",
   url: "https://www.gascitycannabis.com",
-  telephone: "+16476381494",
+  telephone: "+14374660318",
   image: "https://www.gascitycannabis.com/wp-content/uploads/2026/04/7Clmh.jpg",
   priceRange: "$3 - $12/g",
   address: {
