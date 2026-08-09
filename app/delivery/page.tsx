@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import DeliveryContent from "./DeliveryContent";
+import menu from "./delivery-menu.json";
 
 export const metadata: Metadata = {
-  title: "Delivery Coming Soon — GAS CITY CANNABIS | GTA",
-  description: "Get notified when GAS CITY CANNABIS launches same-day weed delivery across GTA and surrounding areas.",
-  alternates: {
-    canonical: "https://gascitycannabis.com/delivery",
-  },
+  title: "Delivery Menu | GAS CITY CANNABIS",
+  description: "Browse the GAS CITY CANNABIS delivery product catalog and compare flower tiers and prices.",
+  alternates: { canonical: "https://www.gascitycannabis.com/delivery" },
 };
 
 export default function DeliveryPage() {
-  return <DeliveryContent />;
+  const structuredData = { "@context": "https://schema.org", "@type": "CollectionPage", name: "GAS CITY CANNABIS Delivery Menu", url: "https://www.gascitycannabis.com/delivery", mainEntity: { "@type": "ItemList", numberOfItems: menu.products.length, itemListElement: menu.products.map((product, index) => ({ "@type": "ListItem", position: index + 1, name: product.name })) } };
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} /><DeliveryContent /></>;
 }
