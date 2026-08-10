@@ -9,7 +9,7 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.brand}>GAS CITY CANNABIS</div>
             <p className={styles.desc}>
-              Your Local Cannabis Dispensary At 985 O'Connor Dr, Toronto. Visit
+              Your Local Cannabis Dispensary At 985 O&apos;Connor Dr, Toronto. Visit
               GAS CITY CANNABIS For Premium Flower, Edibles, Vapes &amp; More.
               Open: Open Daily: 10:00 AM - 03:00 AM.
             </p>
@@ -20,7 +20,7 @@ export default function Footer() {
             <h3 className={styles.colTitle}>Contact Info</h3>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Address:</span>
-              <span>985 O'Connor Dr</span>
+              <span>985 O&apos;Connor Dr</span>
               <span>Toronto, ON M4B 2T1</span>
               <span>Canada</span>
             </div>
@@ -52,7 +52,7 @@ export default function Footer() {
               <Link href="/items/vapes">Vape Pens</Link>
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
-              <Link href="/delivery">Delivery (Coming Soon)</Link>
+              <Link href="/delivery">Delivery Menu</Link>
               <Link href="/info/toronto-weed-dispensary">Toronto Dispensary</Link>
               <Link href="/info/cheap-weed-toronto">Cheap Weed Toronto</Link>
               <Link href="/info/native-cigarettes-toronto">Native Cigarettes</Link>
