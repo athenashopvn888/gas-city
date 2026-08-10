@@ -7,5 +7,6 @@ for (const expected of ['storeId: "GCC01"', 'sod-web-chat:GCC01', 'smsConsent', 
 assert.ok(delivery.includes("<GasCityWebChat />")); assert.ok(delivery.includes("$60 PRODUCT MINIMUM")); assert.ok(delivery.includes("HOW TO ORDER")); assert.ok(footer.includes('Delivery Menu'));
 assert.ok(delivery.includes("store=GCC01")); assert.ok(!chat.includes('storeId: "MJ01"'), "Reference identity must not remain");
 assert.doesNotMatch(`${chat}\n${delivery}`, /href=["'{`]sms:|DELIVERY TEXT NUMBER|Reply YES|YES confirmation/i);
+assert.doesNotMatch(delivery, /Call <strong>|href=["'{`]tel:/i, "Delivery page must not expose a customer-facing phone CTA");
 assert.doesNotMatch(`${chat}\n${delivery}`, /SOD_(?:OPERATOR_ALERT|DISPATCHER_MAIN)_PHONE|Dispatcher Main/i);
 console.log("Gas City Cannabis consent Web Chat contract passed.");
