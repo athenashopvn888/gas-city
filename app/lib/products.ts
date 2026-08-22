@@ -232,7 +232,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
     ],
   },
   CIGARETTES: {
-    banner: "/banners/06_Cigarettes.webp",
+    banner: "/banners/native-cigarette-offer-20260822.webp",
     name: "Cigarettes", slug: "cigarettes", color: "#78716c", icon: "CG",
     seoTitle: "Native Cigarettes Toronto | Gas City Cannabis",
     seoIntro: "Native smokes at Gas City Cannabis in Toronto. The cigarette menu may show $25 carton-style listings and brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver.",
