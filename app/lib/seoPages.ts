@@ -1,3 +1,14 @@
+const NATIVE_HERO_DISCLOSURE = "Brand preview only. Selection varies by store; check the current cigarette menu before visiting.";
+
+const NATIVE_HERO_PRODUCTS = [
+  { name: "BB Lights", image: "/products/1001-BB-LIGHTS-CARTONS.webp" },
+  { name: "BB Full", image: "/products/1003-BB-FULL-CARTON.webp" },
+  { name: "Canadian Lights", image: "/products/1005-CANADIAN-LIGHTS.webp" },
+  { name: "Canadian Full", image: "/products/1006-CANADIAN-FULL.webp" },
+  { name: "Canadian Classics Silver", image: "/products/1015-CANADIAN-CLASSICS-SILVER.webp" },
+  { name: "Canadian Menthol", image: "/products/1013-CANADIAN-MENTHOL.webp" },
+] as const;
+
 export interface SeoPageData {
   slug: string;
   title: string;
@@ -6,6 +17,12 @@ export interface SeoPageData {
   icon: string;
   heroTagline: string;
   banner?: string;
+  heroPreview?: {
+    eyebrow: string;
+    intro: string;
+    products: typeof NATIVE_HERO_PRODUCTS;
+    disclosure: typeof NATIVE_HERO_DISCLOSURE;
+  };
   sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
 }
@@ -162,6 +179,12 @@ export const SEO_PAGES: SeoPageData[] = [
     "h1": "Gas City Cannabis Native Cigarettes Resource",
     "icon": "#",
     "heroTagline": "$25 carton notes and brand names where listed",
+    "heroPreview": {
+      "eyebrow": "Gas City Cannabis · 985 O'Connor Dr, Toronto",
+      "intro": "Cigarette category and visit information for O'Connor Drive",
+      "products": NATIVE_HERO_PRODUCTS,
+      "disclosure": NATIVE_HERO_DISCLOSURE
+    },
     "sections": [
       {
         "heading": "Start With The Cigarette Category",
