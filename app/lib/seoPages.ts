@@ -12,6 +12,7 @@ const NATIVE_HERO_PRODUCTS = [
 export interface SeoPageData {
   slug: string;
   title: string;
+  absoluteTitle?: boolean;
   metaDescription: string;
   h1: string;
   icon: string;
@@ -20,8 +21,17 @@ export interface SeoPageData {
   heroPreview?: {
     eyebrow: string;
     intro: string;
-    products: typeof NATIVE_HERO_PRODUCTS;
-    disclosure: typeof NATIVE_HERO_DISCLOSURE;
+    products: readonly { name: string; image: string; sourceSlug?: string }[];
+    disclosure: string;
+    theme?: "cigarettes" | "nicotine";
+    menuHref?: string;
+    primaryLabel?: string;
+    secondaryLabel?: string;
+    secondaryHref?: string;
+    identityStrip?: string;
+    featuredHeading?: string;
+    featuredIntro?: string;
+    warning?: string;
   };
   sections: { heading: string; body: string }[];
   faqs: { q: string; a: string }[];
@@ -393,7 +403,105 @@ export const SEO_PAGES: SeoPageData[] = [
         "a": "Avoid guessing from old examples. Confirm current details with the menu or staff."
       }
     ]
-  }
+  },
+  {
+    slug: "nicotine-vapes-toronto",
+    title: "Nicotine Vapes in Toronto | GAS CITY CANNABIS",
+    absoluteTitle: true,
+    metaDescription:
+      "Adults 19+: review six verified nicotine vape product pages from GAS CITY CANNABIS in Toronto, then check /items/vapes for the current category. Nicotine is addictive.",
+    h1: "Nicotine Vapes at GAS CITY CANNABIS",
+    icon: "NV",
+    heroTagline: "Adults 19+ · Nicotine is addictive.",
+    heroPreview: {
+      eyebrow: "GAS CITY CANNABIS • EAST YORK / O'CONNOR • ADULTS 19+",
+      intro:
+        "Searching for nicotine vapes near me around East York or O'Connor? This adult-only GAS CITY CANNABIS guide features six verified VAPE PENS product pages. Compare the supported product names, then use /items/vapes for the current nicotine category. Product details can change. Nicotine is addictive.",
+      products: [
+        {
+          name: "ENVI DRIP’N 5% — 28K Puffs",
+          image:
+            "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1092-Envi-Dripn-28K.webp",
+          sourceSlug: "envi-dripn-5-28k-puffs",
+        },
+        {
+          name: "Geek Promax 5% — 30K Puffs",
+          image:
+            "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/GEEK-PROMAX.jpg",
+          sourceSlug: "geek-promax-5-30k-puffs",
+        },
+        {
+          name: "Geek Universe — 25K Puffs",
+          image:
+            "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/geek_universe_pulse_x_25k.webp",
+          sourceSlug: "geek-universe-25k-puffs",
+        },
+        {
+          name: "NEXA PIX — 30K Puffs — Many Flavors",
+          image:
+            "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/nexa_showcase_600x600.webp",
+          sourceSlug: "nexa-pix-30k-puffs-many-flavors",
+        },
+        {
+          name: "OVNS 10000 5% — 10K Puffs",
+          image:
+            "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/1081OVNS10000.jpg",
+          sourceSlug: "ovns-10000-5-10k-puffs",
+        },
+        {
+          name: "OVNS Disposable 5% — 8 mL — Many Flavors",
+          image:
+            "https://pub-eb3e1fe18a43477eabc885cfb791d97c.r2.dev/products/OVNS500x500HQ.webp",
+          sourceSlug: "ovns-disposable-5-8ml-many-flavors",
+        },
+      ],
+      disclosure:
+        "Featured cards are verified starting points, not guarantees of current stock, price or availability.",
+      theme: "nicotine",
+      menuHref: "/items/vapes",
+      primaryLabel: "Browse Nicotine Vapes",
+      secondaryLabel: "Compare the Six Featured Items",
+      secondaryHref: "#featured-vapes",
+      identityStrip:
+        "GAS CITY CANNABIS | East York / O'Connor | Adults 19+ | Nicotine is addictive.",
+      featuredHeading: "Six Verified GAS CITY CANNABIS Vape Cards",
+      featuredIntro:
+        "This shortlist contains verified ENVI, Geek, NEXA and OVNS VAPE PENS product pages. Use each card for its supported display name, then rely on /items/vapes for the current GAS CITY CANNABIS category listing.",
+      warning: "Adults 19+. Nicotine is addictive.",
+    },
+    sections: [
+      {
+        heading: "Read Each Product Format Carefully",
+        body: "One verified listing explicitly identifies an OVNS disposable. Keep that format attached only to its own product, and do not relabel another featured item unless its current page verifies the same format.",
+      },
+      {
+        heading: "Puff Counts Identify Listings",
+        body: "Several verified names include puff counts. Use those numbers to distinguish the listings, not as guarantees of duration, performance or superiority.",
+      },
+      {
+        heading: "Keep Nicotine and Cannabis Vape Routes Separate",
+        body: "This adult-only GAS CITY CANNABIS guide uses VAPE PENS products under /items/vapes. THC and cannabis vape products under /items/vape-disposables are excluded.",
+      },
+      {
+        heading: "Review the Current Toronto Category",
+        body: "Before choosing, open /items/vapes and the individual product page for current supported details. This guide does not claim prices, stock or guaranteed availability.",
+      },
+    ],
+    faqs: [
+      {
+        q: "Where should I check GAS CITY CANNABIS’s current nicotine selection?",
+        a: "Use /items/vapes. The six featured cards are verified starting points while the current category listing controls selection information.",
+      },
+      {
+        q: "Is a disposable nicotine vape represented?",
+        a: "Yes. The verified set includes OVNS Disposable 5% — 8 mL — Many Flavors. Check its current product page for updated details.",
+      },
+      {
+        q: "Does this page include cannabis vapes?",
+        a: "No. It covers nicotine products from the VAPE PENS category for adults 19+. THC and cannabis vape products under /items/vape-disposables are excluded.",
+      },
+    ],
+  },
 ];
 
 export function getSeoPageBySlug(slug: string): SeoPageData | undefined {
