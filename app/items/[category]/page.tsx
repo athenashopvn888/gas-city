@@ -70,11 +70,17 @@ export default async function ItemsCategoryPage({
       {/* Hero Banner */}
       <section style={{ width: "100%", overflow: "hidden", marginTop: "92px", marginBottom: "24px" }}>
         {config.banner && bannerExists ? (
-          <img
-            src={config.banner}
-            alt={config.name}
-            style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
-          />
+          <>
+            <img
+              src={config.banner}
+              alt={config.name}
+              style={{ width: "100%", height: "auto", display: "block", objectFit: "contain" }}
+            />
+            <div className={styles.heroContent} style={{ padding: "28px 24px 8px", textAlign: "center" }}>
+              <h1 className={styles.heroTitle}>{config.name}</h1>
+              <p className={styles.heroSub}>{items.length} products available</p>
+            </div>
+          </>
         ) : (
           <div className={styles.heroContent} style={{ background: config.color, padding: "60px 24px", textAlign: "center" }}>
             <span className={styles.heroIcon}>{config.icon}</span>
@@ -128,7 +134,7 @@ export default async function ItemsCategoryPage({
           <div className={styles.visitCta}>
             <h3 className={styles.visitTitle}>Visit GAS CITY CANNABIS</h3>
             <p className={styles.visitText}>
-              985 O'Connor Dr, GTA, ON M4B 2T1 · Open Daily: 10:00 AM - 03:00 AM
+              985 O&apos;Connor Dr, GTA, ON M4B 2T1 · Open Daily: 10:00 AM - 03:00 AM
             </p>
           </div>
         </div>
