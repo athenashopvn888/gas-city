@@ -40,9 +40,9 @@ export interface SeoPageData {
 export const SEO_PAGES: SeoPageData[] = [
   {
     "slug": "toronto-weed-dispensary",
-    "title": "Gas City Cannabis Weed Dispensary in Toronto",
-    "metaDescription": "Gas City Cannabis is a weed dispensary in Toronto with flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and shopper resources.",
-    "h1": "Gas City Cannabis Weed Dispensary in Toronto",
+    "title": "Gas City Cannabis Menu Guide for East York",
+    "metaDescription": "Use the Gas City Cannabis East York menu guide for category navigation, store-page checks, and visit planning around O'Connor Drive.",
+    "h1": "Gas City Cannabis Menu Guide for East York",
     "icon": "*",
     "heroTagline": "Menu shopping around East York / O'Connor",
     "sections": [
@@ -118,7 +118,7 @@ export const SEO_PAGES: SeoPageData[] = [
     "icon": "#",
     "heroTagline": "$25 carton notes and brand names where listed",
     "heroPreview": {
-      "eyebrow": "Gas City Cannabis · 985 O'Connor Dr, Toronto",
+      "eyebrow": "Gas City Cannabis · 985 O'Connor Dr, East York",
       "intro": "Cigarette category and visit information for O'Connor Drive",
       "products": NATIVE_HERO_PRODUCTS,
       "disclosure": NATIVE_HERO_DISCLOSURE
@@ -155,7 +155,7 @@ export const SEO_PAGES: SeoPageData[] = [
   {
     "slug": "weed-store-near-east-york-o-connor",
     "title": "Weed Store Near East York / O'Connor | Gas City Cannabis",
-    "metaDescription": "Looking for a weed store near East York / O'Connor? Use Gas City Cannabis for store-page checks, menu categories, and local visit planning in Toronto.",
+    "metaDescription": "Looking for a weed store near East York or O'Connor Drive? Use Gas City Cannabis for store-page checks, menu categories, and local visit planning.",
     "h1": "Weed Store Near East York / O'Connor",
     "icon": ">",
     "heroTagline": "Local visit notes for East York / O'Connor, O'Connor Dr, East York, Woodbine Ave",
@@ -226,10 +226,10 @@ export const SEO_PAGES: SeoPageData[] = [
   },
   {
     slug: "nicotine-vapes-toronto",
-    title: "Nicotine Vapes in Toronto | GAS CITY CANNABIS",
+    title: "Nicotine Vapes in East York | GAS CITY CANNABIS",
     absoluteTitle: true,
     metaDescription:
-      "Adults 19+: review six verified nicotine vape product pages from GAS CITY CANNABIS in Toronto, then check /items/vapes for the current category. Nicotine is addictive.",
+      "Adults 19+: review six verified nicotine vape product pages from GAS CITY CANNABIS in East York, then check /items/vapes for the current category. Nicotine is addictive.",
     h1: "Nicotine Vapes at GAS CITY CANNABIS",
     icon: "NV",
     heroTagline: "Adults 19+ · Nicotine is addictive.",
@@ -303,7 +303,7 @@ export const SEO_PAGES: SeoPageData[] = [
         body: "This adult-only GAS CITY CANNABIS guide uses VAPE PENS products under /items/vapes. THC and cannabis vape products under /items/vape-disposables are excluded.",
       },
       {
-        heading: "Review the Current Toronto Category",
+        heading: "Review the Current East York Category",
         body: "Before choosing, open /items/vapes and the individual product page for current supported details. This guide does not claim prices, stock or guaranteed availability.",
       },
     ],

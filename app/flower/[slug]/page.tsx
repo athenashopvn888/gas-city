@@ -58,7 +58,7 @@ function getJsonLd(flower: FlowerProduct) {
 
   const strainData = getStrainData(flower.name, flower.type, flower.tier, flower.thc);
 
-  const offers: any = {
+  const offers: Record<string, unknown> = {
     "@type": "Offer",
     url: `https://www.gascitycannabis.com/flower/${flower.slug}`,
     priceCurrency: "CAD",

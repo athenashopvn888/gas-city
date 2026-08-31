@@ -134,7 +134,7 @@ function ItemCard({ title, accent, items, hiIdx, preset }: {
 
 /* -- TICKER -- */
 const TICKER_SLIDES = [
-  "🔥 GAS CITY CANNABIS — 985 O'Connor Dr, GTA",
+  "🔥 GAS CITY CANNABIS — 985 O'Connor Dr, East York",
   "Browse Flower Tiers",
   "Open Daily: 10:00 AM - 03:00 AM",
   "Pre-Rolls · Edibles · Vapes · Concentrates",
@@ -187,9 +187,9 @@ export default function TV2Page() {
   const wrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setDaytime(isDaytime());
+    const initial = window.setTimeout(() => setDaytime(isDaytime()), 0);
     const iv = setInterval(() => setDaytime(isDaytime()), 60_000);
-    return () => clearInterval(iv);
+    return () => { window.clearTimeout(initial); clearInterval(iv); };
   }, []);
 
   const loadData = useCallback(async () => {
@@ -214,10 +214,10 @@ export default function TV2Page() {
   }, []);
 
   useEffect(() => {
-    loadData(); fitToScreen();
+    const frame = window.requestAnimationFrame(() => { loadData(); fitToScreen(); });
     window.addEventListener("resize", fitToScreen);
     const refresh = setInterval(loadData, 5*60*1000);
-    return () => { window.removeEventListener("resize", fitToScreen); clearInterval(refresh); };
+    return () => { window.cancelAnimationFrame(frame); window.removeEventListener("resize", fitToScreen); clearInterval(refresh); };
   }, [loadData, fitToScreen]);
 
   useEffect(() => {

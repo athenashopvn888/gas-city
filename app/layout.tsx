@@ -12,20 +12,20 @@ export const metadata: Metadata = {
   description:
     "GAS CITY CANNABIS is a cannabis dispensary on O'Connor Dr with adult 19+ store info and category browsing for flower, pre-rolls, vapes, edibles, concentrates, and accessories. Open Daily: 10:00 AM - 03:00 AM.",
   keywords: [
-    "cannabis dispensary Toronto",
+    "cannabis dispensary East York",
     "weed store East York",
-    "exotic flower Toronto",
+    "exotic flower East York",
     "premium cannabis",
     "GAS CITY CANNABIS",
-    "cheap weed Toronto",
+    "cheap weed East York",
     "dispensary near me",
     "THC flower",
     "indica sativa hybrid",
-    "edibles Toronto",
+    "edibles East York",
     "vapes",
     "pre-rolls",
-    "native cigarettes Toronto",
-    "weed store Toronto",
+    "native cigarettes East York",
+    "weed store East York",
   ],
   openGraph: {
     type: "website",
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
         url: "https://www.gascitycannabis.com/wp-content/uploads/2026/04/46Oi5.jpg",
         width: 1200,
         height: 630,
-        alt: "GAS CITY CANNABIS - Cannabis Dispensary Toronto",
+        alt: "GAS CITY CANNABIS - Cannabis Dispensary East York",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "GAS CITY CANNABIS - O'Connor Dr Dispensary",
-    description: "Browse GAS CITY CANNABIS categories. Open Daily: 10:00 AM - 03:00 AM at 985 O'Connor Dr, Toronto.",
+    description: "Browse GAS CITY CANNABIS categories at 985 O'Connor Dr in East York.",
     images: ["https://www.gascitycannabis.com/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
   robots: {
@@ -76,7 +76,7 @@ const jsonLd = {
   additionalType: "https://schema.org/Store",
   "@id": "https://www.gascitycannabis.com",
   name: "GAS CITY CANNABIS",
-  description: "Cannabis dispensary at 985 O'Connor Dr in Toronto, ON. Shop exotic, premium, AAA+, AA, and budget flower tiers plus edibles, prerolls, and vapes. Open Daily: 10:00 AM - 03:00 AM.",
+  description: "Cannabis dispensary at 985 O'Connor Dr in East York, ON, with category browsing and store information for adults 19+.",
   url: "https://www.gascitycannabis.com",
   telephone: "+14374660318",
   image: "https://www.gascitycannabis.com/wp-content/uploads/2026/04/7Clmh.jpg",
@@ -84,7 +84,7 @@ const jsonLd = {
   address: {
     "@type": "PostalAddress",
     streetAddress: "985 O'Connor Dr",
-    addressLocality: "Toronto",
+    addressLocality: "East York",
     addressRegion: "ON",
     postalCode: "M4B 2T1",
     addressCountry: "CA",
@@ -117,7 +117,7 @@ const jsonLd = {
   hasMap: "https://www.gascitycannabis.com/",
   areaServed: {
     "@type": "City",
-    name: "Toronto",
+    name: "East York",
   },
 };
 
@@ -130,7 +130,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="geo.region" content="CA-ON" />
-        <meta name="geo.placename" content="GTA" />
+        <meta name="geo.placename" content="East York" />
         <meta name="geo.position" content="43.7086100;-79.3101300" />
         <meta name="ICBM" content="43.7086100, -79.3101300" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

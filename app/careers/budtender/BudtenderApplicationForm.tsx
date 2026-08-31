@@ -314,7 +314,7 @@ export default function BudtenderApplicationForm() {
       <div className={styles.formSection}>
         <h3>Links And Consent</h3>
         <fieldset className={styles.choiceGroup}>
-          <legend>Can you reliably get to O'Connor Drive for scheduled shifts?</legend>
+          <legend>Can you reliably get to O&apos;Connor Drive for scheduled shifts?</legend>
           <label><input type="radio" name="TransportationReliability" value="Yes" required /> Yes</label>
           <label><input type="radio" name="TransportationReliability" value="No" /> No</label>
           <label><input type="radio" name="TransportationReliability" value="Sometimes" /> Sometimes</label>

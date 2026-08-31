@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require('fs');
 const games = ['snake-munchies', 'brick-breaker', 'memory-match', '2048-strains'];
 for (const g of games) {
