@@ -24,3 +24,9 @@ test("weak-query owners avoid duplicate title branding and competing near-me cop
   assert.match(deliveryPage, /absolute:\s*"Weed Delivery Menu \| GAS CITY CANNABIS"/);
   assert.match(deliveryOwner, /<h1>Weed Delivery Menu<\/h1>/);
 });
+
+test("East York and Native guide owners suppress the site-wide title suffix", () => {
+  const guides = read("app/lib/seoPages.ts");
+  assert.match(guides, /"slug": "native-cigarettes-toronto",[\s\S]*?"absoluteTitle": true/);
+  assert.match(guides, /"slug": "weed-store-near-east-york-o-connor",[\s\S]*?"absoluteTitle": true/);
+});

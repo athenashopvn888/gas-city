@@ -113,6 +113,7 @@ export const SEO_PAGES: SeoPageData[] = [
   {
     "slug": "native-cigarettes-toronto",
     "title": "Gas City Cannabis Native Cigarettes Resource",
+    "absoluteTitle": true,
     "metaDescription": "Gas City Cannabis Native cigarettes resource with brand names shown on the menu and $25 carton notes where listed.",
     "h1": "Gas City Cannabis Native Cigarettes Resource",
     "icon": "#",
@@ -155,6 +156,7 @@ export const SEO_PAGES: SeoPageData[] = [
   {
     "slug": "weed-store-near-east-york-o-connor",
     "title": "Weed Store Near East York / O'Connor | Gas City Cannabis",
+    "absoluteTitle": true,
     "metaDescription": "Looking for a weed store near East York or O'Connor Drive? Use Gas City Cannabis for store-page checks, menu categories, and local visit planning.",
     "h1": "Weed Store Near East York / O'Connor",
     "icon": ">",
