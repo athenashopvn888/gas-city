@@ -103,6 +103,10 @@ export function GBPLandingPage() {
       <section className={styles.section}>
         <h2 className={styles.h2}>Your Local Weed Dispensary</h2>
         <p className={styles.introText}>{gbpLocation.introVariant}</p>
+        <p className={styles.infoText}>
+          Looking for a more detailed local guide? Read the{" "}
+          <Link href="/info/weed-store-near-east-york-o-connor">weed store near East York and O&apos;Connor guide</Link>.
+        </p>
       </section>
 
       {/* Product Section */}

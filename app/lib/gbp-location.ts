@@ -2,16 +2,16 @@
 export const gbpLocation = {
   storeName: "GAS CITY CANNABIS",
   domain: "www.gascitycannabis.com",
-  city: "Toronto",
+  city: "East York",
   province: "ON",
   country: "CA",
   slug: "weed-dispensary-toronto",
-  address: "985 O'Connor Dr, Toronto, ON M4B 2T1",
+  address: "985 O'Connor Dr, East York, ON M4B 2T1",
   streetAddress: "985 O'Connor Dr",
   postalCode: "M4B 2T1",
   phone: "+1 (437) 466-0318",
   phoneIntl: "+14374660318",
-  neighborhood: "East York / O'Connor",
+  neighborhood: "O'Connor / East York",
   nearbyAreas: ["O'Connor Dr", "East York", "Woodbine Ave", "Taylor Creek", "Parkview Hills", "Topham Park", "TTC"],
   products: [
     "Flower",
@@ -29,12 +29,12 @@ export const gbpLocation = {
   latitude: "43.7086100",
   longitude: "-79.3101300",
   hours: ["Open Daily: 10:00 AM - 03:00 AM"],
-  seoTitle: "GAS CITY CANNABIS | Weed Dispensary in Toronto",
-  metaDescription: "GAS CITY CANNABIS is a local weed dispensary in Toronto offering flower, pre-rolls, edibles, vapes, concentrates, CBD, and service for adults 19+.",
+  seoTitle: "GAS CITY CANNABIS | Weed Dispensary in East York",
+  metaDescription: "GAS CITY CANNABIS is a local weed dispensary in East York with category browsing and store information for adults 19+.",
   localLandmarks: ["O'Connor Dr", "East York", "Woodbine Ave"],
-  introVariant: "GAS CITY CANNABIS is located at 985 O'Connor Dr in Toronto. Adults 19+ can browse cannabis flower, pre-rolls, edibles, THC vapes, concentrates, CBD products, and accessories. Visit the store page and menu categories for current details near East York and O'Connor.",
+  introVariant: "GAS CITY CANNABIS is located at 985 O'Connor Dr in East York. Adults 19+ can use this page to confirm store details and browse menu categories before visiting the O'Connor area.",
   neighborhoodDescription: "Located in the vibrant East York / O'Connor district, our cannabis store fits right into this active and historic community, surrounded by local retail shops and convenient transit links.",
   parkingNote: "Parking spaces are available in the plaza lot",
   transitNote: "Easily accessible via local TTC bus routes serving O'Connor Drive.",
-  sectionTitle: "Serving Customers Near East York in Toronto"
+  sectionTitle: "Serving Customers Near O'Connor Drive in East York"
 };

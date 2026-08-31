@@ -31,7 +31,9 @@ export async function generateMetadata({
   const items = getItemsByCategory(catInfo.key);
 
   return {
-    title: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
+    title: {
+      absolute: catInfo.config.seoTitle || `${catInfo.config.name} — ${items.length} Products`,
+    },
     description: catInfo.config.seoIntro || `Shop ${items.length} ${catInfo.config.name.toLowerCase()} at GAS CITY CANNABIS.`,
     alternates: {
       canonical: `https://www.gascitycannabis.com/items/${catSlug}`,
@@ -134,7 +136,7 @@ export default async function ItemsCategoryPage({
           <div className={styles.visitCta}>
             <h3 className={styles.visitTitle}>Visit GAS CITY CANNABIS</h3>
             <p className={styles.visitText}>
-              985 O&apos;Connor Dr, GTA, ON M4B 2T1 · Open Daily: 10:00 AM - 03:00 AM
+              985 O&apos;Connor Dr, East York, ON M4B 2T1 · Open Daily: 10:00 AM - 03:00 AM
             </p>
           </div>
         </div>

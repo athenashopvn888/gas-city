@@ -9,7 +9,7 @@ export default function Footer() {
           <div className={styles.col}>
             <div className={styles.brand}>GAS CITY CANNABIS</div>
             <p className={styles.desc}>
-              Your Local Cannabis Dispensary At 985 O&apos;Connor Dr, Toronto. Visit
+              Your Local Cannabis Dispensary At 985 O&apos;Connor Dr, East York. Visit
               GAS CITY CANNABIS For Premium Flower, Edibles, Vapes &amp; More.
               Open: Open Daily: 10:00 AM - 03:00 AM.
             </p>
@@ -21,7 +21,7 @@ export default function Footer() {
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Address:</span>
               <span>985 O&apos;Connor Dr</span>
-              <span>Toronto, ON M4B 2T1</span>
+              <span>East York, ON M4B 2T1</span>
               <span>Canada</span>
             </div>
             <div className={styles.infoBlock}>
@@ -50,15 +50,15 @@ export default function Footer() {
               <Link href="/items/edibles">Edibles</Link>
               <Link href="/items/cigarettes">Cigarettes</Link>
               <Link href="/items/vapes">Vape Pens</Link>
-              <Link href="/info/nicotine-vapes-toronto">Nicotine Vapes Toronto</Link>
+              <Link href="/info/nicotine-vapes-toronto">Nicotine Vapes East York</Link>
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery Menu</Link>
-              <Link href="/info/toronto-weed-dispensary">Toronto Dispensary</Link>
-              <Link href="/info/cheap-weed-toronto">Cheap Weed Toronto</Link>
+              <Link href="/info/toronto-weed-dispensary">East York Dispensary</Link>
+              <Link href="/info/cheap-weed-toronto">Value Guide East York</Link>
               <Link href="/info/native-cigarettes-toronto">Native Cigarettes</Link>
               <Link href="/info/weed-store-near-east-york-o-connor">Weed Store Near East York</Link>
-              <Link href="/weed-dispensary-toronto/">GAS CITY CANNABIS Weed Dispensary in Toronto</Link>
+              <Link href="/weed-dispensary-toronto/">GAS CITY CANNABIS Weed Dispensary in East York</Link>
               <Link href="/contact">Contact Us</Link>
               <a
                 href="https://www.gascitycannabis.com/"

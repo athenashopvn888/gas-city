@@ -6,7 +6,7 @@ import styles from "./page.module.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
-import { allFlowers } from "./lib/products";
+import { allFlowers, type FlowerProduct } from "./lib/products";
 import Papa from "papaparse";
 
 /* ── Bento Mosaic Config ── */
@@ -70,7 +70,7 @@ const EXPLORE_CATEGORIES = [
 const LOCAL_FAQS = [
   {
     q: "What are the hours for GAS CITY CANNABIS?",
-    a: "GAS CITY CANNABIS at 985 O'Connor Dr, GTA is open daily from 10:00 AM to 03:00 AM. Walk in anytime — no appointment needed.",
+    a: "GAS CITY CANNABIS at 985 O'Connor Dr, East York is open daily from 10:00 AM to 03:00 AM. Walk in anytime — no appointment needed.",
   },
   {
     q: "What cannabis products do you carry?",
@@ -78,7 +78,7 @@ const LOCAL_FAQS = [
   },
   {
     q: "Where is GAS CITY CANNABIS located?",
-    a: "We are located at 985 O'Connor Dr, GTA, ON M4B 2T1. Visit us in person or call us at +1 (437) 466-0318. Free evening street parking is available.",
+    a: "We are located at 985 O'Connor Dr, East York, ON M4B 2T1. Visit us in person or call us at +1 (437) 466-0318.",
   },
   {
     q: "What is the cheapest weed at GAS CITY CANNABIS?",
@@ -98,7 +98,7 @@ interface ReviewStats {
 }
 
 export default function HomePage() {
-  const [featuredStrains, setFeaturedStrains] = useState<any[]>([]);
+  const [featuredStrains, setFeaturedStrains] = useState<FlowerProduct[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [reviewsStats, setReviewsStats] = useState<ReviewStats | null>(null);
   const [reviewsLoading, setReviewsLoading] = useState(true);
@@ -182,7 +182,8 @@ export default function HomePage() {
       tierCounts[f.tier] = tc + 1;
     }
 
-    setFeaturedStrains(picked);
+    const timer = window.setTimeout(() => setFeaturedStrains(picked), 0);
+    return () => window.clearTimeout(timer);
   }, []);
 
   return (
@@ -196,7 +197,7 @@ export default function HomePage() {
           <div className={styles.welcomeBannerContainer}>
             <img
               src={welcomeBannerSrc}
-              alt="Welcome to GAS CITY CANNABIS — Premium GTA Cannabis Dispensary"
+              alt="Welcome to GAS CITY CANNABIS — East York Cannabis Dispensary"
               className={styles.welcomeBannerImg}
               onError={() => setWelcomeBannerError(true)}
             />
@@ -210,7 +211,7 @@ export default function HomePage() {
           <div>
             <span className={styles.hiringEyebrow}>Budtenders / Managers Wanted</span>
             <h2>Join Gas City</h2>
-            <p>O'Connor Drive needs determined, reliable people who can keep customer service moving smoothly. Online applications only. Please do not call the store about hiring.</p>
+            <p>O&apos;Connor Drive needs determined, reliable people who can keep customer service moving smoothly. Online applications only. Please do not call the store about hiring.</p>
           </div>
           <Link href="/careers/budtender" className={styles.hiringButton}>Apply Online</Link>
         </div>
@@ -405,9 +406,9 @@ export default function HomePage() {
               <span className={styles.storeIcon}>📍</span>
               <h3 className={styles.storeCardTitle}>Location</h3>
               <p className={styles.storeCardText}>
-                985 O'Connor Dr
+                985 O&apos;Connor Dr
                 <br />
-                GTA, ON M4B 2T1
+                East York, ON M4B 2T1
                 <br />
               </p>
             </div>
@@ -426,7 +427,7 @@ export default function HomePage() {
               <p className={styles.storeCardText}>
                 No appointment needed
                 <br />
-                <span className={styles.storeHighlight}>985 O'Connor Dr & Nearby Expressway, GTA</span>
+                <span className={styles.storeHighlight}>985 O&apos;Connor Dr &amp; Nearby Expressway, East York</span>
               </p>
             </div>
           </div>

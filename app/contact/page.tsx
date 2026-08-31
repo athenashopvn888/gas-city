@@ -4,16 +4,16 @@ import Footer from "../components/Footer";
 import styles from "./contact.module.css";
 
 export const metadata: Metadata = {
-  title: "Contact Us — GAS CITY CANNABIS | 985 O'Connor Dr, GTA",
+  title: "Contact Us — GAS CITY CANNABIS | 985 O'Connor Dr, East York",
   description:
-    "Visit GAS CITY CANNABIS at 985 O'Connor Dr, GTA, ON M4B 2T1. We are open daily from 10:00 AM to 03:00 AM. Walk-ins welcome.",
+    "Visit GAS CITY CANNABIS at 985 O'Connor Dr, East York, ON M4B 2T1. Use this page for store contact and visit information.",
   alternates: {
     canonical: "https://www.gascitycannabis.com/contact",
   },
   openGraph: {
-    title: "Contact GAS CITY CANNABIS — GTA Dispensary",
+    title: "Contact GAS CITY CANNABIS — East York Dispensary",
     description:
-      "985 O'Connor Dr, GTA. We are open daily from 10:00 AM to 03:00 AM. Premium cannabis, always fire.",
+      "985 O'Connor Dr, East York, ON M4B 2T1. Use this page for store contact and visit information.",
   },
 };
 
@@ -41,7 +41,7 @@ export default function ContactPage() {
               <p className={styles.infoText}>
                 985 O&apos;Connor Dr
                 <br />
-                GTA, ON M4B 2T1
+                East York, ON M4B 2T1
                 <br />
                 <span className={styles.infoMuted}>985 O&apos;Connor Dr & Nearby Expressway</span>
               </p>

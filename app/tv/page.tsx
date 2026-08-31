@@ -671,7 +671,7 @@ function AddOnsCard({ items, hiIdx }: { items: Item[]; hiIdx: number }) {
    VERTICAL TICKER
    ============================================================ */
 const TICKER_SLIDES = [
-  "🔥 GAS CITY CANNABIS — 985 O'Connor Dr, GTA",
+  "🔥 GAS CITY CANNABIS — 985 O'Connor Dr, East York",
   "Browse Flower Tiers",
   "Open Daily: 10:00 AM - 03:00 AM",
   "ALL SALES ARE FINAL",
@@ -792,22 +792,25 @@ export default function TVMenuPage() {
 
   useEffect(() => {
     const colors = ['rgba(220,38,38,.12)','rgba(245,158,11,.10)','rgba(59,130,246,.10)','rgba(16,185,129,.08)','rgba(168,85,247,.08)'];
-    setParticles(Array.from({length: 25}, (_, i) => {
-      const size = 4 + Math.random() * 8;
-      const color = colors[i % colors.length];
-      return {
-        size,
-        left: `${5 + Math.random() * 90}%`,
-        color,
-        shadow: `0 0 ${size*3}px ${color}`,
-        dur: `${18 + Math.random() * 22}s`,
-        delay: `${-Math.random() * 25}s`,
-      };
-    }));
-    loadData(); fitToScreen();
+    const frame = window.requestAnimationFrame(() => {
+      setParticles(Array.from({length: 25}, (_, i) => {
+        const size = 4 + Math.random() * 8;
+        const color = colors[i % colors.length];
+        return {
+          size,
+          left: `${5 + Math.random() * 90}%`,
+          color,
+          shadow: `0 0 ${size*3}px ${color}`,
+          dur: `${18 + Math.random() * 22}s`,
+          delay: `${-Math.random() * 25}s`,
+        };
+      }));
+      loadData();
+      fitToScreen();
+    });
     window.addEventListener("resize", fitToScreen);
     const refresh = setInterval(loadData, 5*60*1000);
-    return () => { window.removeEventListener("resize", fitToScreen); clearInterval(refresh); };
+    return () => { window.cancelAnimationFrame(frame); window.removeEventListener("resize", fitToScreen); clearInterval(refresh); };
   }, [loadData, fitToScreen]);
 
   useEffect(() => {

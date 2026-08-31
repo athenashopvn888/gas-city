@@ -5,7 +5,7 @@ import styles from "./faq.module.css";
 
 export const metadata: Metadata = {
   title: "FAQ | Gas City Cannabis",
-  description: "Frequently asked questions about Gas City Cannabis in Toronto, including store-page checks, menu categories, value shopping, and Native smokes where listed.",
+  description: "Frequently asked questions about Gas City Cannabis in East York, including store-page checks, menu categories, value shopping, and Native smokes where listed.",
   alternates: {
     canonical: "https://www.gascitycannabis.com/faq",
   },
@@ -15,7 +15,7 @@ const FAQ_CATEGORIES = [
   {
     title: "Location and Hours",
     faqs: [
-      { q: "Where is Gas City Cannabis located?", a: "Gas City Cannabis is listed at 985 O'Connor Dr, Toronto, ON M4B 2T1. Use the store page for directions and contact options before visiting." },
+      { q: "Where is Gas City Cannabis located?", a: "Gas City Cannabis is listed at 985 O'Connor Dr, East York, ON M4B 2T1. Use the store page for directions and contact options before visiting." },
       { q: "What are the listed hours?", a: "Open Daily: 10:00 AM - 03:00 AM. Check the current store page or contact staff before visiting if timing matters." },
       { q: "What is the best way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
     ],

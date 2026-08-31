@@ -160,7 +160,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   EDIBLES: {
     banner: "/banners/edibles_prerolls_more_banner.webp",
     name: "Edibles", slug: "edibles", color: "#f97316", icon: "ED",
-    seoTitle: "Cannabis Edibles Toronto | Gas City Cannabis",
+    seoTitle: "Cannabis Edibles East York | Gas City Cannabis",
     seoIntro: "Browse edible options at Gas City Cannabis. Compare product names, package details, posted notes, and current menu information before choosing.",
     seoDescription: "Edibles shop best when you compare the exact listing instead of guessing from an old example. Use the current menu at Gas City Cannabis for names, package details, posted prices, and staff help when needed.",
     faqs: [
@@ -171,7 +171,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   "VAPE PENS": {
     banner: "/banners/01_Vape_Pens.webp",
     name: "THC Vape", slug: "vapes", color: "#8b5cf6", icon: "VP",
-    seoTitle: "Vapes Toronto | Gas City Cannabis",
+    seoTitle: "Vapes East York | Gas City Cannabis",
     seoIntro: "Compare vape listings at Gas City Cannabis by product name, format, posted notes, and current menu details.",
     seoDescription: "Vape shoppers should use the current menu first, then ask staff if a cartridge, disposable, battery, or format detail needs a current answer.",
     faqs: [
@@ -182,7 +182,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   "VAPE DISPOSABLE": {
     banner: "/banners/02_Vape_Disposable.webp",
     name: "Nic Vape", slug: "vape-disposables", color: "#a78bfa", icon: "VD",
-    seoTitle: "Disposable Vapes Toronto | Gas City Cannabis",
+    seoTitle: "Disposable Vapes East York | Gas City Cannabis",
     seoIntro: "Use the disposable vape category at Gas City Cannabis for current product names, formats, and menu notes.",
     seoDescription: "Disposable vape listings are easiest to compare inside their own category. Check the current menu and ask staff if a detail matters before choosing.",
     faqs: [
@@ -193,7 +193,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   CONCENTRATES: {
     banner: "/banners/03_Concentrates.webp",
     name: "Concentrates", slug: "concentrates", color: "#f59e0b", icon: "CN",
-    seoTitle: "Concentrates Toronto | Gas City Cannabis",
+    seoTitle: "Concentrates East York | Gas City Cannabis",
     seoIntro: "Compare concentrates at Gas City Cannabis by product type, name, posted notes, and current menu details.",
     seoDescription: "Concentrate shoppers should stay inside the concentrate category first, then compare the current listing details and ask staff when a format question needs a current answer.",
     faqs: [
@@ -203,7 +203,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   },
   PREROLLS: {
     banner: "/banners/04_Pre_Rolls.webp", name: "Pre-Rolls", slug: "prerolls", color: "#22c55e", icon: "PR",
-    seoTitle: "Pre-Rolls Toronto | Gas City Cannabis",
+    seoTitle: "Pre-Rolls East York | Gas City Cannabis",
     seoIntro: "Shop pre-rolls at Gas City Cannabis by comparing the current product name, format, package details, and posted notes.",
     seoDescription: "Pre-rolls should be compared inside the pre-roll category instead of mixed into flower, edibles, vapes, or concentrates. Use the current menu for details that change.",
     faqs: [
@@ -214,7 +214,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   "ADD ONS": {
     banner: "/banners/05_Accessories.webp",
     name: "Accessories", slug: "add-ons", color: "#34d399", icon: "+",
-    seoTitle: "Cannabis Accessories Toronto | Gas City Cannabis",
+    seoTitle: "Cannabis Accessories East York | Gas City Cannabis",
     seoIntro: "Browse accessories at Gas City Cannabis and compare the current menu notes before visiting.",
     seoDescription: "Accessory listings are practical add-ons for the visit. Check the current menu for what is listed and ask staff when a specific item matters.",
     faqs: [
@@ -234,7 +234,7 @@ export const CATEGORY_CONFIG: Record<string, CategoryInfo> = {
   CIGARETTES: {
     banner: "/banners/native-cigarette-offer-20260822.webp",
     name: "Cigarettes", slug: "cigarettes", color: "#78716c", icon: "CG",
-    seoTitle: "Native Cigarettes Toronto | Gas City Cannabis",
+    seoTitle: "Native Cigarettes East York | Gas City Cannabis",
     seoIntro: "Native smokes at Gas City Cannabis in Toronto. The cigarette menu may show $25 carton-style listings and brands such as Canadian Lights, Canadian Full, Putters, Canadian Goose Full, Canadian Goose Lights, Canadian Menthol, Canadian Classics Original, and Canadian Classics Silver.",
     seoDescription: "Use the cigarette category to compare current Native smoke listings at Gas City Cannabis. Specific brands, carton options, and prices can change, so check the current menu or ask staff before visiting.",
     faqs: [
