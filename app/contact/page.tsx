@@ -25,6 +25,7 @@ export default function ContactPage() {
       {/* ── Hero ── */}
       <section className={styles.hero} style={{ paddingTop: "92px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
+          <h1 className={styles.heroTitle}>Contact GAS CITY CANNABIS</h1>
           <img src="/banners/08_Contact_Us.webp" alt="Contact Us" style={{ width: "100%", height: "auto", display: "block", borderRadius: "var(--radius-lg)" }} />
         </div>
       </section>
@@ -38,11 +39,11 @@ export default function ContactPage() {
               <div className={styles.infoIcon}>📍</div>
               <h2 className={styles.infoTitle}>Location</h2>
               <p className={styles.infoText}>
-                985 O'Connor Dr
+                985 O&apos;Connor Dr
                 <br />
                 GTA, ON M4B 2T1
                 <br />
-                <span className={styles.infoMuted}>985 O'Connor Dr & Nearby Expressway</span>
+                <span className={styles.infoMuted}>985 O&apos;Connor Dr & Nearby Expressway</span>
               </p>
             </div>
 
