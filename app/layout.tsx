@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
 import AgeGate from "./components/AgeGate";
+import { STORE, storeSchema } from "./lib/storeIdentity";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.gascitycannabis.com"),
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
     template: "%s | GAS CITY CANNABIS",
   },
   description:
-    "GAS CITY CANNABIS is a cannabis dispensary on O'Connor Dr with adult 19+ store info and category browsing for flower, pre-rolls, vapes, edibles, concentrates, and accessories. Open Daily: 10:00 AM - 03:00 AM.",
+    "GAS CITY CANNABIS is a cannabis dispensary on O'Connor Dr with adult 19+ store info and category browsing for flower, pre-rolls, vapes, edibles, concentrates, and accessories. Open daily 11:00 AM - 3:00 AM.",
   keywords: [
     "cannabis dispensary East York",
     "weed store East York",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "GAS CITY CANNABIS",
     title: "GAS CITY CANNABIS - O'Connor Dr Cannabis Dispensary",
     description:
-      "Browse flower tiers and cannabis categories at GAS CITY CANNABIS on O'Connor Dr in East York. Open Daily: 10:00 AM - 03:00 AM.",
+      "Browse flower tiers and cannabis categories at GAS CITY CANNABIS on O'Connor Dr in East York. Open daily 11:00 AM - 3:00 AM.",
     images: [
       {
         url: "https://www.gascitycannabis.com/wp-content/uploads/2026/04/46Oi5.jpg",
@@ -72,10 +73,8 @@ export const metadata: Metadata = {
 /* JSON-LD Structured Data */
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Store",
-  additionalType: "https://schema.org/Store",
-  "@id": "https://www.gascitycannabis.com",
-  name: "GAS CITY CANNABIS",
+  "@graph": [
+  { ...storeSchema(), additionalType: "https://schema.org/Store",
   description: "Cannabis dispensary at 985 O'Connor Dr in East York, ON, with category browsing and store information for adults 19+.",
   url: "https://www.gascitycannabis.com",
   telephone: "+14374660318",
@@ -94,22 +93,6 @@ const jsonLd = {
     latitude: 43.7086100,
     longitude: -79.3101300,
   },
-  openingHoursSpecification: [
-  {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
-    ],
-    "opens": "10:00",
-    "closes": "03:00"
-  }
-],
   sameAs: [
     "https://www.gascitycannabis.com/",
     "https://www.gascitycannabis.com/",
@@ -118,7 +101,9 @@ const jsonLd = {
   areaServed: {
     "@type": "City",
     name: "East York",
-  },
+  } },
+  { "@type": "WebSite", "@id": `${STORE.url}/#website`, url: STORE.url, name: STORE.name },
+  ],
 };
 
 export default function RootLayout({
@@ -141,7 +126,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-T74HZ36EV9"></script>
         <script

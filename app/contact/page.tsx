@@ -52,17 +52,17 @@ export default function ContactPage() {
               <div className={styles.infoIcon}>🕒</div>
               <h2 className={styles.infoTitle}>Hours</h2>
               <div className={styles.hoursTable}>
-                <div className={styles.hoursRow}><span>Monday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Tuesday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Wednesday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Thursday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Friday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Saturday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
-                <div className={styles.hoursRow}><span>Sunday</span><span className={styles.hoursTime}>10:00 AM - 03:00 AM</span></div>
+                <div className={styles.hoursRow}><span>Monday</span><span className={styles.hoursTime}>11:00 AM - 03:00 AM</span></div>
+                <div className={styles.hoursRow}><span>Tuesday</span><span className={styles.hoursTime}>11:00 AM - 03:00 AM</span></div>
+                <div className={styles.hoursRow}><span>Wednesday</span><span className={styles.hoursTime}>11:00 AM - 03:00 AM</span></div>
+                <div className={styles.hoursRow}><span>Thursday</span><span className={styles.hoursTime}>11:00 AM - 03:00 AM</span></div>
+                <div className={styles.hoursRow}><span>Friday</span><span className={styles.hoursTime}>11:00 AM - 03:00 AM</span></div>
+                <div className={styles.hoursRow}><span>Saturday</span><span className={styles.hoursTime}>11:00 AM - 03:00 AM</span></div>
+                <div className={styles.hoursRow}><span>Sunday</span><span className={styles.hoursTime}>11:00 AM - 03:00 AM</span></div>
               </div>
               <div className={styles.openBadge}>
                 <div className={styles.openDot} />
-                Open Daily: 10:00 AM - 03:00 AM
+                Open Daily: 11:00 AM - 03:00 AM
               </div>
             </div>
 

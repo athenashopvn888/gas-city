@@ -16,7 +16,7 @@ const FAQ_CATEGORIES = [
     title: "Location and Hours",
     faqs: [
       { q: "Where is Gas City Cannabis located?", a: "Gas City Cannabis is listed at 985 O'Connor Dr, East York, ON M4B 2T1. Use the store page for directions and contact options before visiting." },
-      { q: "What are the listed hours?", a: "Open Daily: 10:00 AM - 03:00 AM. Check the current store page or contact staff before visiting if timing matters." },
+      { q: "What are the listed hours?", a: "Open Daily: 11:00 AM - 03:00 AM. Check the current store page or contact staff before visiting if timing matters." },
       { q: "What is the best way to plan the visit?", a: "Start with the store page, confirm directions and listed hours, then open the menu category that matches the visit." },
     ],
   },
