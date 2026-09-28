@@ -12,6 +12,7 @@ import {
 } from "../lib/products";
 import { TIER_SEO } from "../lib/tierSeoContent";
 import styles from "./tier.module.css";
+import { STORE } from "../lib/storeIdentity";
 
 /* -- Generate all tier pages at build -- */
 export function generateStaticParams() {
@@ -31,7 +32,7 @@ export async function generateMetadata({
   const seo = TIER_SEO[tierInfo.key];
 
   return {
-    title: seo?.seoTitle || `${tierInfo.config.name} Cannabis Flower — ${flowers.length} Strains`,
+    title: { absolute: `${tierInfo.config.name} Cannabis Flower | O'Connor Dr, East York | Gas City Cannabis` },
     description: seo?.seoIntro || `Shop ${flowers.length} ${tierInfo.config.name.toLowerCase()} cannabis strains at GAS CITY CANNABIS.`,
     alternates: {
       canonical: `https://www.gascitycannabis.com/${tierSlug}`,
@@ -60,6 +61,22 @@ export default async function TierPage({
   const saleFlowers = flowers.filter((f) => f.isSale);
   const regularFlowers = flowers.filter((f) => !f.isSale);
   const hotFlowers = flowers.filter((f) => f.isHot);
+  const pageUrl = `${STORE.url}/${tierSlug}`;
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    name: `${config.name} Cannabis Flower on O'Connor Drive in East York`,
+    description: seo?.seoIntro,
+    isPartOf: { "@id": `${STORE.url}/#website` },
+    about: { "@id": `${STORE.url}/#store` },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: flowers.length,
+      itemListElement: flowers.map((flower, index) => ({ "@type": "ListItem", position: index + 1, name: flower.name, url: `${STORE.url}/flower/${flower.slug}` })),
+    },
+  };
 
   // Check if banner file exists in the public folder
   const bannerExists = config.banner
@@ -68,6 +85,7 @@ export default async function TierPage({
 
   return (
     <main className={styles.main}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema).replace(/</g, "\\u003c") }} />
       <Navbar />
 
       {/* ── Banner Image (standalone, no overlay text) ── */}
@@ -91,7 +109,7 @@ export default async function TierPage({
             <div className={styles.heroTitleRow}>
               <span className={styles.heroIcon}>{config.icon}</span>
               <h1 className={styles.heroTitle}>
-                <span style={{ color: config.color }}>{config.name}</span>
+                <span style={{ color: config.color }}>{config.name} Cannabis Flower on O&apos;Connor Drive in East York</span>
               </h1>
             </div>
             <p className={styles.heroTagline}>{config.tagline}</p>

@@ -15,6 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/delivery`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
     { url: `${BASE}/careers/budtender`, lastModified: now, changeFrequency: "monthly", priority: 0.65 },
+    { url: `${BASE}/visit`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/weed-dispensary-oconnor-east-york`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/native-cigarettes-oconnor-east-york`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+    { url: `${BASE}/nicotine-vape-oconnor-east-york`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
   ];
 
   const tierPages: MetadataRoute.Sitemap = Object.values(TIER_CONFIG).map((t) => ({

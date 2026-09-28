@@ -11,7 +11,7 @@ export default function Footer() {
             <p className={styles.desc}>
               Your Local Cannabis Dispensary At 985 O&apos;Connor Dr, East York. Visit
               GAS CITY CANNABIS For Premium Flower, Edibles, Vapes &amp; More.
-              Open: Open Daily: 10:00 AM - 03:00 AM.
+              Open: Open Daily: 11:00 AM - 3:00 AM.
             </p>
             <div className={styles.buttons}></div>
           </div>
@@ -34,7 +34,7 @@ export default function Footer() {
             </div>
             <div className={styles.infoBlock}>
               <span className={styles.infoLabel}>Hours:</span>
-              <span className={styles.highlight}>Open Daily: 10:00 AM - 03:00 AM</span>
+              <span className={styles.highlight}>Open Daily: 11:00 AM - 3:00 AM</span>
             </div>
           </div>
 
@@ -54,6 +54,10 @@ export default function Footer() {
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
               <Link href="/delivery">Delivery Menu</Link>
+              <Link href="/visit">Visit Gas City Cannabis</Link>
+              <Link href="/weed-dispensary-oconnor-east-york">O&apos;Connor Drive Store Guide</Link>
+              <Link href="/native-cigarettes-oconnor-east-york">Native Cigarettes East York</Link>
+              <Link href="/nicotine-vape-oconnor-east-york">Nicotine Vapes East York</Link>
               <Link href="/info/toronto-weed-dispensary">East York Dispensary</Link>
               <Link href="/info/cheap-weed-toronto">Value Guide East York</Link>
               <Link href="/info/native-cigarettes-toronto">Native Cigarettes</Link>
