@@ -3,11 +3,12 @@ import Link from "next/link";
 import "./globals.css";
 import AgeGate from "./components/AgeGate";
 import { STORE, storeSchema } from "./lib/storeIdentity";
+import { HOME_TITLE } from "./lib/homeDelivery";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.gascitycannabis.com"),
   title: {
-    default: "GAS CITY CANNABIS | O'Connor Dr Dispensary",
+    default: HOME_TITLE,
     template: "%s | GAS CITY CANNABIS",
   },
   description:
@@ -33,7 +34,7 @@ export const metadata: Metadata = {
     locale: "en_CA",
     url: "https://www.gascitycannabis.com",
     siteName: "GAS CITY CANNABIS",
-    title: "GAS CITY CANNABIS - O'Connor Dr Cannabis Dispensary",
+    title: HOME_TITLE,
     description:
       "Browse flower tiers and cannabis categories at GAS CITY CANNABIS on O'Connor Dr in East York. Open daily 11:00 AM - 3:00 AM.",
     images: [
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GAS CITY CANNABIS - O'Connor Dr Dispensary",
+    title: HOME_TITLE,
     description: "Browse GAS CITY CANNABIS categories at 985 O'Connor Dr in East York.",
     images: ["https://www.gascitycannabis.com/wp-content/uploads/2026/04/46Oi5.jpg"],
   },
