@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./page.module.css";
 import Navbar from "./components/Navbar";
+import HomeDeliverySection from "./components/HomeDeliverySection";
 import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
 import { allFlowers, type FlowerProduct } from "./lib/products";
 import Papa from "papaparse";
+import { HOME_TITLE } from "./lib/homeDelivery";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -226,9 +228,13 @@ export default function HomePage() {
           {/* Brand branding */}
           <div className={styles.brandBlock}>
             <img src="/storeFavicon.webp" alt="GAS CITY CANNABIS Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
-            <h1 className={styles.brandTitle}>GAS CITY CANNABIS</h1>
+            <h1 className={styles.brandTitle}>{HOME_TITLE}</h1>
             <p className={styles.brandSub}>Premium Cannabis Dispensary</p>
             <div className={styles.brandBadge}>Open Daily: 11:00 AM - 3:00 AM</div>
+            <div className={styles.homeMenuActions} aria-label="Choose a Gas City menu">
+              <Link href="/exotic" className={`${styles.homeMenuCta} ${styles.homeMenuPrimary}`}>STORE MENU</Link>
+              <Link href="/delivery" className={`${styles.homeMenuCta} ${styles.homeDeliverySecondary}`}>Delivery</Link>
+            </div>
           </div>
 
           {/* Bento Grid */}
@@ -253,6 +259,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <HomeDeliverySection />
 
       <section className={styles.authoritySection} aria-labelledby="local-guides-heading">
         <div className={styles.container}><div className={styles.sectionHeader}><h2 className={styles.sectionTitle} id="local-guides-heading">Gas City local guides</h2><p className={styles.sectionSubtitle}>Plan an O&apos;Connor Drive visit, compare delivery information, or open the current adult product categories.</p></div><div className={styles.authorityGrid}>{[
