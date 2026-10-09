@@ -1,12 +1,24 @@
+import { getLiveMenu } from "./lib/liveMenu";
 import type { MetadataRoute } from "next";
 import { DELIVERY_GUIDE_REGISTRY, DELIVERY_GUIDE_STORE } from "./lib/deliveryGuideRegistry";
-import { TIER_CONFIG, CATEGORY_CONFIG, allFlowers, allItems } from "./lib/products";
+import { TIER_CONFIG, CATEGORY_CONFIG } from "./lib/products";
 import { SEO_PAGES } from "./lib/seoPages";
 import { RESOURCE_PAGES } from "./resources/resourceData";
 
+// Products come from the same loader as /api/tv-data on every request.
+export const dynamic = "force-dynamic";
+
+// ONE product loader (same as /api/tv-data), filled per request by __loadMenuData(). Grok 2026-10-09.
+let __menu!: Awaited<ReturnType<typeof getLiveMenu>>;
+async function __loadMenuData(): Promise<void> {
+  __menu = await getLiveMenu();
+
+}
+
 const BASE = "https://www.gascitycannabis.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+    await __loadMenuData();
   const now = new Date().toISOString();
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -36,14 +48,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const flowerPages: MetadataRoute.Sitemap = allFlowers.map((f) => ({
+  const flowerPages: MetadataRoute.Sitemap = __menu.flowers.map((f) => ({
     url: `${BASE}/flower/${f.slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
 
-  const itemDetailPages: MetadataRoute.Sitemap = allItems.map((i) => ({
+  const itemDetailPages: MetadataRoute.Sitemap = __menu.items.map((i) => ({
     url: `${BASE}/item/${i.slug}`,
     lastModified: now,
     changeFrequency: "weekly" as const,

@@ -7,9 +7,10 @@ import Navbar from "./components/Navbar";
 import HomeDeliverySection from "./components/HomeDeliverySection";
 import Footer from "./components/Footer";
 import FlowerCard from "./components/FlowerCard";
-import { allFlowers, type FlowerProduct } from "./lib/products";
+import { type FlowerProduct } from "./lib/products";
 import Papa from "papaparse";
 import { HOME_TITLE } from "./lib/homeDelivery";
+import { useLiveFlowers } from "./lib/useLiveMenu";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -100,6 +101,7 @@ interface ReviewStats {
 }
 
 export default function HomePage() {
+    const __liveFlowers = useLiveFlowers();
   const [featuredStrains, setFeaturedStrains] = useState<FlowerProduct[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [reviewsStats, setReviewsStats] = useState<ReviewStats | null>(null);
@@ -165,7 +167,7 @@ export default function HomePage() {
 
   /* ── 2. Build Featured Strains ── */
   useEffect(() => {
-    const pool = [...allFlowers].filter((f) => f.image);
+    const pool = [...__liveFlowers].filter((f) => f.image);
     // Shuffle pool securely
     for (let i = pool.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -186,7 +188,7 @@ export default function HomePage() {
 
     const timer = window.setTimeout(() => setFeaturedStrains(picked), 0);
     return () => window.clearTimeout(timer);
-  }, []);
+  }, [__liveFlowers]);
 
   return (
     <main className={styles.main}>
