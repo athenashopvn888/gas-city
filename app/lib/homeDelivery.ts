@@ -19,3 +19,6 @@ export const HOME_DELIVERY_FAQS = [
   { q: "Do I need photo ID?", a: "Yes. Cannabis browsing, walk-in service, and delivery are for adults 19+ with valid government-issued photo ID." },
   { q: "Are homepage listings a live availability promise?", a: "No. Use the delivery or store menu for current details and confirm a specific item through the store's ordering path." },
 ] as const;
+
+// Document <title> only (exact Google name | area). H1 keeps HOME_TITLE.
+export const HOME_DOC_TITLE = "Gas City Cannabis Dispensary Weed Delivery | East York";
