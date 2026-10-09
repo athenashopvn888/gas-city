@@ -14,7 +14,7 @@ import {
 import { getWebMenuData } from "../../lib/webMenu";
 import styles from "./items.module.css";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 /* ── Generate all category pages ── */
 export function generateStaticParams() {

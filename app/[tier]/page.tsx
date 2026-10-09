@@ -11,7 +11,7 @@ import { TIER_SEO } from "../lib/tierSeoContent";
 import styles from "./tier.module.css";
 import { STORE } from "../lib/storeIdentity";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 /* -- Generate all tier pages at build -- */
 export function generateStaticParams() {
