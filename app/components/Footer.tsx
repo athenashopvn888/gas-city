@@ -53,6 +53,7 @@ export default function Footer() {
               <Link href="/info/nicotine-vapes-toronto">Nicotine Vapes East York</Link>
               <Link href="/resources">Resources</Link>
               <Link href="/faq">FAQ</Link>
+              <Link href="/hours">Store Hours</Link>
               <Link href="/delivery">Delivery Menu</Link>
               <Link href="/visit">Visit Gas City Cannabis</Link>
               <Link href="/weed-dispensary-oconnor-east-york">O&apos;Connor Drive Store Guide</Link>
