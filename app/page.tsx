@@ -195,6 +195,18 @@ export default function HomePage() {
       {/* ── NAVBAR ── */}
       <Navbar />
 
+      {/* ── CIGARETTE PROMO ── */}
+      <section aria-label="Cigarette promotion" style={{ width: "100%" }}>
+        <Link href="/items/cigarettes" data-cig-mix-banner="" aria-label="Shop the 2 packs for $5 mix and match cigarette offer">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/banners/native-cigarette-offer-20260822.webp"
+            alt="2 packs for $5 mix and match and $25 carton cigarette offer at Gas City Cannabis."
+            style={{ display: "block", width: "100%", height: "auto" }}
+          />
+        </Link>
+      </section>
+
       {/* ── WELCOME BANNER ── */}
       {hasWelcomeBanner && !welcomeBannerError && (
         <section className={styles.welcomeBannerSection}>
