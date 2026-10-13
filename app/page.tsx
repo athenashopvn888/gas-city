@@ -195,6 +195,7 @@ export default function HomePage() {
     <main className={styles.main}>
       {/* ── NAVBAR ── */}
       <Navbar />
+      <h1 data-home-store-title="" style={{ margin: 0, padding: "118px 16px 14px", background: "#111827", color: "#ffffff", textAlign: "center", fontSize: "clamp(1.1rem, 3vw, 2rem)", fontWeight: 900, lineHeight: 1.2, position: "relative", zIndex: 60 }}>{HOME_TITLE}</h1>
       <FleetAnnouncementBanner />
 
       {/* ── WELCOME BANNER ── */}
@@ -232,7 +233,6 @@ export default function HomePage() {
           {/* Brand branding */}
           <div className={styles.brandBlock}>
             <img src="/storeFavicon.webp" alt="GAS CITY CANNABIS Icon" style={{ height: "60px", width: "60px", objectFit: "contain", borderRadius: "8px", marginBottom: "8px" }} />
-            <h1 className={styles.brandTitle}>{HOME_TITLE}</h1>
             <p className={styles.brandSub}>Premium Cannabis Dispensary</p>
             <div className={styles.brandBadge}>Open Daily: 11:00 AM - 3:00 AM</div>
             <div className={styles.homeMenuActions} aria-label="Choose a Gas City menu">
