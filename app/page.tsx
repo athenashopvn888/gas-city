@@ -12,6 +12,8 @@ import { type FlowerProduct } from "./lib/products";
 import Papa from "papaparse";
 import { HOME_TITLE } from "./lib/homeDelivery";
 import { useLiveFlowers } from "./lib/useLiveMenu";
+import NearMeFaq from "./components/NearMeFaq";
+import nearMeFaq from "./lib/nearMeFaq.json";
 
 /* ── Bento Mosaic Config ── */
 const BENTO_TIERS = [
@@ -405,6 +407,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      <NearMeFaq id="local-near-me" q={nearMeFaq.home.q} a={nearMeFaq.home.a} />
       {/* ── FAQS SECTION ── */}
       <section className={styles.faqSection}>
         <div className={styles.faqContainer}>
