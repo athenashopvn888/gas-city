@@ -465,3 +465,11 @@ button { cursor: pointer; font-family: inherit; }
   backdrop-filter: blur(16px);
   border: 1px solid var(--border-subtle);
 }
+
+/* Pinned nav: opaque (no content showing through) and above page content, in the store's own nav colour so nav text stays readable. */
+#main-nav {
+  z-index: 1000 !important;
+  background: rgb(0, 0, 0) !important;
+  background-color: rgb(0, 0, 0) !important;
+  backdrop-filter: none !important;
+}
