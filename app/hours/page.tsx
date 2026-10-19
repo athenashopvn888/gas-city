@@ -31,7 +31,7 @@ const jsonLd = {
       name: "Gas City Cannabis",
       url: ORIGIN,
       telephone: "+14374660318",
-      address: { "@type": "PostalAddress", streetAddress: "985 O'Connor Dr", addressLocality: "East York", addressRegion: "ON", postalCode: "M4B 2T1", addressCountry: "CA" },
+      address: { "@type": "PostalAddress", streetAddress: "985 O'Connor Dr", addressLocality: "Toronto", addressRegion: "ON", postalCode: "M4B 2T1", addressCountry: "CA" },
       openingHoursSpecification: [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "11:00", "closes": "03:00"}],
     },
     { "@type": "WebPage", "@id": `${PAGE_URL}#webpage`, url: PAGE_URL, name: TITLE, description: DESCRIPTION, about: { "@id": "https://www.gascitycannabis.com/#store" } },
