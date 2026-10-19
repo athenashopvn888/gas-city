@@ -1,3 +1,4 @@
+import FullNameNap from "./components/FullNameNap";
 import PinnedNavClearance from "./components/PinnedNavClearance";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -76,6 +77,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
   { ...storeSchema(), additionalType: "https://schema.org/Store",
+  name: "Gas City Cannabis Dispensary Weed Delivery",
+  alternateName: "Gas City Cannabis",
   description: "Cannabis dispensary at 985 O'Connor Dr in East York, ON, with category browsing and store information for adults 19+.",
   url: "https://www.gascitycannabis.com",
   telephone: "+14374660318",
@@ -84,7 +87,7 @@ const jsonLd = {
   address: {
     "@type": "PostalAddress",
     streetAddress: "985 O'Connor Dr",
-    addressLocality: "East York",
+    addressLocality: "Toronto",
     addressRegion: "ON",
     postalCode: "M4B 2T1",
     addressCountry: "CA",
@@ -96,9 +99,9 @@ const jsonLd = {
   },
   sameAs: [
     "https://www.gascitycannabis.com/",
-    "https://www.gascitycannabis.com/",
+    "https://www.google.com/maps/place/?q=place_id:ChIJXS-WHh_N1IkR7ZP8wWjQBTk",
   ],
-  hasMap: "https://www.gascitycannabis.com/",
+  hasMap: "https://www.google.com/maps/place/?q=place_id:ChIJXS-WHh_N1IkR7ZP8wWjQBTk",
   areaServed: {
     "@type": "City",
     name: "East York",
@@ -146,6 +149,7 @@ export default function RootLayout({
           NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
         </Link>
         {children}
+        <FullNameNap />
         <PinnedNavClearance />
       </body>
     </html>
