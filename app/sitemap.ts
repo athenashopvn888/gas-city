@@ -80,5 +80,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const deliveryGuidePages: MetadataRoute.Sitemap = DELIVERY_GUIDE_REGISTRY.map((guide) => ({ url: `https://${DELIVERY_GUIDE_STORE.domain}/guides/${guide.slug}`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.75 }));
   const strainGuidePages: MetadataRoute.Sitemap = [`${BASE}/guides`, ...STRAIN_GUIDES.map((guide) => `${BASE}/guides/${guide.slug}`)].map((url) => ({ url, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.7 }));
-  return [...deliveryGuidePages, ...strainGuidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages];
+  const packagingRecyclingArticle: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/cannabis-packaging-recycling-toronto`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
+  return [...deliveryGuidePages, ...strainGuidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages, ...packagingRecyclingArticle];
 }
