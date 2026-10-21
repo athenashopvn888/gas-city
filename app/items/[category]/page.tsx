@@ -1,4 +1,5 @@
 import CigaretteSeasonalNotice from "../../components/CigaretteSeasonalNotice";
+import { SHOW_CIGARETTES, isCigaretteCategory, isPreservedSmokeItem } from "../../lib/siteConfig";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import fs from "fs";
@@ -63,6 +64,11 @@ export default async function ItemsCategoryPage({
     const existingIds = new Set(items.map(i => i.sku));
     const uniqueAccessories = accessories.filter(a => !existingIds.has(a.sku));
     items = [...items, ...uniqueAccessories];
+  }
+  if (!SHOW_CIGARETTES && catInfo.key === "ADD ONS") {
+    const preserved = menuItems.filter((item) => isPreservedSmokeItem(item) && isCigaretteCategory(item.category));
+    const existingIds = new Set(items.map((item) => item.sku));
+    items = [...items, ...preserved.filter((item) => !existingIds.has(item.sku)).map((item) => ({ ...item, category: "ADD ONS" }))];
   }
   const { config } = catInfo;
   const categoryBanner = resolveItemBanner(catSlug, config.banner);

@@ -40,9 +40,7 @@ import itemsJson from "./items.json";
 import type { BoardDeal } from "./flowerDeals";
 
 export const allFlowers: FlowerProduct[] = flowersJson as FlowerProduct[];
-export const allItems: ItemProduct[] = SHOW_CIGARETTES
-  ? itemsJson as ItemProduct[]
-  : (itemsJson as ItemProduct[]).filter((item) => !isCigaretteCategory(item.category));
+export const allItems: ItemProduct[] = filterCigaretteItems(itemsJson as ItemProduct[]);
 
 /* ── Live stock fetch from Apps Script ── */
 // Shared fleet menu feed (no Gmail on requests). Read ONLY from MENU_FEED_URL; the legacy

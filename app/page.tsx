@@ -1,6 +1,6 @@
 "use client";
 
-import { cigaretteSafeContent } from "./lib/siteConfig";
+import { SHOW_CIGARETTES, cigaretteSafeContent, filterCigaretteEntries } from "./lib/siteConfig";
 
 import { FULL_NAME_NAP } from "./lib/fullNameNap";
 
@@ -74,6 +74,14 @@ const EXPLORE_CATEGORIES = cigaretteSafeContent([
   { name: "Accessories", slug: "items/add-ons", banner: "/banners/05_Accessories.webp", icon: "➕" },
   { name: "Cigarettes", slug: "items/cigarettes", banner: "/banners/native-cigarette-offer-20260822.webp", icon: "🏷️" },
   { name: "Magic Stuff", slug: "items/magic", banner: "/banners/09_Magic_Stuff.webp", icon: "🍄" },
+]);
+
+const LOCAL_GUIDES = filterCigaretteEntries([
+  { label: "Weed dispensary on O'Connor Drive", href: "/weed-dispensary-oconnor-east-york" },
+  { label: "Weed delivery information", href: "/delivery" },
+  { label: "Native cigarettes in East York", href: "/native-cigarettes-oconnor-east-york" },
+  { label: "Nicotine vapes in East York", href: "/nicotine-vape-oconnor-east-york" },
+  { label: "Address, hours and map", href: "/visit" },
 ]);
 
 /* ── Local FAQs for Jane St ── */
@@ -274,13 +282,7 @@ export default function HomePage() {
       <HomeDeliverySection />
 
       <section className={styles.authoritySection} aria-labelledby="local-guides-heading">
-        <div className={styles.container}><div className={styles.sectionHeader}><h2 className={styles.sectionTitle} id="local-guides-heading">Gas City local guides</h2><p className={styles.sectionSubtitle}>Plan an O&apos;Connor Drive visit, compare delivery information, or open the current adult product categories.</p></div><div className={styles.authorityGrid}>{[
-          ["Weed dispensary on O'Connor Drive", "/weed-dispensary-oconnor-east-york"],
-          ["Weed delivery information", "/delivery"],
-          ["Native cigarettes in East York", "/native-cigarettes-oconnor-east-york"],
-          ["Nicotine vapes in East York", "/nicotine-vape-oconnor-east-york"],
-          ["Address, hours and map", "/visit"],
-        ].map(([label,href])=><Link key={href} href={href} className={styles.authorityCard}>{label}<span>→</span></Link>)}</div></div>
+        <div className={styles.container}><div className={styles.sectionHeader}><h2 className={styles.sectionTitle} id="local-guides-heading">Gas City local guides</h2><p className={styles.sectionSubtitle}>Plan an O&apos;Connor Drive visit, compare delivery information, or open the current adult product categories.</p></div><div className={styles.authorityGrid}>{LOCAL_GUIDES.map(({ label, href }) => <Link key={href} href={href} className={styles.authorityCard}>{label}<span>→</span></Link>)}</div></div>
       </section>
 
       {/* ── EXPLORE CATEGORIES ── */}
@@ -342,7 +344,9 @@ export default function HomePage() {
           <div className={styles.seoPanel}>
             <h2 className={styles.seoPanelTitle}>Shop The Menu With A Plan</h2>
             <p className={styles.seoPanelText}>
-              Start with the store page, then choose the product category that fits the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently.
+              {SHOW_CIGARETTES
+                ? "Start with the store page, then choose the product category that fits the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently."
+                : "Start with the store page, then choose the product category that fits the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories each shop differently."}
             </p>
             <p className={styles.seoPanelText}>
               If cheap weed or affordable weed is the goal, start with Budget and AA flower before moving up. If premium flower or exotic flower is the mood, open those lanes first and compare the current details there.
