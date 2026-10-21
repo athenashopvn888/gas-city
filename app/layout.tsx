@@ -1,3 +1,4 @@
+import { cigaretteSafeContent } from "./lib/siteConfig";
 import FullNameNap from "./components/FullNameNap";
 import PinnedNavClearance from "./components/PinnedNavClearance";
 import type { Metadata } from "next";
@@ -6,7 +7,7 @@ import "./globals.css";
 import { STORE, storeSchema } from "./lib/storeIdentity";
 import { HOME_DOC_TITLE } from "./lib/homeDelivery";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = cigaretteSafeContent({
   metadataBase: new URL("https://www.gascitycannabis.com"),
   title: {
     default: HOME_DOC_TITLE,
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
   verification: {
     // google: "your-google-verification-code",
   },
-};
+});
 
 /* JSON-LD Structured Data */
 const jsonLd = {
@@ -130,7 +131,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(cigaretteSafeContent(jsonLd)).replace(/</g, "\\u003c") }}
         />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-T74HZ36EV9"></script>
         <script

@@ -1,3 +1,4 @@
+import { SHOW_CIGARETTES } from "../lib/siteConfig";
 import Link from "next/link";
 import styles from "./Footer.module.css";
 
@@ -48,7 +49,7 @@ export default function Footer() {
               <Link href="/aa">AA Flower</Link>
               <Link href="/budget">Budget Flower</Link>
               <Link href="/items/edibles">Edibles</Link>
-              <Link href="/items/cigarettes">Cigarettes</Link>
+              {SHOW_CIGARETTES ? (<Link href="/items/cigarettes">Cigarettes</Link>) : null}
               <Link href="/items/vapes">Vape Pens</Link>
               <Link href="/info/nicotine-vapes-toronto">Nicotine Vapes East York</Link>
               <Link href="/resources">Resources</Link>
@@ -57,11 +58,11 @@ export default function Footer() {
               <Link href="/delivery">Delivery Menu</Link>
               <Link href="/visit">Visit Gas City Cannabis</Link>
               <Link href="/weed-dispensary-oconnor-east-york">O&apos;Connor Drive Store Guide</Link>
-              <Link href="/native-cigarettes-oconnor-east-york">Native Cigarettes East York</Link>
+              {SHOW_CIGARETTES ? (<Link href="/native-cigarettes-oconnor-east-york">Native Cigarettes East York</Link>) : null}
               <Link href="/nicotine-vape-oconnor-east-york">Nicotine Vapes East York</Link>
               <Link href="/info/toronto-weed-dispensary">East York Dispensary</Link>
               <Link href="/info/cheap-weed-toronto">Value Guide East York</Link>
-              <Link href="/info/native-cigarettes-toronto">Native Cigarettes</Link>
+              {SHOW_CIGARETTES ? (<Link href="/info/native-cigarettes-toronto">Native Cigarettes</Link>) : null}
               <Link href="/info/weed-store-near-east-york-o-connor">Weed Store Near East York</Link>
               <Link href="/weed-dispensary-toronto/">GAS CITY CANNABIS Weed Dispensary in East York</Link>
               <Link href="/contact">Contact Us</Link>
