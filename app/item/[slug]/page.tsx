@@ -1,4 +1,5 @@
 import { getLiveMenu } from "../../lib/liveMenu";
+import { SHOW_CIGARETTES, isPreservedSmokeItem } from "../../lib/siteConfig";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -96,8 +97,7 @@ function getJsonLd(item: ItemProduct) {
 }
 
 /* -- Breadcrumb JSON-LD -- */
-function getBreadcrumbJsonLd(item: ItemProduct) {
-  const catSlug = item.category.toLowerCase().replace(' ', '-');
+function getBreadcrumbJsonLd(item: ItemProduct, categoryHref: string, categoryLabel: string) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -111,8 +111,8 @@ function getBreadcrumbJsonLd(item: ItemProduct) {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": item.category,
-        "item": `https://www.gascitycannabis.com/items/${catSlug}`
+        "name": categoryLabel,
+        "item": `https://www.gascitycannabis.com${categoryHref}`
       },
       {
         "@type": "ListItem",
@@ -139,6 +139,9 @@ export default async function ItemPage({
   const catInfo = Object.values(CATEGORY_CONFIG).find(c => c.name.toUpperCase() === item.category.toUpperCase() || c.name === item.category);
   const catColor = catInfo?.color || "#94a3b8";
   const catIcon = catInfo?.icon || "🏷️";
+  const preservedOnAccessories = !SHOW_CIGARETTES && isPreservedSmokeItem(item);
+  const categoryHref = preservedOnAccessories ? "/items/add-ons" : `/items/${catInfo?.slug || item.category.toLowerCase().replace(" ", "-")}`;
+  const categoryLabel = preservedOnAccessories ? "Accessories" : item.category;
   
   const itemData = getItemData(item.category, item.name);
 
@@ -150,7 +153,7 @@ export default async function ItemPage({
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbJsonLd(item)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(getBreadcrumbJsonLd(item, categoryHref, categoryLabel)) }}
       />
 
       <main className={styles.main}>
@@ -161,7 +164,7 @@ export default async function ItemPage({
           <nav className={styles.breadcrumb}>
             <Link href="/">Home</Link>
             <span>/</span>
-            <Link href={`/items/${catInfo?.slug || item.category.toLowerCase().replace(' ', '-')}`}>{item.category}</Link>
+            <Link href={categoryHref}>{categoryLabel}</Link>
             <span>/</span>
             <span className={styles.breadcrumbCurrent}>{item.name}</span>
           </nav>
@@ -186,7 +189,7 @@ export default async function ItemPage({
             {/* -- Details -- */}
             <div className={styles.details}>
               <div className={styles.tierBadge} style={{ color: catColor, borderColor: `${catColor}33`, background: `${catColor}10` }}>
-                {catIcon} {item.category}
+                {catIcon} {categoryLabel}
               </div>
 
               <h1 className={styles.strainName}>{item.name}</h1>
