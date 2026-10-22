@@ -2,8 +2,8 @@
 
 import { SHOW_CIGARETTES } from "../lib/siteConfig";
 
-import { isNicotineItem } from "../tv/flashMessages";
-import { CIGARETTE_FLASH_MESSAGE, isCigaretteFlashWindow } from "../tv/flashMessages";
+import { isCigaretteFlashHour, isNicotineItem } from "../tv/flashMessages";
+import { useCigaretteState } from "../components/CigaretteStateProvider";
 import { useState, useEffect, useCallback, useRef } from "react";
 import styles from "./tv2.module.css";
 import HiringRibbon from "../components/HiringRibbon";
@@ -188,16 +188,18 @@ const TICKER_SLIDES = [
 ];
 
 function VerticalTicker() {
+  const cig = useCigaretteState();
   const [activeIdx, setActiveIdx] = useState(0);
   const [exitIdx, setExitIdx] = useState(-1);
-  const [showCigaretteFlash, setShowCigaretteFlash] = useState(() => isCigaretteFlashWindow());
-  const slides = showCigaretteFlash ? [CIGARETTE_FLASH_MESSAGE, ...TICKER_SLIDES] : TICKER_SLIDES;
+  const [showCigaretteFlash, setShowCigaretteFlash] = useState(() => cig.tv && isCigaretteFlashHour());
+  const flash = cig.wording.tickerLine1;
+  const slides = showCigaretteFlash && flash ? [flash, ...TICKER_SLIDES] : TICKER_SLIDES;
 
   useEffect(() => {
-    const update = () => setShowCigaretteFlash(isCigaretteFlashWindow());
+    const update = () => setShowCigaretteFlash(cig.tv && isCigaretteFlashHour());
     const iv = setInterval(update, 60_000);
     return () => clearInterval(iv);
-  }, []);
+  }, [cig.tv]);
   useEffect(() => {
     const iv = setInterval(() => {
       setExitIdx(activeIdx);
@@ -222,6 +224,7 @@ function VerticalTicker() {
 
 /* -- MAIN TV2 PAGE -- */
 export default function TV2Page() {
+  const cards = useCigaretteState().tv ? CARD_CONFIG_RAW : CARD_CONFIG;
   const theme = getTvTheme(tvHiring?.store);
   const [bgUrl, setBgUrl] = useState("");
   useEffect(() => {
@@ -263,11 +266,11 @@ export default function TV2Page() {
       setItems(data);
       setStockUpdated(readStockUpdatedAt(res, data));
       const hi: Record<string,number> = {};
-      CARD_CONFIG.forEach(c => { hi[c.id] = 0; });
+      cards.forEach(c => { hi[c.id] = 0; });
       setHighlights(hi);
       setLastUpdate(formatBoardTime(new Date()) || "");
     } catch (err) { console.warn("[TV2] Load failed:", err); }
-  }, []);
+  }, [cards]);
 
   const fitToScreen = useCallback(() => {
     if (!wrapRef.current) return;
@@ -290,7 +293,7 @@ export default function TV2Page() {
     const interval = setInterval(() => {
       setHighlights(prev => {
         const next = {...prev};
-        CARD_CONFIG.forEach(c => {
+        cards.forEach(c => {
           const filtered = items.filter(c.filter);
           next[c.id] = ((prev[c.id]||0) + 1) % Math.max(1, filtered.length);
         });
@@ -298,7 +301,7 @@ export default function TV2Page() {
       });
     }, 5000);
     return () => clearInterval(interval);
-  }, [items]);
+  }, [items, cards]);
 
   return (
     <div
@@ -314,7 +317,7 @@ export default function TV2Page() {
         <div className={styles.stage}>
           <HiringRibbon hiring={tvHiring} />
           <div className={styles.grid}>
-            {CARD_CONFIG.map(card => {
+            {cards.map(card => {
               const filtered = items.filter(card.filter).filter(it => !(daytime && isNicotineItem(it)));
               const promo = getTv2DaytimePromo(card.id, daytime, promoElapsedMs);
 
