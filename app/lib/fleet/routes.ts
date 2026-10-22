@@ -1,3 +1,5 @@
+import { FLEET_ARTICLES_PATH } from "./config.ts";
+
 /** Paths revalidated when a content bundle is published. */
 export const FLEET_AFFECTED_PATHS = [
   "/",
@@ -24,8 +26,12 @@ export const FLEET_AFFECTED_PATHS = [
   "/delivery",
   "/guides",
   "/resources",
+  FLEET_ARTICLES_PATH,
   "/native-cigarettes-oconnor-east-york",
   "/nicotine-vape-oconnor-east-york",
   "/weed-dispensary-oconnor-east-york",
   "/weed-dispensary-toronto",
 ] as const;
+
+/** Dynamic article pages. Passed to revalidatePath with type "page". */
+export const FLEET_DYNAMIC_PATHS = ["/articles/[slug]"] as const;

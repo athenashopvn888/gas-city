@@ -1,5 +1,5 @@
 import {
-  FLEET_DOMAIN,
+  FLEET_DOMAINS,
   FLEET_MAX_BUNDLE_BYTES,
   FLEET_SCHEMA_VERSION,
   FLEET_STORE_CODE,
@@ -32,7 +32,7 @@ function hasIdentity(record: Record<string, unknown>, keys: readonly string[]): 
 
 function domainMatches(domain: string): boolean {
   const host = domain.trim().toLowerCase().replace(/^https?:\/\//, "").replace(/\/.*$/, "");
-  return host === FLEET_DOMAIN || host === "gascitycannabis.com";
+  return (FLEET_DOMAINS as readonly string[]).includes(host);
 }
 
 function versionOrder(bundle: ContentBundle, previous: ContentBundle | null): RejectReason | null {
@@ -49,8 +49,7 @@ function versionOrder(bundle: ContentBundle, previous: ContentBundle | null): Re
 function imageHostAllowed(host: string): boolean {
   return host.endsWith(".blob.vercel-storage.com")
     || host.endsWith(".public.blob.vercel-storage.com")
-    || host === FLEET_DOMAIN
-    || host === "gascitycannabis.com"
+    || (FLEET_DOMAINS as readonly string[]).includes(host)
     || host === "athena-cannabis-images.vercel.app"
     || host.endsWith(".r2.dev");
 }
@@ -73,7 +72,7 @@ export function imageUrlAllowed(value: unknown): boolean {
 
 function slotsHaveSafeImages(slots: ContentSlot[] | undefined): boolean {
   if (!slots) return true;
-  return slots.every((slot) => imageUrlAllowed(slot.image));
+  return slots.every((slot) => imageUrlAllowed(slot.image) && imageUrlAllowed(slot.offImage));
 }
 
 export function parseBundle(raw: string, previous: ContentBundle | null = null): AcceptResult<ContentBundle> {
