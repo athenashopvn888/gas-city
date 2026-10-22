@@ -1,6 +1,10 @@
 "use client";
 
-import { SHOW_CIGARETTES, cigaretteSafeContent, filterCigaretteEntries } from "./lib/siteConfig";
+import { filterCigaretteEntries } from "./lib/siteConfig";
+import { useCigaretteState } from "./components/CigaretteStateProvider";
+import { useFleetContent } from "./components/FleetContentProvider";
+import FleetSheetImage from "./components/FleetSheetImage";
+import { bannerMatchesCoded } from "./lib/fleet/resolve";
 
 import { FULL_NAME_NAP } from "./lib/fullNameNap";
 
@@ -66,7 +70,7 @@ const BENTO_TIERS = [
 ];
 
 /* ── Explore Categories Config (New Banners) ── */
-const EXPLORE_CATEGORIES = cigaretteSafeContent([
+const EXPLORE_CATEGORIES_RAW = [
   { name: "Vape Pens", slug: "items/vapes", banner: "/banners/01_Vape_Pens.webp", icon: "💨" },
   { name: "Nic Vape", slug: "items/vape-disposables", banner: "/banners/02_Vape_Disposable.webp", icon: "💨" },
   { name: "Concentrates", slug: "items/concentrates", banner: "/banners/03_Concentrates.webp", icon: "💎" },
@@ -74,15 +78,15 @@ const EXPLORE_CATEGORIES = cigaretteSafeContent([
   { name: "Accessories", slug: "items/add-ons", banner: "/banners/05_Accessories.webp", icon: "➕" },
   { name: "Cigarettes", slug: "items/cigarettes", banner: "/banners/native-cigarette-offer-20260822.webp", icon: "🏷️" },
   { name: "Magic Stuff", slug: "items/magic", banner: "/banners/09_Magic_Stuff.webp", icon: "🍄" },
-]);
+];
 
-const LOCAL_GUIDES = filterCigaretteEntries([
+const LOCAL_GUIDES_RAW = [
   { label: "Weed dispensary on O'Connor Drive", href: "/weed-dispensary-oconnor-east-york" },
   { label: "Weed delivery information", href: "/delivery" },
   { label: "Native cigarettes in East York", href: "/native-cigarettes-oconnor-east-york" },
   { label: "Nicotine vapes in East York", href: "/nicotine-vape-oconnor-east-york" },
   { label: "Address, hours and map", href: "/visit" },
-]);
+];
 
 /* ── Local FAQs for Jane St ── */
 const LOCAL_FAQS = [
@@ -117,6 +121,12 @@ interface ReviewStats {
 
 export default function HomePage() {
     const __liveFlowers = useLiveFlowers();
+  const web = useCigaretteState().web;
+  const fleet = useFleetContent();
+  const exploreCategories = web ? EXPLORE_CATEGORIES_RAW : filterCigaretteEntries(EXPLORE_CATEGORIES_RAW);
+  const localGuides = web ? LOCAL_GUIDES_RAW : filterCigaretteEntries(LOCAL_GUIDES_RAW);
+  const welcome = fleet.banners.find((banner) => banner.id === "welcome");
+  const welcomeOverride = fleet.active && welcome && !bannerMatchesCoded(welcome) ? welcome : null;
   const [featuredStrains, setFeaturedStrains] = useState<FlowerProduct[]>([]);
   const [reviews, setReviews] = useState<Review[]>([]);
   const [reviewsStats, setReviewsStats] = useState<ReviewStats | null>(null);
@@ -214,7 +224,13 @@ export default function HomePage() {
       <FleetAnnouncementBanner />
 
       {/* ── WELCOME BANNER ── */}
-      {hasWelcomeBanner && !welcomeBannerError && (
+      {welcomeOverride?.hidden ? null : welcomeOverride ? (
+        <section className={styles.welcomeBannerSection}>
+          <div className={styles.welcomeBannerContainer}>
+            <FleetSheetImage banner={welcomeOverride} className={styles.welcomeBannerImg} imageStyle={{ width: "100%", height: "auto", display: "block" }} />
+          </div>
+        </section>
+      ) : hasWelcomeBanner && !welcomeBannerError && (
         <section className={styles.welcomeBannerSection}>
           <div className={styles.welcomeBannerContainer}>
             <img
@@ -282,7 +298,7 @@ export default function HomePage() {
       <HomeDeliverySection />
 
       <section className={styles.authoritySection} aria-labelledby="local-guides-heading">
-        <div className={styles.container}><div className={styles.sectionHeader}><h2 className={styles.sectionTitle} id="local-guides-heading">Gas City local guides</h2><p className={styles.sectionSubtitle}>Plan an O&apos;Connor Drive visit, compare delivery information, or open the current adult product categories.</p></div><div className={styles.authorityGrid}>{LOCAL_GUIDES.map(({ label, href }) => <Link key={href} href={href} className={styles.authorityCard}>{label}<span>→</span></Link>)}</div></div>
+        <div className={styles.container}><div className={styles.sectionHeader}><h2 className={styles.sectionTitle} id="local-guides-heading">Gas City local guides</h2><p className={styles.sectionSubtitle}>Plan an O&apos;Connor Drive visit, compare delivery information, or open the current adult product categories.</p></div><div className={styles.authorityGrid}>{localGuides.map(({ label, href }) => <Link key={href} href={href} className={styles.authorityCard}>{label}<span>→</span></Link>)}</div></div>
       </section>
 
       {/* ── EXPLORE CATEGORIES ── */}
@@ -296,7 +312,7 @@ export default function HomePage() {
           </div>
 
           <div className={styles.categoriesGrid}>
-            {EXPLORE_CATEGORIES.map((cat) => (
+            {exploreCategories.map((cat) => (
               <Link
                 key={cat.slug}
                 href={`/${cat.slug}`}
@@ -344,7 +360,7 @@ export default function HomePage() {
           <div className={styles.seoPanel}>
             <h2 className={styles.seoPanelTitle}>Shop The Menu With A Plan</h2>
             <p className={styles.seoPanelText}>
-              {SHOW_CIGARETTES
+              {web
                 ? "Start with the store page, then choose the product category that fits the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, accessories, and cigarettes each shop differently."
                 : "Start with the store page, then choose the product category that fits the visit. Flower, pre-rolls, edibles, THC vapes, concentrates, and accessories each shop differently."}
             </p>

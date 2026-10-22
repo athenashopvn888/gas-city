@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import styles from "./contact.module.css";
+import { CODED_PAGES } from "../lib/fleet/coded";
+import { getFleetContent } from "../lib/fleetContent";
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Contact Us — GAS CITY CANNABIS | 985 O'Connor Dr, East York",
   description:
     "Visit GAS CITY CANNABIS at 985 O'Connor Dr, East York, ON M4B 2T1. Use this page for store contact and visit information.",
@@ -16,6 +18,31 @@ export const metadata: Metadata = {
       "985 O'Connor Dr, East York, ON M4B 2T1. Use this page for store contact and visit information.",
   },
 };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  const contact = fleet.pages.Contact;
+  const coded = CODED_PAGES.Contact;
+  if (
+    !contact
+    || (contact.description === coded.description
+      && contact.metaTitle === coded.metaTitle
+      && contact.metaDescription === coded.metaDescription)
+  ) {
+    return metadata;
+  }
+  const description = contact.metaDescription || contact.description;
+  return {
+    ...metadata,
+    ...(contact.metaTitle ? { title: { absolute: contact.metaTitle } } : {}),
+    description,
+    openGraph: {
+      ...metadata.openGraph,
+      ...(contact.metaTitle ? { title: contact.metaTitle } : {}),
+      description,
+    },
+  };
+}
 
 export default function ContactPage() {
   return (

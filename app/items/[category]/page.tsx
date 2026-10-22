@@ -1,5 +1,8 @@
 import CigaretteSeasonalNotice from "../../components/CigaretteSeasonalNotice";
+import CigaretteUnavailable from "../../components/CigaretteUnavailable";
 import { SHOW_CIGARETTES, isCigaretteCategory, isPreservedSmokeItem } from "../../lib/siteConfig";
+import { getCigaretteAccess } from "../../lib/cigaretteFeed";
+import { getFleetContent } from "../../lib/fleetContent";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import fs from "fs";
@@ -53,6 +56,20 @@ export default async function ItemsCategoryPage({
   params: Promise<{ category: string }>;
 }) {
   const { category: catSlug } = await params;
+  if (catSlug === "cigarettes") {
+    const fleet = await getFleetContent();
+    if ((await getCigaretteAccess(fleet.active)) === "unavailable") {
+      return (
+        <main className={styles.main}>
+          <Navbar />
+          <div style={{ paddingTop: 120 }}>
+            <CigaretteUnavailable />
+          </div>
+          <Footer />
+        </main>
+      );
+    }
+  }
   const catInfo = getCategoryFromSlug(catSlug);
   if (!catInfo) notFound();
 

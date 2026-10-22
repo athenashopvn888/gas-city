@@ -1,6 +1,7 @@
 "use client";
 
 import { filterCigaretteEntries } from "../lib/siteConfig";
+import { useCigaretteState } from "./CigaretteStateProvider";
 
 
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -30,6 +31,7 @@ const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const links = useCigaretteState().web ? ALL_LINKS : filterCigaretteEntries(ALL_LINKS);
   const isStoreMenuActive = ["/exotic", "/premium", "/aaa", "/aa", "/budget"].includes(pathname);
   const isDeliveryActive = pathname === "/delivery";
   const scrollBarRef = useRef<HTMLDivElement>(null);
@@ -69,7 +71,7 @@ export default function Navbar() {
       <div className={styles.scrollShell}>
         <div ref={scrollBarRef} id="store-menu-scrollbar" className={styles.scrollBar}>
           <div className={styles.scrollInner}>
-          {filterCigaretteEntries(ALL_LINKS).map((link) => {
+          {links.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link

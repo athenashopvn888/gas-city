@@ -1,8 +1,14 @@
-import { SHOW_CIGARETTES } from "../lib/siteConfig";
+"use client";
+
 import CigaretteSeasonalNotice from "./CigaretteSeasonalNotice";
 import { Fragment } from "react";
 import Link from "next/link";
 import HalloweenNotice from "./HalloweenNotice";
+import FleetSheetImage from "./FleetSheetImage";
+import { useCigaretteState } from "./CigaretteStateProvider";
+import { useFleetContent } from "./FleetContentProvider";
+import { bannerMatchesCoded } from "../lib/fleet/resolve";
+import type { ResolvedBanner } from "../lib/fleet/types";
 
 const STORE_NAME = "Gas City Cannabis";
 const THEME = { accent: "#f59e0b", background: "#170b03" };
@@ -12,22 +18,48 @@ const promosRaw = [
   { key: "cigarettes", href: "/items/cigarettes", image: "/banners/core-cigarette-mix-match.webp", alt: `${STORE_NAME} 2 packs for $5 mix and match and $25 carton cigarette offer`, caption: "2 PACKS $5 / $25 CARTON" },
   { key: "premium-cigarettes", href: "/items/cigarettes", image: "/banners/core-premium-cigarettes.webp", alt: `${STORE_NAME} BB Full Flavor and Lights, Marlboro and Belmont cigarettes`, caption: "BB Full Flavor + Lights 2 packs $5 · Marlboro & Belmont $10/pack" },
 ] as const;
-const promos = SHOW_CIGARETTES
-  ? promosRaw
-  : promosRaw.filter((promo) => !/cigarette|marlboro|belmont/i.test(`${promo.key} ${promo.href} ${promo.alt} ${promo.caption}`));
-
 const STORE_ORIGIN = "https://www.gascitycannabis.com";
-const bannerImageObjects = promos.map((promo) => ({ "@type": "ImageObject", name: promo.alt, contentUrl: `${STORE_ORIGIN}${promo.image}`, description: `${promo.alt} at ${STORE_NAME}.`, caption: promo.caption }));
+
+function visiblePromos(web: boolean) {
+  return web
+    ? promosRaw
+    : promosRaw.filter((promo) => !/cigarette|marlboro|belmont/i.test(`${promo.key} ${promo.href} ${promo.alt} ${promo.caption}`));
+}
 
 const figureStyle = { margin: 0, width: "100%" } as const;
 const imageStyle = { display: "block", width: "100%", maxWidth: "100%", height: "auto" } as const;
 const captionStyle = { margin: 0, padding: "10px 14px", background: "#111827", color: "#ffffff", textAlign: "center" as const, fontWeight: 800, lineHeight: 1.35 };
 
+function sheetOverride(banners: ResolvedBanner[], id: ResolvedBanner["id"]): ResolvedBanner | "hidden" | null {
+  const banner = banners.find((entry) => entry.id === id);
+  if (!banner || bannerMatchesCoded(banner)) return null;
+  if (banner.hidden) return "hidden";
+  return banner;
+}
+
 export default function FleetAnnouncementBanner() {
+  const web = useCigaretteState().web;
+  const fleet = useFleetContent();
+  const promos = visiblePromos(web);
+  const bannerImageObjects = promos.map((promo) => ({ "@type": "ImageObject", name: promo.alt, contentUrl: `${STORE_ORIGIN}${promo.image}`, description: `${promo.alt} at ${STORE_NAME}.`, caption: promo.caption }));
   return (
     <aside data-fleet-homepage-announcement="" aria-label="Store promotions" style={{ display: "flex", flexDirection: "column", width: "100%", maxWidth: "100%", height: "auto", minHeight: 0, overflow: "visible", position: "relative", zIndex: 50 }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": bannerImageObjects }).replace(/</g, "\\u003c") }} />
-      {promos.map((promo) => (
+      {promos.map((promo) => {
+        const override = fleet.active ? sheetOverride(fleet.banners, promo.key) : null;
+        if (override === "hidden") return null;
+        if (override) {
+          return (
+            <Fragment key={promo.key}>
+              {promo.key === "cigarettes" && <CigaretteSeasonalNotice />}
+              <figure data-core-banner={promo.key} style={{ ...figureStyle, boxShadow: `inset 0 0 0 2px ${THEME.accent}` }}>
+                <FleetSheetImage banner={override} imageStyle={imageStyle} linkStyle={{ display: "block", width: "100%", background: THEME.background }} />
+                <figcaption style={{ ...captionStyle, borderBottom: `3px solid ${THEME.accent}` }}>{override.textBar}</figcaption>
+              </figure>
+            </Fragment>
+          );
+        }
+        return (
         <Fragment key={promo.key}>
         {promo.key === "cigarettes" && <CigaretteSeasonalNotice />}
         <figure data-core-banner={promo.key} style={{ ...figureStyle, boxShadow: `inset 0 0 0 2px ${THEME.accent}` }}>
@@ -46,7 +78,8 @@ export default function FleetAnnouncementBanner() {
           <figcaption style={{ ...captionStyle, borderBottom: `3px solid ${THEME.accent}` }}>{promo.caption}</figcaption>
         </figure>
         </Fragment>
-      ))}
+        );
+      })}
       <HalloweenNotice storeName={STORE_NAME} />
     </aside>
   );

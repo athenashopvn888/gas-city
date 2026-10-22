@@ -1,13 +1,20 @@
 import { cigaretteSafeContent } from "./lib/siteConfig";
+import CigaretteStateProvider from "./components/CigaretteStateProvider";
+import FleetContentProvider from "./components/FleetContentProvider";
 import FullNameNap from "./components/FullNameNap";
 import PinnedNavClearance from "./components/PinnedNavClearance";
 import type { Metadata } from "next";
 import Link from "next/link";
 import "./globals.css";
+import { getPublicCigaretteFlags } from "./lib/cigaretteFeed";
+import { CODED_PAGES } from "./lib/fleet/coded";
+import { getFleetContent } from "./lib/fleetContent";
 import { STORE, storeSchema } from "./lib/storeIdentity";
 import { HOME_DOC_TITLE } from "./lib/homeDelivery";
 
-export const metadata: Metadata = cigaretteSafeContent({
+export const revalidate = 300;
+
+const metadata: Metadata = cigaretteSafeContent({
   metadataBase: new URL("https://www.gascitycannabis.com"),
   title: {
     default: HOME_DOC_TITLE,
@@ -73,6 +80,30 @@ export const metadata: Metadata = cigaretteSafeContent({
   },
 });
 
+export async function generateMetadata(): Promise<Metadata> {
+  const fleet = await getFleetContent();
+  const home = fleet.pages.Home;
+  const coded = CODED_PAGES.Home;
+  if (
+    home.description === coded.description
+    && home.metaTitle === coded.metaTitle
+    && home.metaDescription === coded.metaDescription
+  ) {
+    return metadata;
+  }
+  const description = home.metaDescription || home.description;
+  return {
+    ...metadata,
+    ...(home.metaTitle ? { title: { absolute: home.metaTitle } } : {}),
+    description,
+    openGraph: {
+      ...metadata.openGraph,
+      ...(home.metaTitle ? { title: home.metaTitle } : {}),
+      description,
+    },
+  };
+}
+
 /* JSON-LD Structured Data */
 const jsonLd = {
   "@context": "https://schema.org",
@@ -111,14 +142,17 @@ const jsonLd = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const fleet = await getFleetContent();
+  const cigarettes = await getPublicCigaretteFlags(fleet);
   return (
     <html lang="en">
       <head>
+        <meta name="fleet-content-version" content={fleet.version} />
         <meta name="geo.region" content="CA-ON" />
         <meta name="geo.placename" content="East York" />
         <meta name="geo.position" content="43.7086100;-79.3101300" />
@@ -146,12 +180,16 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Link className="deliveryAnnouncement" href="/delivery">
-          NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
-        </Link>
-        {children}
-        <FullNameNap />
-        <PinnedNavClearance />
+        <FleetContentProvider value={fleet.active ? { active: true, version: fleet.version, nap: fleet.nap, banners: fleet.banners } : undefined}>
+          <CigaretteStateProvider value={fleet.active ? cigarettes : undefined}>
+            <Link className="deliveryAnnouncement" href="/delivery">
+              NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
+            </Link>
+            {children}
+            <FullNameNap />
+            <PinnedNavClearance />
+          </CigaretteStateProvider>
+        </FleetContentProvider>
       </body>
     </html>
   );

@@ -1,5 +1,8 @@
 import { getLiveMenu } from "../../lib/liveMenu";
-import { SHOW_CIGARETTES, isPreservedSmokeItem } from "../../lib/siteConfig";
+import { SHOW_CIGARETTES, isCigaretteCategory, isPreservedSmokeItem } from "../../lib/siteConfig";
+import CigaretteUnavailable from "../../components/CigaretteUnavailable";
+import { getCigaretteAccess } from "../../lib/cigaretteFeed";
+import { getFleetContent } from "../../lib/fleetContent";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -135,6 +138,20 @@ export default async function ItemPage({
   const { items } = await getWebMenuData();
   const item = items.find((i) => i.slug === slug);
   if (!item) notFound();
+  if (isCigaretteCategory(item.category)) {
+    const fleet = await getFleetContent();
+    if ((await getCigaretteAccess(fleet.active)) === "unavailable") {
+      return (
+        <main className={styles.main}>
+          <Navbar />
+          <div style={{ paddingTop: 120 }}>
+            <CigaretteUnavailable />
+          </div>
+          <Footer />
+        </main>
+      );
+    }
+  }
 
   const catInfo = Object.values(CATEGORY_CONFIG).find(c => c.name.toUpperCase() === item.category.toUpperCase() || c.name === item.category);
   const catColor = catInfo?.color || "#94a3b8";
