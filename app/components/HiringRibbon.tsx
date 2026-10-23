@@ -3,7 +3,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { TvHiringConfig } from "../lib/tvHiring";
 import { TV_POLICY_MESSAGE } from "../lib/tvPolicy";
-import { CIGARETTE_FLASH_MESSAGE, isCigaretteFlashWindow } from "../tv/flashMessages";
+import { isCigaretteFlashHour } from "../tv/flashMessages";
+import { useCigaretteState } from "./CigaretteStateProvider";
 import styles from "./HiringRibbon.module.css";
 
 const PHASE_CLASS = [styles.phaseHeadline, styles.phaseApply, styles.phaseUrl];
@@ -53,12 +54,22 @@ function fitPolicyLine(node: HTMLSpanElement) {
   node.style.textOverflow = "";
 }
 
-export default function HiringRibbon({ hiring }: { hiring: TvHiringConfig | null }) {
-  const [showCigaretteFlash, setShowCigaretteFlash] = useState(() => isCigaretteFlashWindow());
+export default function HiringRibbon({
+  hiring,
+  cigarette,
+}: {
+  hiring: TvHiringConfig | null;
+  cigarette?: { show: boolean; line: string } | null;
+}) {
+  const seeded = useCigaretteState();
+  const flag = cigarette ?? { show: seeded.tv, line: seeded.wording.tickerLine1 };
+  const [flashHour, setFlashHour] = useState(() => isCigaretteFlashHour());
+  const line = trimmed(flag.line);
+  const showCigaretteFlash = flag.show && flashHour && line.length > 0;
   const policy = trimmed(TV_POLICY_MESSAGE);
   const hiringOn = hiring !== null && trimmed(hiring.displayUrl).length > 0;
   const messages = [
-    ...(showCigaretteFlash ? [CIGARETTE_FLASH_MESSAGE] : []),
+    ...(showCigaretteFlash ? [line] : []),
     ...(hiringOn ? hiringLines(hiring) : []),
     ...(policy ? [policy] : []),
   ];
@@ -72,7 +83,7 @@ export default function HiringRibbon({ hiring }: { hiring: TvHiringConfig | null
   const policyRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const update = () => setShowCigaretteFlash(isCigaretteFlashWindow());
+    const update = () => setFlashHour(isCigaretteFlashHour());
     const timer = window.setInterval(update, 60_000);
     return () => window.clearInterval(timer);
   }, []);
