@@ -15,6 +15,7 @@ import {
   resolveCigWording,
   resolveSurfaceFlag,
 } from "../app/lib/cigDecision.ts";
+import { isItemPageCigaretteGated, isRealCigaretteItem } from "../app/lib/cigMarkers.ts";
 import { SHOW_CIGARETTES } from "../app/lib/siteConfig.ts";
 
 const carton = { category: "CIGARETTES", name: "BB FULL CARTON", slug: "bb-full-carton" };
@@ -224,4 +225,42 @@ test("TV off keeps wraps, pouches, Backwoods, cigarillos, papers, Zyn, and Velo"
   const kept = [wrap, pouch, backwoods, cigarillo, paper, zyn];
   const hidden = reconcileSurfaceItems([vape, carton, grabba, ...kept], [carton, ...kept], false);
   assert.deepEqual(hidden.map((item) => item.slug), [vape.slug, ...kept.map((item) => item.slug)]);
+});
+
+test("a live cigarette item page is gated and a Backwoods item is not", () => {
+  const page = readFileSync(new URL("../app/item/[slug]/page.tsx", import.meta.url), "utf8");
+  const markers = readFileSync(new URL("../app/lib/cigMarkers.ts", import.meta.url), "utf8");
+  const items = JSON.parse(readFileSync(new URL("../app/lib/items.json", import.meta.url), "utf8")) as Array<{ slug?: string; name?: string; category?: string }>;
+  const liveCarton = { category: "CIGARETTES", name: "BB FULL CARTON", slug: "bb-full-carton-live" };
+  const belmont = { category: "CIGARETTES", name: "BELMONT KING SIZE (PACK ONLY)", slug: "belmont-king-size-pack-only-live" };
+  const liveGrabba = { category: "CIGARETTES", name: "GRABBA", slug: "grabba-live-shelf" };
+  const velo = { category: "CIGARETTES", name: "VELO POUCH", slug: "velo-pouch-live" };
+  const kept = [wrap, pouch, backwoods, cigarillo, paper, zyn, velo];
+  const backwoodsRow = items.find((item) => /backwood/i.test(`${item.name || ""} ${item.slug || ""}`));
+
+  assert.equal(items.some((item) => item.slug === liveCarton.slug), false);
+  assert.equal(items.some((item) => item.slug === carton.slug), true);
+  assert.equal(isRealCigaretteItem(liveCarton), true);
+  assert.equal(isRealCigaretteItem(carton), true);
+  assert.equal(isItemPageCigaretteGated(liveCarton, false), true);
+  assert.equal(isItemPageCigaretteGated(carton, false), true);
+  assert.equal(isItemPageCigaretteGated(belmont, false), true);
+  assert.equal(isItemPageCigaretteGated(liveGrabba, false), true);
+  assert.equal(isItemPageCigaretteGated(grabba, false), true);
+  assert.equal(isItemPageCigaretteGated(backwoods, false), false);
+  assert.equal(isItemPageCigaretteGated(backwoods, true), false);
+  assert.ok(backwoodsRow);
+  assert.equal(isRealCigaretteItem(backwoodsRow), false);
+  assert.equal(isItemPageCigaretteGated(backwoodsRow, true), false);
+  for (const item of kept) {
+    assert.equal(isItemPageCigaretteGated(item, false), false, item.slug);
+    assert.equal(isItemPageCigaretteGated(item, true), false, item.slug);
+  }
+
+  assert.match(markers, /pathIsGated \|\| isRealCigaretteItem\(item\)/);
+  assert.match(page, /isItemPageCigaretteGated\(item, isCigaretteCategory\(item\.category\)\)/);
+  assert.match(page, /toPublicCigaretteState\(await getCigaretteSnapshot\(\)\)\.web/);
+  assert.match(page, /getCigaretteAccess\(fleet\.active\)\) === "unavailable" \|\| !websiteCigarettesOn/);
+  assert.match(page, /<CigaretteUnavailable \/>/);
+  assert.doesNotMatch(page, /if \(isCigaretteCategory\(item\.category\)\)/);
 });
