@@ -6,6 +6,7 @@ import {
   cigarettePublicHeaders,
   decideCigaretteGuide,
   decideCigaretteSurface,
+  publicWebsiteCigaretteFlag,
   reconcileSurfaceItems,
   type CigaretteAccess,
   type CigaretteSurfaceDecision,
@@ -42,9 +43,11 @@ function menuUrl(): string {
 }
 
 function snapshotFrom(cig: unknown, items: ItemProduct[], live: boolean, errored: boolean): CigaretteSnapshot {
-  const web = decideCigaretteSurface({ cig, items, surface: "web", errored, codedShow: SHOW_CIGARETTES });
+  const webDecision = decideCigaretteSurface({ cig, items, surface: "web", errored, codedShow: SHOW_CIGARETTES });
   const tv = decideCigaretteSurface({ cig, items, surface: "tv", errored });
   const guides = decideCigaretteGuide({ cig, items, errored, codedShow: SHOW_CIGARETTES });
+  // SHOW_CIGARETTES ? feed.web : false, and false on a feed error or a missing block.
+  const web = { ...webDecision, show: publicWebsiteCigaretteFlag(webDecision, SHOW_CIGARETTES) };
   return { web, tv, guides, wording: web.wording, live, items };
 }
 
@@ -60,6 +63,8 @@ export async function readCigaretteFeed(): Promise<CigaretteSnapshot> {
     const items = Array.isArray(data?.items) && data.items.length ? data.items : staticShelf;
     const cig = data?.cig ?? null;
     const live = Array.isArray(data?.flowers);
+    // Last-good cig inside the cache window still follows its saved tvOn.
+    // A miss with no saved cig is an error. TV hides, and the website flag stays off.
     return snapshotFrom(cig, items, live, !live && !cig);
   } catch {
     return snapshotFrom(null, staticShelf.length ? staticShelf : allItems, false, true);

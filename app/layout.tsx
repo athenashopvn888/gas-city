@@ -1,4 +1,4 @@
-import { cigaretteSafeContent } from "./lib/siteConfig";
+import { cigaretteSafeContent, SHOW_CIGARETTES } from "./lib/siteConfig";
 import CigaretteStateProvider from "./components/CigaretteStateProvider";
 import FleetContentProvider from "./components/FleetContentProvider";
 import FullNameNap from "./components/FullNameNap";
@@ -181,7 +181,7 @@ export default async function RootLayout({
       </head>
       <body>
         <FleetContentProvider value={fleet.active ? { active: true, version: fleet.version, nap: fleet.nap, banners: fleet.banners } : undefined}>
-          <CigaretteStateProvider value={fleet.active ? cigarettes : undefined}>
+          <CigaretteStateProvider value={fleet.active ? { ...cigarettes, web: SHOW_CIGARETTES ? cigarettes.web : false } : undefined}>
             <Link className="deliveryAnnouncement" href="/delivery">
               NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
             </Link>
