@@ -3,6 +3,7 @@ import {
   CIG_WORDING_FALLBACK,
   CIGARETTE_REVALIDATE_SECONDS,
   cigaretteAccessFrom,
+  cigarettePublicHeaders,
   decideCigaretteGuide,
   decideCigaretteSurface,
   reconcileSurfaceItems,
@@ -42,7 +43,7 @@ function menuUrl(): string {
 
 function snapshotFrom(cig: unknown, items: ItemProduct[], live: boolean, errored: boolean): CigaretteSnapshot {
   const web = decideCigaretteSurface({ cig, items, surface: "web", errored, codedShow: SHOW_CIGARETTES });
-  const tv = decideCigaretteSurface({ cig, items, surface: "tv", errored, codedShow: SHOW_CIGARETTES });
+  const tv = decideCigaretteSurface({ cig, items, surface: "tv", errored });
   const guides = decideCigaretteGuide({ cig, items, errored, codedShow: SHOW_CIGARETTES });
   return { web, tv, guides, wording: web.wording, live, items };
 }
@@ -69,6 +70,10 @@ export const getCigaretteSnapshot = cache(readCigaretteFeed);
 
 export function toPublicCigaretteState(snap: CigaretteSnapshot): PublicCigaretteState {
   return { web: snap.web.show, tv: snap.tv.show, wording: snap.wording };
+}
+
+export function snapshotHeaders(snap: CigaretteSnapshot): Record<string, string> {
+  return cigarettePublicHeaders({ web: snap.web.show, tv: snap.tv.show, wording: snap.wording });
 }
 
 /** Coded content keeps today's switch. A live bundle lets webOn and tvOn drive. */

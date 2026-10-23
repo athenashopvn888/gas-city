@@ -1,6 +1,6 @@
 "use client";
 
-import { SHOW_CIGARETTES } from "../lib/siteConfig";
+import { includeCigaretteCard, readCigaretteTvHeader } from "../lib/cigDecision";
 
 import { isCigaretteFlashHour, isNicotineItem } from "../tv/flashMessages";
 import { useCigaretteState } from "../components/CigaretteStateProvider";
@@ -37,9 +37,7 @@ const CARD_CONFIG_RAW = [
   { id:"CIGARETTES",      title:"🚬 CIGARETTES",         accent:"#78350f", filter:(it:Item)=>it.category==="CIGARETTES", preset:"" },
   { id:"MAGIC",           title:"🍄 MAGIC & OTHERS",     accent:"#9333ea", filter:(it:Item)=>it.category==="MAGIC & OTHERS", preset:"🍫 START SMALL · WAIT 45 MIN · THEN MORE" },
 ];
-const CARD_CONFIG = SHOW_CIGARETTES
-  ? CARD_CONFIG_RAW
-  : CARD_CONFIG_RAW.filter((card) => card.id !== "CIGARETTES");
+const CARD_CONFIG = CARD_CONFIG_RAW;
 
 /* -- HELPERS -- */
 const fmtPrice = (v?:string) => { const s=String(v||"").trim(); if(!s)return""; return /^\$/.test(s)?s:"$"+s; };
@@ -227,8 +225,9 @@ function VerticalTicker() {
 
 /* -- MAIN TV2 PAGE -- */
 export default function TV2Page() {
-  const cigaretteTv = useCigaretteState().tv;
-  const cards = cigaretteTv ? CARD_CONFIG_RAW : CARD_CONFIG;
+  const seeded = useCigaretteState();
+  const [tvCig, setTvCig] = useState({ show: seeded.tv, wording: seeded.wording });
+  const cards = includeCigaretteCard(CARD_CONFIG, tvCig.show);
   const theme = getTvTheme(tvHiring?.store);
   const [bgUrl, setBgUrl] = useState("");
   useEffect(() => {
@@ -269,14 +268,15 @@ export default function TV2Page() {
     try {
       const res = await fetch("/api/tv-data?type=items");
       const data: Item[] = res.ok ? await res.json() : [];
+      setTvCig(res.ok ? readCigaretteTvHeader(res.headers) : { show: false, wording: seeded.wording });
       setItems(data);
       setStockUpdated(readStockUpdatedAt(res, data));
       const hi: Record<string,number> = {};
-      cards.forEach(c => { hi[c.id] = 0; });
+      CARD_CONFIG.forEach(c => { hi[c.id] = 0; });
       setHighlights(hi);
       setLastUpdate(formatBoardTime(new Date()) || "");
     } catch (err) { console.warn("[TV2] Load failed:", err); }
-  }, [cards]);
+  }, [seeded.wording]);
 
   const fitToScreen = useCallback(() => {
     if (!wrapRef.current) return;
@@ -299,7 +299,7 @@ export default function TV2Page() {
     const interval = setInterval(() => {
       setHighlights(prev => {
         const next = {...prev};
-        cards.forEach(c => {
+        CARD_CONFIG.forEach(c => {
           const filtered = items.filter(c.filter);
           next[c.id] = ((prev[c.id]||0) + 1) % Math.max(1, filtered.length);
         });
@@ -307,7 +307,7 @@ export default function TV2Page() {
       });
     }, 5000);
     return () => clearInterval(interval);
-  }, [items, cards]);
+  }, [items]);
 
   return (
     <div
@@ -321,13 +321,13 @@ export default function TV2Page() {
 
         {/* GRID */}
         <div className={styles.stage}>
-          <HiringRibbon hiring={tvHiring} />
+          <HiringRibbon hiring={tvHiring} cigarette={{ show: tvCig.show, line: tvCig.wording.tickerLine1 }} />
           <div className={styles.grid}>
             {cards.map(card => {
               const filtered = items.filter(card.filter).filter(it => !(daytime && isNicotineItem(it)));
               const broken = sheetBroken[card.id] || {};
               const sheet = pickTv2Sheet(fleetTv.cards[card.id], {
-                categoryOff: card.id === "CIGARETTES" && !cigaretteTv,
+                categoryOff: card.id === "CIGARETTES" && !tvCig.show,
                 noItems: filtered.length === 0,
                 promoBroken: Boolean(broken.promo),
                 offBroken: Boolean(broken.off),
@@ -390,7 +390,7 @@ export default function TV2Page() {
               return (
                 <ItemCard key={card.id} title={card.title} accent={card.accent}
                   items={filtered} hiIdx={highlights[card.id]||0} preset={card.preset}
-                  offerPromo={card.id === "CIGARETTES" ? getCigaretteOfferPromo(daytime, promoElapsedMs) : undefined} />
+                  offerPromo={card.id === "CIGARETTES" && tvCig.show ? getCigaretteOfferPromo(daytime, promoElapsedMs) : undefined} />
               );
             })}
           </div>

@@ -88,7 +88,7 @@ export function decideCigaretteSurface(input: {
   surface: CigaretteSurface;
   envRaw?: string;
   errored?: boolean;
-  /** Fail-open target. Defaults to the coded SHOW_CIGARETTES switch. */
+  /** Website fail-open target when the feed is missing or errors. TV ignores it. */
   codedShow?: boolean;
 }): CigaretteSurfaceDecision & { wording: CigaretteWording } {
   const wording = resolveCigWording(
@@ -97,9 +97,17 @@ export function decideCigaretteSurface(input: {
       : undefined,
   );
   if (cigaretteEnvHardOff(input.envRaw)) return { show: false, reason: "env", wording };
-  // A missing feed or a feed error keeps today's coded on/off. Only an explicit false flag hides a live feed.
-  if (input.errored) return { show: codedShow(input.codedShow), reason: "error", wording };
-  if (!input.cig || typeof input.cig !== "object" || Array.isArray(input.cig)) {
+  const missing = !input.cig || typeof input.cig !== "object" || Array.isArray(input.cig);
+  // TV follows tvOn (cig.on when tvOn is absent). The coded switch is a website gate only.
+  // A missing feed or a feed error leaves the TV board open. Web keeps that coded switch,
+  // and a live web feed follows webOn alone.
+  if (input.surface === "tv") {
+    if (input.errored || missing) {
+      return { show: true, reason: input.errored ? "error" : "missing", wording };
+    }
+  } else if (input.errored) {
+    return { show: codedShow(input.codedShow), reason: "error", wording };
+  } else if (missing) {
     return { show: codedShow(input.codedShow), reason: "missing", wording };
   }
   if (!resolveSurfaceFlag(input.cig, input.surface)) return { show: false, reason: "off", wording };
@@ -145,6 +153,31 @@ export function reconcileSurfaceItems<T extends ShelfItem>(menuItems: T[], liveI
 /** Explicit feed off (or a live shelf with no real cigarettes) stays on the URL. */
 export function cigarettePageUnavailable(decision: CigaretteSurfaceDecision): boolean {
   return !decision.show && (decision.reason === "off" || decision.reason === "no-items");
+}
+
+export function cigarettePublicHeaders(state: { web: boolean; tv: boolean; wording: CigaretteWording }): Record<string, string> {
+  return {
+    "x-tv-data-cig-tv": state.tv ? "1" : "0",
+    "x-tv-data-cig-web": state.web ? "1" : "0",
+    "x-tv-data-cig-wording": encodeURIComponent(JSON.stringify(state.wording)),
+  };
+}
+
+export function readCigaretteTvHeader(headers: { get(name: string): string | null }): { show: boolean; wording: CigaretteWording } {
+  const show = headers.get("x-tv-data-cig-tv") === "1";
+  const raw = headers.get("x-tv-data-cig-wording");
+  if (!raw) return { show, wording: { ...CIG_WORDING_FALLBACK } };
+  try {
+    return { show, wording: resolveCigWording(JSON.parse(decodeURIComponent(raw))) };
+  } catch {
+    return { show, wording: { ...CIG_WORDING_FALLBACK } };
+  }
+}
+
+/** Cigarettes card stays on the board only while the TV feed flag is on. */
+export function includeCigaretteCard<T extends { id: string }>(cards: readonly T[], tvShow: boolean): readonly T[] {
+  if (tvShow) return cards;
+  return cards.filter((card) => card.id !== "CIGARETTES");
 }
 
 export function cigaretteAccessFrom(input: { fleetActive: boolean; decision: CigaretteSurfaceDecision }): CigaretteAccess {
