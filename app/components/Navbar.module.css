@@ -170,6 +170,8 @@
 .menuChoices { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 7px; }
 .menuChoice { display: inline-flex; min-width: 112px; min-height: 40px; align-items: center; justify-content: center; padding: 7px 12px; border: 1px solid rgba(251,191,36,.7); border-radius: 9px; color: #fff8e8; background: rgba(251,191,36,.12); font-size: 10px; font-weight: 900; letter-spacing: .055em; text-decoration: none; white-space: nowrap; }
 .deliveryMenuChoice { color: #fff; background: #c5161d; border-color: #fff; }
+.directionsMenuChoice { display: none; gap: 4px; color: #171109; background: linear-gradient(180deg,#ffe28a,#fbbf24); border-color: #fbbf24; }
 .menuChoiceActive { color: #111827; background: #fbbf24; border-color: #fbbf24; }
 .deliveryMenuChoice.menuChoiceActive { color: #fff; background: #e11d2e; border-color: #fff; }
+@media(max-width:768px){.menuChoices{grid-template-columns:repeat(3,minmax(0,1fr))}.directionsMenuChoice{display:inline-flex}}
 @media(max-width:486px){.topBar{padding:0 12px}.brandName,.open{display:none}.topBarRight{flex:1}.menuChoices{width:100%;gap:5px}.menuChoice{min-width:0;min-height:44px;padding:7px 5px;font-size:9px}}
