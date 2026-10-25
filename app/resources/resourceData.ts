@@ -105,7 +105,7 @@ const RESOURCE_PAGES_RAW: ResourcePage[] = [
     "sections": [
       {
         "heading": "Choose The Category First",
-        "body": "If you want flower, start with flower. If you want pre-rolls, stay in pre-rolls. If the visit is about edibles, vapes, concentrates, or accessories, open that section and compare there first.",
+        "body": "If you want flower, start with flower. If you want pre-rolls, stay in pre-rolls. If the visit is about edibles, vapes, concentrates, or accessories, open that section and compare there first. Shoppers who want a [weed dispensary in East York](/weed-dispensary-oconnor-east-york) can open the O'Connor Drive guide, and shoppers who want a [weed dispensary in Toronto](/weed-dispensary-toronto) can open this same store's page.",
         "bullets": [
           "Flower shoppers should compare tiers.",
           "Pre-roll shoppers should compare format and package details.",
@@ -114,7 +114,7 @@ const RESOURCE_PAGES_RAW: ResourcePage[] = [
       },
       {
         "heading": "Check What Is Current",
-        "body": "Use this guide for the shopping method, then use the current menu and staff for the product names, prices, and package details currently listed."
+        "body": "Use this guide for the shopping method, then use the current menu and staff for the product names, prices, and package details currently listed. When a walk-in is not the plan, [weed delivery in East York](/delivery) opens the local delivery menu for this store."
       }
     ]
   },

@@ -1,12 +1,28 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { articleBodyParts } from "./articleLinks";
 import styles from "./resources.module.css";
 import type { ResourcePage } from "./resourceData";
 
 type ResourceViewProps = {
   page: ResourcePage;
 };
+
+function renderArticleBody(text: string): ReactNode {
+  const parts = articleBodyParts(text);
+  if (!parts.some((part) => part.type === "link")) return text;
+  return parts.map((part, index) =>
+    part.type === "link" ? (
+      <Link key={`${part.href}-${index}`} href={part.href}>
+        {part.text}
+      </Link>
+    ) : (
+      part.text
+    ),
+  );
+}
 
 export default function ResourceView({ page }: ResourceViewProps) {
   return (
@@ -37,7 +53,7 @@ export default function ResourceView({ page }: ResourceViewProps) {
         {page.sections.map((section) => (
           <article key={section.heading} className={styles.section}>
             <h2>{section.heading}</h2>
-            <p>{section.body}</p>
+            <p>{renderArticleBody(section.body)}</p>
             {section.bullets && (
               <ul>
                 {section.bullets.map((item) => (
