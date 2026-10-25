@@ -8,6 +8,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
+import { STORE } from "../lib/storeIdentity";
 
 const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
   { href: "/exotic", label: "Exotic" },
@@ -39,6 +40,12 @@ export default function Navbar() {
   const updateScrollState = useCallback(() => { const scrollBar = scrollBarRef.current; if (!scrollBar) return; setCanAdvance(scrollBar.scrollWidth - scrollBar.clientWidth - scrollBar.scrollLeft > 2); }, []);
   useEffect(() => { const scrollBar = scrollBarRef.current; if (!scrollBar) return; updateScrollState(); scrollBar.addEventListener("scroll", updateScrollState, { passive: true }); window.addEventListener("resize", updateScrollState); const resizeObserver = new ResizeObserver(updateScrollState); resizeObserver.observe(scrollBar); if (scrollBar.firstElementChild) resizeObserver.observe(scrollBar.firstElementChild); return () => { scrollBar.removeEventListener("scroll", updateScrollState); window.removeEventListener("resize", updateScrollState); resizeObserver.disconnect(); }; }, [pathname, updateScrollState]);
   const advanceScrollBar = () => { const scrollBar = scrollBarRef.current; if (!scrollBar) return; const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches; scrollBar.scrollBy({ left: Math.max(180, scrollBar.clientWidth * 0.75), behavior: reduceMotion ? "auto" : "smooth" }); };
+  const trackDirections = () => {
+    (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.("event", "directions_click", {
+      store_code: "GCC01",
+      link_location: "mobile_navigation",
+    });
+  };
 
   return (
     <nav className={styles.navbar} id="main-nav">
@@ -60,6 +67,10 @@ export default function Navbar() {
           <div className={styles.menuChoices} aria-label="Choose a menu">
             <Link href="/exotic" className={`${styles.menuChoice} ${isStoreMenuActive ? styles.menuChoiceActive : ""}`}>STORE MENU</Link>
             <Link href="/delivery" className={`${styles.menuChoice} ${styles.deliveryMenuChoice} ${isDeliveryActive ? styles.menuChoiceActive : ""}`}>Delivery</Link>
+            <a href={STORE.mapUrl} target="_blank" rel="noopener noreferrer" className={`${styles.menuChoice} ${styles.directionsMenuChoice}`} onClick={trackDirections}>
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="15" height="15"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg>
+              <span>Directions</span>
+            </a>
           </div>
           <span className={styles.open}>
             <span className={styles.dot}></span>
