@@ -94,6 +94,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
   ];
+  const storageAccessoriesArticle: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/cannabis-storage-accessories-glossary`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
 
   let fleetArticlePages: MetadataRoute.Sitemap = [];
   try {
@@ -111,5 +119,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     fleetArticlePages = [];
   }
 
-  return withoutCigaretteUrls([...deliveryGuidePages, ...strainGuidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages, ...packagingRecyclingArticle, ...fleetArticlePages]);
+  return withoutCigaretteUrls([...deliveryGuidePages, ...strainGuidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages, ...packagingRecyclingArticle, ...storageAccessoriesArticle, ...fleetArticlePages]);
 }

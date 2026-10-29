@@ -1,4 +1,5 @@
-import { ARTICLE_H1, ARTICLE_PATH } from "../../resources/cannabis-packaging-recycling-toronto/articleCopy.ts";
+import { ARTICLE_H1 as PACKAGING_H1, ARTICLE_PATH as PACKAGING_PATH } from "../../resources/cannabis-packaging-recycling-toronto/articleCopy.ts";
+import { ARTICLE_H1 as STORAGE_H1, ARTICLE_PATH as STORAGE_PATH } from "../../resources/cannabis-storage-accessories-glossary/articleCopy.ts";
 import { RESOURCE_PAGES } from "../../resources/resourceData.ts";
 import type { CodedArticleLink } from "./articles.ts";
 
@@ -9,11 +10,18 @@ export function codedArticleLinks(): CodedArticleLink[] {
     title: page.title,
     href: `/resources/${page.slug}`,
   }));
-  const extra: CodedArticleLink = {
-    slug: ARTICLE_PATH.replace(/^\/resources\//, ""),
-    title: ARTICLE_H1,
-    href: ARTICLE_PATH,
-  };
-  if (fromResources.some((page) => page.slug === extra.slug)) return fromResources;
-  return [...fromResources, extra];
+  const extras: CodedArticleLink[] = [
+    {
+      slug: PACKAGING_PATH.replace(/^\/resources\//, ""),
+      title: PACKAGING_H1,
+      href: PACKAGING_PATH,
+    },
+    {
+      slug: STORAGE_PATH.replace(/^\/resources\//, ""),
+      title: STORAGE_H1,
+      href: STORAGE_PATH,
+    },
+  ];
+  const seen = new Set(fromResources.map((page) => page.slug));
+  return [...fromResources, ...extras.filter((page) => !seen.has(page.slug))];
 }
