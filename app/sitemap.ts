@@ -102,6 +102,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
   ];
+  const vaporizerCleanArticle: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/how-to-clean-a-dry-herb-vaporizer`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
 
   let fleetArticlePages: MetadataRoute.Sitemap = [];
   try {
@@ -119,5 +127,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     fleetArticlePages = [];
   }
 
-  return withoutCigaretteUrls([...deliveryGuidePages, ...strainGuidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages, ...packagingRecyclingArticle, ...storageAccessoriesArticle, ...fleetArticlePages]);
+  return withoutCigaretteUrls([...deliveryGuidePages, ...strainGuidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages, ...packagingRecyclingArticle, ...storageAccessoriesArticle, ...vaporizerCleanArticle, ...fleetArticlePages]);
 }

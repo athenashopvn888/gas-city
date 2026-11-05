@@ -1,5 +1,6 @@
 import { ARTICLE_H1 as PACKAGING_H1, ARTICLE_PATH as PACKAGING_PATH } from "../../resources/cannabis-packaging-recycling-toronto/articleCopy.ts";
 import { ARTICLE_H1 as STORAGE_H1, ARTICLE_PATH as STORAGE_PATH } from "../../resources/cannabis-storage-accessories-glossary/articleCopy.ts";
+import { ARTICLE_H1 as VAPORIZER_H1, ARTICLE_PATH as VAPORIZER_PATH } from "../../resources/how-to-clean-a-dry-herb-vaporizer/articleCopy.ts";
 import { RESOURCE_PAGES } from "../../resources/resourceData.ts";
 import type { CodedArticleLink } from "./articles.ts";
 
@@ -20,6 +21,11 @@ export function codedArticleLinks(): CodedArticleLink[] {
       slug: STORAGE_PATH.replace(/^\/resources\//, ""),
       title: STORAGE_H1,
       href: STORAGE_PATH,
+    },
+    {
+      slug: VAPORIZER_PATH.replace(/^\/resources\//, ""),
+      title: VAPORIZER_H1,
+      href: VAPORIZER_PATH,
     },
   ];
   const seen = new Set(fromResources.map((page) => page.slug));
