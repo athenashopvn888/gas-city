@@ -110,6 +110,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
   ];
+  const redCongoleseArticle: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/red-congolese-strain`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
 
   let fleetArticlePages: MetadataRoute.Sitemap = [];
   try {
@@ -127,5 +135,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     fleetArticlePages = [];
   }
 
-  return withoutCigaretteUrls([...deliveryGuidePages, ...strainGuidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages, ...packagingRecyclingArticle, ...storageAccessoriesArticle, ...vaporizerCleanArticle, ...fleetArticlePages]);
+  return withoutCigaretteUrls([...deliveryGuidePages, ...strainGuidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages, ...packagingRecyclingArticle, ...storageAccessoriesArticle, ...vaporizerCleanArticle, ...redCongoleseArticle, ...fleetArticlePages]);
 }
