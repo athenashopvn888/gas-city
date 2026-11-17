@@ -29,7 +29,7 @@ export const gbpLocation = {
   latitude: "43.7086100",
   longitude: "-79.3101300",
   hours: ["Open Daily: 11:00 AM - 03:00 AM"],
-  seoTitle: "GAS CITY CANNABIS | Weed Dispensary in East York",
+  seoTitle: "GAS CITY CANNABIS | Weed Dispensary near me in East York",
   metaDescription: "GAS CITY CANNABIS is a local weed dispensary in East York with category browsing and store information for adults 19+.",
   localLandmarks: ["O'Connor Dr", "East York", "Woodbine Ave"],
   introVariant: "GAS CITY CANNABIS is located at 985 O'Connor Dr in East York. Adults 19+ can use this page to confirm store details and browse menu categories before visiting the O'Connor area.",
