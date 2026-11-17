@@ -72,6 +72,8 @@ const nextConfig: NextConfig = {
       { source: "/add-ons", destination: "/items/add-ons", permanent: true },
       { source: "/cigarettes", destination: "/items/cigarettes", permanent: true },
       { source: "/magic", destination: "/items/magic", permanent: true },
+      { source: "/weed-delivery-east-york", destination: "/delivery", statusCode: 301 },
+      { source: "/weed-delivery-east-york/", destination: "/delivery", statusCode: 301 },
     ];
   },
 };
