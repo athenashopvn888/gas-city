@@ -2,6 +2,7 @@ import { ARTICLE_H1 as PACKAGING_H1, ARTICLE_PATH as PACKAGING_PATH } from "../.
 import { ARTICLE_H1 as STORAGE_H1, ARTICLE_PATH as STORAGE_PATH } from "../../resources/cannabis-storage-accessories-glossary/articleCopy.ts";
 import { ARTICLE_H1 as VAPORIZER_H1, ARTICLE_PATH as VAPORIZER_PATH } from "../../resources/how-to-clean-a-dry-herb-vaporizer/articleCopy.ts";
 import { ARTICLE_H1 as RED_CONGOLESE_H1, ARTICLE_PATH as RED_CONGOLESE_PATH } from "../../resources/red-congolese-strain/articleCopy.ts";
+import { ARTICLE_H1 as NECTAR_COLLECTOR_H1, ARTICLE_PATH as NECTAR_COLLECTOR_PATH } from "../../resources/what-is-a-nectar-collector/articleCopy.ts";
 import { RESOURCE_PAGES } from "../../resources/resourceData.ts";
 import type { CodedArticleLink } from "./articles.ts";
 
@@ -32,6 +33,11 @@ export function codedArticleLinks(): CodedArticleLink[] {
       slug: RED_CONGOLESE_PATH.replace(/^\/resources\//, ""),
       title: RED_CONGOLESE_H1,
       href: RED_CONGOLESE_PATH,
+    },
+    {
+      slug: NECTAR_COLLECTOR_PATH.replace(/^\/resources\//, ""),
+      title: NECTAR_COLLECTOR_H1,
+      href: NECTAR_COLLECTOR_PATH,
     },
   ];
   const seen = new Set(fromResources.map((page) => page.slug));

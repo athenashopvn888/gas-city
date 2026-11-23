@@ -118,6 +118,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
   ];
+  const nectarCollectorArticle: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE}/resources/what-is-a-nectar-collector`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
 
   let fleetArticlePages: MetadataRoute.Sitemap = [];
   try {
@@ -135,5 +143,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     fleetArticlePages = [];
   }
 
-  return withoutCigaretteUrls([...deliveryGuidePages, ...strainGuidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages, ...packagingRecyclingArticle, ...storageAccessoriesArticle, ...vaporizerCleanArticle, ...redCongoleseArticle, ...fleetArticlePages]);
+  return withoutCigaretteUrls([...deliveryGuidePages, ...strainGuidePages, ...staticPages, ...tierPages, ...itemPages, ...flowerPages, ...itemDetailPages, ...resourcePages, ...seoPages, ...packagingRecyclingArticle, ...storageAccessoriesArticle, ...vaporizerCleanArticle, ...redCongoleseArticle, ...nectarCollectorArticle, ...fleetArticlePages]);
 }
