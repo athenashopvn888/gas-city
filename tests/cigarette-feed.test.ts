@@ -260,7 +260,7 @@ test("a live cigarette item page is gated and a Backwoods item is not", () => {
   assert.match(markers, /pathIsGated \|\| isRealCigaretteItem\(item\)/);
   assert.match(page, /isItemPageCigaretteGated\(item, isCigaretteCategory\(item\.category\)\)/);
   assert.match(page, /toPublicCigaretteState\(await getCigaretteSnapshot\(\)\)\.web/);
-  assert.match(page, /getCigaretteAccess\(fleet\.active\)\) === "unavailable" \|\| !websiteCigarettesOn/);
+  assert.match(page, /getCigaretteAccess\(\)\) === "unavailable" \|\| !websiteCigarettesOn/);
   assert.match(page, /<CigaretteUnavailable \/>/);
   assert.doesNotMatch(page, /if \(isCigaretteCategory\(item\.category\)\)/);
 });
