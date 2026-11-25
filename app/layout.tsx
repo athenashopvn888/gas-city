@@ -13,7 +13,7 @@ import { getFleetContent } from "./lib/fleetContent";
 import { STORE, storeSchema } from "./lib/storeIdentity";
 import { HOME_DOC_TITLE } from "./lib/homeDelivery";
 
-export const revalidate = 300;
+export const dynamic = "force-dynamic";
 
 const metadata: Metadata = cigaretteSafeContent({
   metadataBase: new URL("https://www.gascitycannabis.com"),
@@ -149,7 +149,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const fleet = await getFleetContent();
-  const cigarettes = await getPublicCigaretteFlags(fleet);
+  const cigarettes = await getPublicCigaretteFlags();
   return (
     <html lang="en">
       <head>
@@ -182,7 +182,7 @@ export default async function RootLayout({
       </head>
       <body>
         <FleetContentProvider value={fleet.active ? { active: true, version: fleet.version, nap: fleet.nap, banners: fleet.banners } : undefined}>
-          <CigaretteStateProvider value={fleet.active ? { ...cigarettes, web: SHOW_CIGARETTES ? cigarettes.web : false } : undefined}>
+          <CigaretteStateProvider value={{ ...cigarettes, web: SHOW_CIGARETTES ? cigarettes.web : false }}>
             <Link className="deliveryAnnouncement" href="/delivery">
               NEW DELIVERY MENU IS HERE — CLICK TO EXPLORE
             </Link>

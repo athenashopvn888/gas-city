@@ -1,6 +1,6 @@
 "use client";
 
-import { filterCigaretteEntries } from "../lib/siteConfig";
+import { isCigaretteEntry } from "../lib/siteConfig";
 import { useCigaretteState } from "./CigaretteStateProvider";
 
 
@@ -32,7 +32,7 @@ const ALL_LINKS: { href: string; label: string; featured?: boolean }[] = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const links = useCigaretteState().web ? ALL_LINKS : filterCigaretteEntries(ALL_LINKS);
+  const links = useCigaretteState().web ? ALL_LINKS : ALL_LINKS.filter((entry) => !isCigaretteEntry(entry));
   const isStoreMenuActive = ["/exotic", "/premium", "/aaa", "/aa", "/budget"].includes(pathname);
   const isDeliveryActive = pathname === "/delivery";
   const scrollBarRef = useRef<HTMLDivElement>(null);

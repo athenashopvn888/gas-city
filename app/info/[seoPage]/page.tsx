@@ -10,7 +10,6 @@ import { SEO_PAGES, getSeoPageBySlug } from "../../lib/seoPages";
 import { isCigarettePath } from "../../lib/siteConfig";
 import CigaretteUnavailable from "../../components/CigaretteUnavailable";
 import { getCigaretteAccess } from "../../lib/cigaretteFeed";
-import { getFleetContent } from "../../lib/fleetContent";
 import { TIER_CONFIG } from "../../lib/products";
 import styles from "./seo.module.css";
 
@@ -48,8 +47,7 @@ export default async function SeoLandingPage({
   const page = getSeoPageBySlug(slug);
   if (!page) notFound();
   if (isCigarettePath(page.slug)) {
-    const fleet = await getFleetContent();
-    if ((await getCigaretteAccess(fleet.active)) === "unavailable") {
+        if ((await getCigaretteAccess()) === "unavailable") {
       return (
         <main className={styles.main}>
           <Navbar />

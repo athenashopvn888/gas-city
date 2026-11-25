@@ -1,6 +1,5 @@
 import { cache } from "react";
 import {
-  CIG_WORDING_FALLBACK,
   CIGARETTE_REVALIDATE_SECONDS,
   cigaretteAccessFrom,
   cigarettePublicHeaders,
@@ -12,7 +11,6 @@ import {
   type CigaretteSurfaceDecision,
   type CigaretteWording,
 } from "./cigDecision";
-import type { FleetState } from "./fleet/types";
 import { allItems, type ItemProduct } from "./products";
 import itemsJson from "./items.json";
 import { cigaretteEnvHardOff, SHOW_CIGARETTES } from "./siteConfig";
@@ -81,17 +79,12 @@ export function snapshotHeaders(snap: CigaretteSnapshot): Record<string, string>
   return cigarettePublicHeaders({ web: snap.web.show, tv: snap.tv.show, wording: snap.wording });
 }
 
-/** Coded content keeps today's switch. A live bundle lets webOn and tvOn drive. */
-export async function getPublicCigaretteFlags(fleet: FleetState): Promise<PublicCigaretteState> {
-  if (!fleet.active) {
-    return { web: SHOW_CIGARETTES, tv: SHOW_CIGARETTES, wording: CIG_WORDING_FALLBACK };
-  }
+export async function getPublicCigaretteFlags(): Promise<PublicCigaretteState> {
   const snap = await getCigaretteSnapshot();
   return toPublicCigaretteState(snap);
 }
 
-export async function getCigaretteAccess(fleetActive: boolean): Promise<CigaretteAccess> {
-  if (!fleetActive) return SHOW_CIGARETTES ? "show" : "redirect";
+export async function getCigaretteAccess(): Promise<CigaretteAccess> {
   const snap = await getCigaretteSnapshot();
   return cigaretteAccessFrom({ fleetActive: true, decision: snap.web });
 }

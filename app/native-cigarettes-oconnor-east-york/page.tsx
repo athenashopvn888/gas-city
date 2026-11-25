@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import CigaretteUnavailable from "../components/CigaretteUnavailable";
 import { AUTHORITY_PAGES } from "../lib/authorityPages";
 import { getCigaretteAccess } from "../lib/cigaretteFeed";
-import { getFleetContent } from "../lib/fleetContent";
 
 export const metadata: Metadata = {
   title: { absolute: "Native Cigarettes | O'Connor Dr, East York | Gas City Cannabis" },
@@ -14,8 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-  const fleet = await getFleetContent();
-  if ((await getCigaretteAccess(fleet.active)) === "unavailable") {
+    if ((await getCigaretteAccess()) === "unavailable") {
     return (
       <main>
         <Navbar />
