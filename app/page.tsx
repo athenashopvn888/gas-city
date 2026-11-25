@@ -1,6 +1,6 @@
 "use client";
 
-import { filterCigaretteEntries } from "./lib/siteConfig";
+import { isCigaretteEntry } from "./lib/siteConfig";
 import { useCigaretteState } from "./components/CigaretteStateProvider";
 import { useFleetContent } from "./components/FleetContentProvider";
 import FleetSheetImage from "./components/FleetSheetImage";
@@ -123,8 +123,8 @@ export default function HomePage() {
     const __liveFlowers = useLiveFlowers();
   const web = useCigaretteState().web;
   const fleet = useFleetContent();
-  const exploreCategories = web ? EXPLORE_CATEGORIES_RAW : filterCigaretteEntries(EXPLORE_CATEGORIES_RAW);
-  const localGuides = web ? LOCAL_GUIDES_RAW : filterCigaretteEntries(LOCAL_GUIDES_RAW);
+  const exploreCategories = web ? EXPLORE_CATEGORIES_RAW : EXPLORE_CATEGORIES_RAW.filter((entry) => !isCigaretteEntry(entry));
+  const localGuides = web ? LOCAL_GUIDES_RAW : LOCAL_GUIDES_RAW.filter((entry) => !isCigaretteEntry(entry));
   const welcome = fleet.banners.find((banner) => banner.id === "welcome");
   const welcomeOverride = fleet.active && welcome && !bannerMatchesCoded(welcome) ? welcome : null;
   const [featuredStrains, setFeaturedStrains] = useState<FlowerProduct[]>([]);

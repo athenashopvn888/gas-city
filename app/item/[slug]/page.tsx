@@ -3,7 +3,6 @@ import { SHOW_CIGARETTES, isCigaretteCategory, isPreservedSmokeItem } from "../.
 import CigaretteUnavailable from "../../components/CigaretteUnavailable";
 import { isItemPageCigaretteGated } from "../../lib/cigMarkers";
 import { getCigaretteAccess, getCigaretteSnapshot, toPublicCigaretteState } from "../../lib/cigaretteFeed";
-import { getFleetContent } from "../../lib/fleetContent";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -140,9 +139,8 @@ export default async function ItemPage({
   const item = items.find((i) => i.slug === slug);
   if (!item) notFound();
   if (isItemPageCigaretteGated(item, isCigaretteCategory(item.category))) {
-    const fleet = await getFleetContent();
-    const websiteCigarettesOn = toPublicCigaretteState(await getCigaretteSnapshot()).web;
-    if ((await getCigaretteAccess(fleet.active)) === "unavailable" || !websiteCigarettesOn) {
+        const websiteCigarettesOn = toPublicCigaretteState(await getCigaretteSnapshot()).web;
+    if ((await getCigaretteAccess()) === "unavailable" || !websiteCigarettesOn) {
       return (
         <main className={styles.main}>
           <Navbar />
